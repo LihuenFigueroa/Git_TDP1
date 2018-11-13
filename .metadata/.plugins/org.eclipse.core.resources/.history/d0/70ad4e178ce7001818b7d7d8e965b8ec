@@ -14,7 +14,7 @@
 #include "lcd.h"
 #include "stdint.h"                /* <= Standar Integer data types header */
 #include "chip.h"                  /* <= LPCopen header */
-
+#include "sapi.h"
 
 #define SIZE_BUFFER_OUT 32U
 
@@ -135,14 +135,21 @@ void LCD_init(char mode1, char mode2) {
 	gpioConfig( LCD3, GPIO_OUTPUT );
 	gpioConfig( LCD4, GPIO_OUTPUT );
 	gpioConfig( LCDRS, GPIO_OUTPUT );
+	Chip_GPIO_SetDir(LPC_GPIO_PORT, LCD_ENABLE_GPIO, (1 << LCD_ENABLE_PIN),
+	OUTPUT);
+	Chip_GPIO_SetDir(LPC_GPIO_PORT, LCD_RS_GPIO, (1 << LCD_RS_PIN), OUTPUT);
+	Chip_GPIO_SetDir(LPC_GPIO_PORT, LCD_D1_GPIO, (1 << LCD_D1_PIN), OUTPUT);
+	Chip_GPIO_SetDir(LPC_GPIO_PORT, LCD_D2_GPIO, (1 << LCD_D2_PIN), OUTPUT);
+	Chip_GPIO_SetDir(LPC_GPIO_PORT, LCD_D3_GPIO, (1 << LCD_D3_PIN), OUTPUT);
+	Chip_GPIO_SetDir(LPC_GPIO_PORT, LCD_D4_GPIO, (1 << LCD_D4_PIN), OUTPUT);
 
 	/* Init EDU-CIAA-NXP LCD Pins OFF */
-	gpioWrite(LCD1,OFF);
-	gpioWrite(LCD2,OFF);
-	gpioWrite(LCD3,OFF);
-	gpioWrite(LCD4,OFF);
-	gpioWrite(LCDRS,OFF);
-	gpioWrite(LCDEN,OFF);
+	Chip_GPIO_ClearValue(LPC_GPIO_PORT, LCD_ENABLE_GPIO, (1 << LCD_ENABLE_PIN));
+	Chip_GPIO_ClearValue(LPC_GPIO_PORT, LCD_RS_GPIO, (1 << LCD_RS_PIN));
+	Chip_GPIO_ClearValue(LPC_GPIO_PORT, LCD_D1_GPIO, (1 << LCD_D1_PIN));
+	Chip_GPIO_ClearValue(LPC_GPIO_PORT, LCD_D2_GPIO, (1 << LCD_D2_PIN));
+	Chip_GPIO_ClearValue(LPC_GPIO_PORT, LCD_D3_GPIO, (1 << LCD_D3_PIN));
+	Chip_GPIO_ClearValue(LPC_GPIO_PORT, LCD_D4_GPIO, (1 << LCD_D4_PIN));
 
 	LCD_delay_ms(16); // retardo de 15 ms
 	// LCD 4-bit mode initialization sequence

@@ -14,7 +14,7 @@
 #include "lcd.h"
 #include "stdint.h"                /* <= Standar Integer data types header */
 #include "chip.h"                  /* <= LPCopen header */
-
+#include "sapi.h"
 
 #define SIZE_BUFFER_OUT 32U
 
