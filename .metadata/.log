@@ -1,0 +1,13 @@
+!SESSION 2018-11-13 17:56:05.429 -----------------------------------------------
+eclipse.buildId=4.4.0.I20140606-1215
+java.version=1.8.0_20
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=es_ES
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -product org.eclipse.epp.package.cpp.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.cpp.product -data C:\CIAA\Git_TDP1 -product org.eclipse.epp.package.cpp.product
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-11-13 17:57:21.671
+!MESSAGE Indexed 'Firmware_v2' (608 sources, 1 074 headers) in 23,4 sec: 67 579 declarations; 148 570 references; 322 unresolved inclusions; 5 089 syntax errors; 26 117 unresolved names (11%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2018-11-13 17:59:39.752
+!MESSAGE Indexed 'Firmware_v2' (605 sources, 1 146 headers) in 21,7 sec: 71 718 declarations; 175 403 references; 34 unresolved inclusions; 5 091 syntax errors; 3 927 unresolved names (1,6%)

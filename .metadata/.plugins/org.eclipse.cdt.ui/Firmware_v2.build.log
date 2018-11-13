@@ -1,0 +1,13 @@
+18:00:02 **** Clean-only build of configuration Default for project Firmware_v2 ****
+make clean 
+Clean project...
+
+rm -f out/lpc4337_m4/obj/*.*
+rm -f out/lpc4337_m4/*.*
+rm -f *.launch
+
+Clean complete.
+
+
+18:00:03 Build Finished (took 1s.462ms)
+
