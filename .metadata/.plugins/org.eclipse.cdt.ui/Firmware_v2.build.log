@@ -1,13 +1,17 @@
-18:00:02 **** Clean-only build of configuration Default for project Firmware_v2 ****
-make clean 
-Clean project...
+18:11:23 **** Incremental Build of configuration Default for project Firmware_v2 ****
+make 
+Build project...
 
-rm -f out/lpc4337_m4/obj/*.*
-rm -f out/lpc4337_m4/*.*
-rm -f *.launch
+make[1]: se entra en el directorio '/cygdrive/c/CIAA/Git_TDP1/Firmware_v2'
+*** linking project gpio_02_blinky ***
+   text	   data	    bss	    dec	    hex	filename
+   8828	      8	     36	   8872	   22a8	out/lpc4337_m4/gpio_02_blinky.axf
+copy from `out/lpc4337_m4/gpio_02_blinky.axf' [elf32-littlearm] to `out/lpc4337_m4/gpio_02_blinky.bin' [binary]
+*** post-build ***
+make[1]: se sale del directorio '/cygdrive/c/CIAA/Git_TDP1/Firmware_v2'
 
-Clean complete.
+Build complete.
 
 
-18:00:03 Build Finished (took 1s.462ms)
+18:11:25 Build Finished (took 2s.75ms)
 

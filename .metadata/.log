@@ -11,3 +11,6 @@ Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.
 
 !ENTRY org.eclipse.cdt.core 1 0 2018-11-13 17:59:39.752
 !MESSAGE Indexed 'Firmware_v2' (605 sources, 1 146 headers) in 21,7 sec: 71 718 declarations; 175 403 references; 34 unresolved inclusions; 5 091 syntax errors; 3 927 unresolved names (1,6%)
+
+!ENTRY ilg.gnuarmeclipse.debug.gdbjtag.openocd 4 0 2018-11-13 18:04:03.868
+!MESSAGE Missing mandatory configuration. Fill-in the 'Config options:' field in the Debugger tab.
