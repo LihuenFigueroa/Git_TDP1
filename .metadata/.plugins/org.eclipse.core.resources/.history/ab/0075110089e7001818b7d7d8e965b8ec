@@ -96,7 +96,7 @@ void LCD_send_byte(char address, char data) {
 		gpioWrite(LCDRS, OFF);
 	else
 		gpioWrite(LCDRS, ON);
-	gpioWrite(LCDEN, OFF); // set LCD enable line to 0
+	Chip_GPIO_SetPinState( LPC_GPIO_PORT, LCD_ENABLE_GPIO, LCD_ENABLE_PIN, OFF); // set LCD enable line to 0
 	LCD_send_nibble(data >> 4); // send the higher nibble
 	LCD_send_nibble(data & 0x0f); // send the lower nibble
 	for (temp = 255; temp; temp--);
@@ -121,20 +121,14 @@ void LCD_init(char mode1, char mode2) {
 	//Inicializacion del dispositivo LCD
 
 	/* Config EDU-CIAA-NXP LCD Pins as GPIOs */
-	//Chip_SCU_PinMux(LCD_ENABLE_P, LCD_ENABLE_P_, MD_PUP, FUNC4); /* P4_9,  GPIO5[13],LCD_ENABLE*/
-	//Chip_SCU_PinMux(LCD_RS_P, LCD_RS_P_, MD_PUP, FUNC4); /* P4_8,  GPIO5[12],LCD_RS */
-	//Chip_SCU_PinMux(LCD_D1_P, LCD_D1_P_, MD_PUP, FUNC0); /* P4_4,  GPIO2[4],LCD_D1 */
-	//Chip_SCU_PinMux(LCD_D2_P, LCD_D2_P_, MD_PUP, FUNC0); /* P4_5, GPIO2[5],LCD_D2*/
-	//Chip_SCU_PinMux(LCD_D3_P, LCD_D3_P_, MD_PUP, FUNC0); /* P4_6, GPIO2[6],LCD_D3 */
-	//Chip_SCU_PinMux(LCD_D4_P, LCD_D4_P_, MD_PUP, FUNC4); /* P4_10, GPIO5[14],LCD_D4 */
+	Chip_SCU_PinMux(LCD_ENABLE_P, LCD_ENABLE_P_, MD_PUP, FUNC4); /* P4_9,  GPIO5[13],LCD_ENABLE*/
+	Chip_SCU_PinMux(LCD_RS_P, LCD_RS_P_, MD_PUP, FUNC4); /* P4_8,  GPIO5[12],LCD_RS */
+	Chip_SCU_PinMux(LCD_D1_P, LCD_D1_P_, MD_PUP, FUNC0); /* P4_4,  GPIO2[4],LCD_D1 */
+	Chip_SCU_PinMux(LCD_D2_P, LCD_D2_P_, MD_PUP, FUNC0); /* P4_5, GPIO2[5],LCD_D2*/
+	Chip_SCU_PinMux(LCD_D3_P, LCD_D3_P_, MD_PUP, FUNC0); /* P4_6, GPIO2[6],LCD_D3 */
+	Chip_SCU_PinMux(LCD_D4_P, LCD_D4_P_, MD_PUP, FUNC4); /* P4_10, GPIO5[14],LCD_D4 */
 
 	/* Config EDU-CIAA-NXP LCD Pins as Outputs */
-	gpioConfig( LCDEN, GPIO_OUTPUT );
-	gpioConfig( LCD1, GPIO_OUTPUT );
-	gpioConfig( LCD2, GPIO_OUTPUT );
-	gpioConfig( LCD3, GPIO_OUTPUT );
-	gpioConfig( LCD4, GPIO_OUTPUT );
-	gpioConfig( LCDRS, GPIO_OUTPUT );
 	Chip_GPIO_SetDir(LPC_GPIO_PORT, LCD_ENABLE_GPIO, (1 << LCD_ENABLE_PIN),
 	OUTPUT);
 	Chip_GPIO_SetDir(LPC_GPIO_PORT, LCD_RS_GPIO, (1 << LCD_RS_PIN), OUTPUT);
