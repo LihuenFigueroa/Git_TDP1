@@ -1,4 +1,4 @@
-18:07:54 **** Build of configuration Default for project Firmware_v2 ****
+09:33:55 **** Build of configuration Default for project Firmware_v2 ****
 make 
 Build project...
 
@@ -183,20 +183,6 @@ modules/lpc4337_m4/board/src/board.c:50:17: warning: 'lcd_cfg_val' defined but n
       0	      0	      0	      0	      0	gpiogroup_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
    2072	      0	      0	   2072	    818	ccan_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
 *** compiling C file sapi_examples/edu-ciaa-nxp/bare_metal/gpio/gpio_02_blinky/src/blinky.c ***
-*** linking project gpio_02_blinky ***
-   text	   data	    bss	    dec	    hex	filename
-   8828	      8	     36	   8872	   22a8	out/lpc4337_m4/gpio_02_blinky.axf
-copy from `out/lpc4337_m4/gpio_02_blinky.axf' [elf32-littlearm] to `out/lpc4337_m4/gpio_02_blinky.bin' [binary]
-*** post-build ***
-make[1]: se sale del directorio '/cygdrive/c/CIAA/Git_TDP1/Firmware_v2'
-
-Build complete.
-
-18:11:23 **** Incremental Build of configuration Default for project Firmware_v2 ****
-make 
-Build project...
-
-make[1]: se entra en el directorio '/cygdrive/c/CIAA/Git_TDP1/Firmware_v2'
 *** linking project gpio_02_blinky ***
    text	   data	    bss	    dec	    hex	filename
    8828	      8	     36	   8872	   22a8	out/lpc4337_m4/gpio_02_blinky.axf
