@@ -112,10 +112,10 @@ int main(void){
    uartWriteByte( UART_USB, '\r' ); /* Envía '\r', retorno de carro */
    uartWriteByte( UART_USB, '\n' ); /* Envía '\n', nueva línea      */
 
-   uartWriteByte( UART_USB, dato1 + 48 ); /* Envía '1' */
-   uartWriteByte( UART_USB, ' ' );        /* Envía ' ' */
-   uartWriteByte( UART_USB, '1' );        /* Envía '1' */
-   uartWriteByte( UART_USB, 32 );         /* Envía ' ' */
+   uartWriteByte( UART_USB, dato1 + 48 ); /* Envia '1' */
+   uartWriteByte( UART_USB, ' ' );        /* Envia ' ' */
+   uartWriteByte( UART_USB, '1' );        /* Envia '1' */
+   uartWriteByte( UART_USB, 32 );         /* Envia ' ' */
 
    /* Convertir un número entero de 2 dígitos ASCII y enviar */
    uartWriteByte( UART_USB, (dato2/10) + 48 ); /* Envía '7' */

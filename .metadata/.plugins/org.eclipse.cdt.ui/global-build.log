@@ -1,4 +1,4 @@
-09:33:55 **** Build of configuration Default for project Firmware_v2 ****
+14:40:13 **** Build of configuration Default for project Firmware_v2 ****
 make 
 Build project...
 
@@ -182,6 +182,35 @@ modules/lpc4337_m4/board/src/board.c:50:17: warning: 'lcd_cfg_val' defined but n
     808	      0	      0	    808	    328	hsadc_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
       0	      0	      0	      0	      0	gpiogroup_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
    2072	      0	      0	   2072	    818	ccan_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+*** compiling C file sapi_examples/edu-ciaa-nxp/bare_metal/gpio/gpio_01_switches_leds/src/switches_leds.c ***
+*** linking project gpio_01_switches_leds ***
+   text	   data	    bss	    dec	    hex	filename
+   8960	      8	     36	   9004	   232c	out/lpc4337_m4/gpio_01_switches_leds.axf
+copy from `out/lpc4337_m4/gpio_01_switches_leds.axf' [elf32-littlearm] to `out/lpc4337_m4/gpio_01_switches_leds.bin' [binary]
+*** post-build ***
+make[1]: se sale del directorio '/cygdrive/c/CIAA/Git_TDP1/Firmware_v2'
+
+Build complete.
+
+14:41:00 **** Incremental Build of configuration Default for project Firmware_v2 ****
+make 
+Build project...
+
+make[1]: se entra en el directorio '/cygdrive/c/CIAA/Git_TDP1/Firmware_v2'
+*** linking project gpio_01_switches_leds ***
+   text	   data	    bss	    dec	    hex	filename
+   8960	      8	     36	   9004	   232c	out/lpc4337_m4/gpio_01_switches_leds.axf
+copy from `out/lpc4337_m4/gpio_01_switches_leds.axf' [elf32-littlearm] to `out/lpc4337_m4/gpio_01_switches_leds.bin' [binary]
+*** post-build ***
+make[1]: se sale del directorio '/cygdrive/c/CIAA/Git_TDP1/Firmware_v2'
+
+Build complete.
+
+14:44:34 **** Incremental Build of configuration Default for project Firmware_v2 ****
+make 
+Build project...
+
+make[1]: se entra en el directorio '/cygdrive/c/CIAA/Git_TDP1/Firmware_v2'
 *** compiling C file sapi_examples/edu-ciaa-nxp/bare_metal/gpio/gpio_02_blinky/src/blinky.c ***
 *** linking project gpio_02_blinky ***
    text	   data	    bss	    dec	    hex	filename
