@@ -1,17 +1,17 @@
-15:11:22 **** Incremental Build of configuration Default for project Firmware_v2 ****
+15:28:45 **** Incremental Build of configuration Default for project Firmware_v2 ****
 make 
 Build project...
 
 make[1]: se entra en el directorio '/cygdrive/c/CIAA/Git_TDP1/Firmware_v2'
-*** linking project gpio_04_led_sequences ***
+*** linking project uart_01_echo ***
    text	   data	    bss	    dec	    hex	filename
-   9400	      8	     36	   9444	   24e4	out/lpc4337_m4/gpio_04_led_sequences.axf
-copy from `out/lpc4337_m4/gpio_04_led_sequences.axf' [elf32-littlearm] to `out/lpc4337_m4/gpio_04_led_sequences.bin' [binary]
+  11136	      8	     76	  11220	   2bd4	out/lpc4337_m4/uart_01_echo.axf
+copy from `out/lpc4337_m4/uart_01_echo.axf' [elf32-littlearm] to `out/lpc4337_m4/uart_01_echo.bin' [binary]
 *** post-build ***
 make[1]: se sale del directorio '/cygdrive/c/CIAA/Git_TDP1/Firmware_v2'
 
 Build complete.
 
 
-15:11:23 Build Finished (took 1s.566ms)
+15:28:46 Build Finished (took 1s.479ms)
 
