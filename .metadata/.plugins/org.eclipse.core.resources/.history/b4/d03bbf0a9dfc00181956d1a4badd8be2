@@ -5,16 +5,16 @@ void Aten_Init() {
 	Aten_SetValue(127);
 }
 
-uint8_t Aten_SetValue(uint8_t value) {
-	if ((value > 127) || (value<0)) {
+uint8_t Aten_SetValue(uint8_t valor) {
+	if (valor > 127) {
 		return 1;
 	} else {
-		Aten_Write(value);
+		Aten_Write(valor);
 	}
 	return 0;
 }
 
-void Aten_Write(uint8_t value) {
+void Aten_Write(uint8_t valor) {
 
 	actualAten = 0;
 
@@ -26,49 +26,49 @@ void Aten_Write(uint8_t value) {
 //	} else {
 //	}
 
-	if (value & 01000000) {
+	if (valor & 01000000) {
 		actualAten += 64;
 		gpioWrite(ATEN_64, ON);
 	} else {
 		gpioWrite(ATEN_64, OFF);
 	}
 
-	if (value & 00100000) {
+	if (valor & 00100000) {
 		actualAten += 32;
 		gpioWrite(ATEN_32, ON);
 	} else {
 		gpioWrite(ATEN_32, OFF);
 	}
 
-	if (value & 00010000) {
+	if (valor & 00010000) {
 		actualAten += 16;
 		gpioWrite(ATEN_16, ON);
 	} else {
 		gpioWrite(ATEN_16, OFF);
 	}
 
-	if (value & 00001000) {
+	if (valor & 00001000) {
 		actualAten += 8;
 		gpioWrite(ATEN_8, ON);
 	} else {
 		gpioWrite(ATEN_8, OFF);
 	}
 
-	if (value & 00000100) {
+	if (valor & 00000100) {
 		actualAten += 4;
 		gpioWrite(ATEN_4, ON);
 	} else {
 		gpioWrite(ATEN_4, OFF);
 	}
 
-	if (value & 00000010) {
+	if (valor & 00000010) {
 		actualAten += 2;
 		gpioWrite(ATEN_2, ON);
 	} else {
 		gpioWrite(ATEN_2, OFF);
 	}
 
-	if (value & 00000001) {
+	if (valor & 00000001) {
 		actualAten += 1;
 		gpioWrite(ATEN_1, ON);
 	} else {
