@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Firmware_v2/paterf/src/uart_aten.h&apos; to &apos;uart_aten.c&apos;" description="Rename resource &apos;uart_aten.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="paterf/src/uart_aten.h" name="uart_aten.c" stamp="1544462563400" updateReferences="true"/>
+</session>
