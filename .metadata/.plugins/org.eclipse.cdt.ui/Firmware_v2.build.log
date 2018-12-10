@@ -1,17 +1,17 @@
-15:28:45 **** Incremental Build of configuration Default for project Firmware_v2 ****
+13:53:00 **** Incremental Build of configuration Default for project Firmware_v2 ****
 make 
 Build project...
 
 make[1]: se entra en el directorio '/cygdrive/c/CIAA/Git_TDP1/Firmware_v2'
-*** linking project uart_01_echo ***
+*** linking project uart_03_receive_string ***
    text	   data	    bss	    dec	    hex	filename
-  11136	      8	     76	  11220	   2bd4	out/lpc4337_m4/uart_01_echo.axf
-copy from `out/lpc4337_m4/uart_01_echo.axf' [elf32-littlearm] to `out/lpc4337_m4/uart_01_echo.bin' [binary]
+  11372	      8	     60	  11440	   2cb0	out/lpc4337_m4/uart_03_receive_string.axf
+copy from `out/lpc4337_m4/uart_03_receive_string.axf' [elf32-littlearm] to `out/lpc4337_m4/uart_03_receive_string.bin' [binary]
 *** post-build ***
 make[1]: se sale del directorio '/cygdrive/c/CIAA/Git_TDP1/Firmware_v2'
 
 Build complete.
 
 
-15:28:46 Build Finished (took 1s.479ms)
+13:53:03 Build Finished (took 2s.676ms)
 
