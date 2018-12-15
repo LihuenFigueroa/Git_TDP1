@@ -1,4 +1,4 @@
-13:50:55 **** Build of configuration Default for project Firmware_v2 ****
+00:58:40 **** Build of configuration Default for project Firmware_v2 ****
 make 
 Build project...
 
@@ -182,25 +182,44 @@ modules/lpc4337_m4/board/src/board.c:50:17: warning: 'lcd_cfg_val' defined but n
     808	      0	      0	    808	    328	hsadc_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
       0	      0	      0	      0	      0	gpiogroup_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
    2072	      0	      0	   2072	    818	ccan_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
-*** compiling C file sapi_examples/edu-ciaa-nxp/bare_metal/uart/uart_03_receive_string/src/uart_receive_string.c ***
-*** linking project uart_03_receive_string ***
+*** compiling C file test/src/main.c ***
+test/src/main.c: In function 'interrupcionUSB':
+test/src/main.c:60:6: warning: unused variable 'i' [-Wunused-variable]
+  int i=0;
+      ^
+test/src/main.c:69:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+test/src/main.c: In function 'main':
+test/src/main.c:105:39: warning: passing argument 2 of 'uartRxInterruptCallbackSet' from incompatible pointer type
+  uartRxInterruptCallbackSet(UART_USB ,&interrupcionUSB);  // pointer to function
+                                       ^
+In file included from modules/lpc4337_m4/sapi/inc/sapi.h:51:0,
+                 from test/src/main.c:44:
+modules/lpc4337_m4/sapi/inc/sapi_uart.h:118:6: note: expected 'callBackFuncPtr_t' but argument is of type 'void (* (*)(void))(void *)'
+ void uartRxInterruptCallbackSet( 
+      ^
+test/src/main.c:100:6: warning: unused variable 'var' [-Wunused-variable]
+  int var;
+      ^
+*** linking project test ***
    text	   data	    bss	    dec	    hex	filename
-  11372	      8	     60	  11440	   2cb0	out/lpc4337_m4/uart_03_receive_string.axf
-copy from `out/lpc4337_m4/uart_03_receive_string.axf' [elf32-littlearm] to `out/lpc4337_m4/uart_03_receive_string.bin' [binary]
+  11168	      8	     68	  11244	   2bec	out/lpc4337_m4/test.axf
+copy from `out/lpc4337_m4/test.axf' [elf32-littlearm] to `out/lpc4337_m4/test.bin' [binary]
 *** post-build ***
 make[1]: se sale del directorio '/cygdrive/c/CIAA/Git_TDP1/Firmware_v2'
 
 Build complete.
 
-13:53:00 **** Incremental Build of configuration Default for project Firmware_v2 ****
+00:59:21 **** Incremental Build of configuration Default for project Firmware_v2 ****
 make 
 Build project...
 
 make[1]: se entra en el directorio '/cygdrive/c/CIAA/Git_TDP1/Firmware_v2'
-*** linking project uart_03_receive_string ***
+*** linking project test ***
    text	   data	    bss	    dec	    hex	filename
-  11372	      8	     60	  11440	   2cb0	out/lpc4337_m4/uart_03_receive_string.axf
-copy from `out/lpc4337_m4/uart_03_receive_string.axf' [elf32-littlearm] to `out/lpc4337_m4/uart_03_receive_string.bin' [binary]
+  11168	      8	     68	  11244	   2bec	out/lpc4337_m4/test.axf
+copy from `out/lpc4337_m4/test.axf' [elf32-littlearm] to `out/lpc4337_m4/test.bin' [binary]
 *** post-build ***
 make[1]: se sale del directorio '/cygdrive/c/CIAA/Git_TDP1/Firmware_v2'
 
