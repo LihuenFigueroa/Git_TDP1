@@ -33,7 +33,7 @@
 #define _1_LINE         0
 
 #define LCD_RS			ENET_RXD1
-#define LCD_EN			ENET_TX_EN
+#define LCD_EN			ENET_TXEN
 #define LCD_1			ENET_MDC
 #define LCD_2			ENET_CRS_DV
 #define LCD_3			ENET_MDIO
