@@ -8,3 +8,5 @@
 1544837270409	Delete resource 'Firmware_v2/paterf/src/uart_aten.c'
 1544837278353	Delete resource 'Firmware_v2/test/inc/uart_aten.h'
 1544837280873	Delete resource 'Firmware_v2/test/src/uart_aten.c'
+1544857162178	Delete resource 'Firmware_v2/test_EEPROM/inc/eeprom_test.h'
+1544857166335	Delete resource 'Firmware_v2/test_EEPROM/src/eeprom_test.c'
