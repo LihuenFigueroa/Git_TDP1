@@ -1,17 +1,17 @@
-09:57:42 **** Incremental Build of configuration Default for project Firmware_v2 ****
+11:17:34 **** Incremental Build of configuration Default for project Firmware_v2 ****
 make 
 Build project...
 
 make[1]: se entra en el directorio '/cygdrive/c/CIAA/Git_TDP1/Firmware_v2'
-*** linking project test_EEPROM ***
+*** linking project test_KEYPAD ***
    text	   data	    bss	    dec	    hex	filename
-  11632	      8	     68	  11708	   2dbc	out/lpc4337_m4/test_EEPROM.axf
-copy from `out/lpc4337_m4/test_EEPROM.axf' [elf32-littlearm] to `out/lpc4337_m4/test_EEPROM.bin' [binary]
+  11984	      8	     68	  12060	   2f1c	out/lpc4337_m4/test_KEYPAD.axf
+copy from `out/lpc4337_m4/test_KEYPAD.axf' [elf32-littlearm] to `out/lpc4337_m4/test_KEYPAD.bin' [binary]
 *** post-build ***
 make[1]: se sale del directorio '/cygdrive/c/CIAA/Git_TDP1/Firmware_v2'
 
 Build complete.
 
 
-09:57:43 Build Finished (took 1s.269ms)
+11:17:35 Build Finished (took 1s.171ms)
 
