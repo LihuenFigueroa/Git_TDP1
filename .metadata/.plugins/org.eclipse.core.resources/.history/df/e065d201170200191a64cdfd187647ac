@@ -89,7 +89,7 @@ static void initHardware(void)
 
 }
 
-static void llenar_buffer(char buffer[32] , uint16_t keypressed){
+static void llenar_buffer(char buffer[] , uint16_t keypressed){
 	int i;
 	for (i = 0; i < 32; i++) {
 		if(i==15){
