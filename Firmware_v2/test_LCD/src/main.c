@@ -90,14 +90,38 @@ static void initHardware(void)
 }
 
 static void llenar_buffer(char buffer[32] , uint16_t keypressed){
-	int i;
-	for (i = 0; i < 32; i++) {
-		if(i==15){
-			buffer[i]=keypressed;
-		}
-		else{
-		buffer[i]=0;}
-	}
+		buffer[0] =	 ' ';
+		buffer[1] =	 ' ';
+		buffer[2] =	 ' ';
+		buffer[3] =	 ' ';
+		buffer[4] =	 ' ';
+		buffer[5] =	 ' ';
+		buffer[6] =	 ' ';
+		buffer[7] =	 keypressed;
+		buffer[8] =	 ' ';
+		buffer[9] =  ' ';
+		buffer[10] = ' ';
+		buffer[11] = ' ';
+		buffer[12] = ' ';
+		buffer[13] = ' ';
+		buffer[14] = ' ';
+		buffer[15] = ' ';
+		buffer[16] = ' ';
+		buffer[17] = ' ';
+		buffer[18] = ' ';
+		buffer[19] = ' ';
+		buffer[20] = ' ';
+		buffer[21] = ' ';
+		buffer[22] = ' ';
+		buffer[23] = keypressed;
+		buffer[24] = ' ';
+		buffer[25] = ' ';
+		buffer[26] = ' ';
+		buffer[27] = ' ';
+		buffer[28] = ' ';
+		buffer[29] = ' ';
+		buffer[30] = ' ';
+		buffer[31] = ' ';
 }
 
 /*==================[external functions definition]==========================*/
@@ -126,7 +150,7 @@ int main(void)
 		delay(500);
 		}
 		uartTxWrite( UART_USB, keypressed);
-		llenar_buffer(buffer,keypressed);
+		llenar_buffer(buffer,keypressed + 0x30);
 		LCD_Write_Buffer(buffer);
 		LCD_Interrupt();
 	}
