@@ -32,12 +32,12 @@
 #define _2_LINES        8
 #define _1_LINE         0
 
-#define LCD_RS			ENET_RXD1
-#define LCD_EN			ENET_TX_EN
-#define LCD_1			ENET_MDC
-#define LCD_2			ENET_CRS_DV
-#define LCD_3			ENET_MDIO
-#define LCD_4			ENET_TXD0
+#define LCDRS			ENET_RXD1
+#define LCDEN			ENET_TX_EN
+#define LCD1			ENET_MDC
+#define LCD2			ENET_CRS_DV
+#define LCD3			ENET_MDIO
+#define LCD4			ENET_TXD0
 
 //**************************************************************************
 //* Prototypes

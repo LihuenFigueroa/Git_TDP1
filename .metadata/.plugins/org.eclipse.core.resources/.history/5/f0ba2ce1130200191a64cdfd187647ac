@@ -73,15 +73,15 @@ void LCD_send_nibble(char data) {
 	// Output the four data bits
 	//Chip_GPIO_SetPinState( LPC_GPIO_PORT, LCD_D1_GPIO, LCD_D1_PIN,
 	//		my_union.bit.b0);
-	gpioWrite(LCD_1, my_union.bit.b0);
-	gpioWrite(LCD_2, my_union.bit.b1);
-	gpioWrite(LCD_3, my_union.bit.b2);
-	gpioWrite(LCD_4, my_union.bit.b3);
+	gpioWrite(LCD1, my_union.bit.b0);
+	gpioWrite(LCD2, my_union.bit.b1);
+	gpioWrite(LCD3, my_union.bit.b2);
+	gpioWrite(LCD4, my_union.bit.b3);
 
 	// pulse the LCD enable line
-	gpioWrite(LCD_EN, ON);
+	gpioWrite(LCDEN, ON);
 	for (data = 255; data; data--);
-	gpioWrite(LCD_EN, OFF);
+	gpioWrite(LCDEN, OFF);
 }
 
 //**************************************************************************
@@ -94,10 +94,10 @@ void LCD_send_nibble(char data) {
 void LCD_send_byte(char address, char data) {
 	unsigned int temp;
 	if (address == 0)
-		gpioWrite(LCD_RS, OFF);
+		gpioWrite(LCDRS, OFF);
 	else
-		gpioWrite(LCD_RS, ON);
-	gpioWrite(LCD_EN, OFF); // set LCD enable line to 0
+		gpioWrite(LCDRS, ON);
+	gpioWrite(LCDEN, OFF); // set LCD enable line to 0
 	LCD_send_nibble(data >> 4); // send the higher nibble
 	LCD_send_nibble(data & 0x0f); // send the lower nibble
 	for (temp = 255; temp; temp--);
@@ -130,20 +130,20 @@ void LCD_init(char mode1, char mode2) {
 	//Chip_SCU_PinMux(LCD_D4_P, LCD_D4_P_, MD_PUP, FUNC4); /* P4_10, GPIO5[14],LCD_D4 */
 
 	/* Config EDU-CIAA-NXP LCD Pins as Outputs */
-	gpioConfig( LCD_EN, GPIO_OUTPUT );
-	gpioConfig( LCD_1, GPIO_OUTPUT );
-	gpioConfig( LCD_2, GPIO_OUTPUT );
-	gpioConfig( LCD_3, GPIO_OUTPUT );
-	gpioConfig( LCD_4, GPIO_OUTPUT );
-	gpioConfig( LCD_RS, GPIO_OUTPUT );
+	gpioConfig( LCDEN, GPIO_OUTPUT );
+	gpioConfig( LCD1, GPIO_OUTPUT );
+	gpioConfig( LCD2, GPIO_OUTPUT );
+	gpioConfig( LCD3, GPIO_OUTPUT );
+	gpioConfig( LCD4, GPIO_OUTPUT );
+	gpioConfig( LCDRS, GPIO_OUTPUT );
 
 	/* Init EDU-CIAA-NXP LCD Pins OFF */
-	gpioWrite(LCD_1,OFF);
-	gpioWrite(LCD_2,OFF);
-	gpioWrite(LCD_3,OFF);
-	gpioWrite(LCD_4,OFF);
-	gpioWrite(LCD_RS,OFF);
-	gpioWrite(LCD_EN,OFF);
+	gpioWrite(LCD1,OFF);
+	gpioWrite(LCD2,OFF);
+	gpioWrite(LCD3,OFF);
+	gpioWrite(LCD4,OFF);
+	gpioWrite(LCDRS,OFF);
+	gpioWrite(LCDEN,OFF);
 
 	LCD_delay_ms(16); // retardo de 15 ms
 	// LCD 4-bit mode initialization sequence
