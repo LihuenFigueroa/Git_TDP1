@@ -41,6 +41,7 @@
 
 #include "main.h"
 #include "sapi.h"
+#include "eeprom.h"
 
 
 #define FIN_DE_COMANDO '#'
@@ -58,30 +59,6 @@ int dir_wr=0x00;
  */
 static void initHardware(void);
 
-
-static void EEPROM_Write(unsigned char page, unsigned char offset, uint32_t data){
-	uint32_t * pEEData = (uint32_t *)EEPROM_ADDRESS(page, offset); /* dirección de la palabra a escribir */
-
-		Chip_EEPROM_Init(LPC_EEPROM);
-
-	 /* programar la EEPROM */
-		Chip_EEPROM_SetAutoProg(LPC_EEPROM, EEPROM_AUTOPROG_AFT_1WORDWRITTEN);
-
-		*pEEData = data;
-
-		Chip_EEPROM_WaitForIntStatus(LPC_EEPROM, EEPROM_INT_ENDOFPROG);
-}
-
-/*==================[external functions definition]==========================*/
-static uint32_t EEPROM_Read(unsigned char page, unsigned char offset){
-	uint32_t * pEEData = (uint32_t *)EEPROM_ADDRESS(page, offset); /* dirección de la palabra a escribir */
-
-		Chip_EEPROM_Init(LPC_EEPROM);
-
-		return (*pEEData);
-
-
-}
 
 
 static callBackFuncPtr_t interrupcionUSB(void){

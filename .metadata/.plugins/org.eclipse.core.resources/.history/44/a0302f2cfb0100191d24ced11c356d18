@@ -1,0 +1,16 @@
+/*
+ * EEPROM.h
+ *
+ *  Created on: 17/12/2018
+ *      Author: Lihuen
+ */
+
+#ifndef EEPROM_H_
+#define EEPROM_H_
+
+#include "sapi.h"
+
+static void EEPROM_Write(unsigned char page, unsigned char offset, uint32_t data);
+static uint32_t EEPROM_Read(unsigned char page, unsigned char offset);
+
+#endif /* EEPROM_H_ */
