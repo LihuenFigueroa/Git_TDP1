@@ -1,7 +1,11 @@
+
+
+
+
 #include "rs232.h"
-#include "sapi.h"
+
 #define ACTUAL_UART UART_RS232
-static uint8_t[SIZE_BUFFER] buffer;
+static uint8_t buffer[SIZE_BUFFER];
 static uint8_t pos = 0;
 static uint8_t flag = 0;
 
@@ -21,14 +25,15 @@ static callBackFuncPtr_t interrupcion(void){
 uint8_t RS232_Flag(){
     return flag;
 }
-void    RS232_GetBuffer     (uint8_t[SIZE_BUFFER] command){
+
+void    RS232_GetBuffer     (uint8_t command[SIZE_BUFFER]){
     for(uint8_t i = 0; i < SIZE_BUFFER; i++)
     {
         command[i] = buffer[i];
     }
     flag = 0;
 }
-void    RS232_SetState      (estado_t state);
+void    RS232_SetState      (estado_t state){
     if (state == Primario)
     {
         uartRxInterruptSet(ACTUAL_UART, ON );
@@ -42,7 +47,7 @@ void    RS232_SetState      (estado_t state);
 void    RS232_SetBaudRate   (uint32_t baudRate){
     uartConfig(ACTUAL_UART,baudRate);
 }
-void    RS232_Write         (uint8_t[SIZE_BUFFER] data){
+void    RS232_Write         (uint8_t data[SIZE_BUFFER]){
     if (state != Apagado)
     {
         

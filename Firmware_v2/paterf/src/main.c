@@ -42,13 +42,21 @@
 #include "main.h"
 #include "board.h"
 #include "sapi.h"
+#include "TimerTicks.h"
+#include "main_MEF.h"
+
+#define TICKRATE_1MS	(1)				/* 1000 ticks per second */
+#define TICKRATE_MS		20	/* 1000 ticks per second */
 
 /*==================[macros and definitions]=================================*/
 
 /*==================[internal data declaration]==============================*/
-
+volatile bool SysTick_Time_Flag = false;
 /*==================[internal functions declaration]=========================*/
 
+void myTickHook( void *ptr ){
+	SysTick_Time_Flag = true;
+}
 /** @brief hardware initialization function
  *	@return none
  */
@@ -61,8 +69,6 @@ static void pausems(uint32_t t);
 
 /*==================[internal data definition]===============================*/
 
-/** @brief used for delay counter */
-static uint32_t pausems_count;
 
 /*==================[external data definition]===============================*/
 
@@ -72,32 +78,25 @@ static void initHardware(void)
 {
 	Board_Init();
 	SystemCoreClockUpdate();
-	SysTick_Config(SystemCoreClock / 1000);
 }
 
-static void pausems(uint32_t t)
-{
-	pausems_count = t;
-	while (pausems_count != 0) {
-		__WFI();
-	}
-}
-
-/*==================[external functions definition]==========================*/
-
-void SysTick_Handler(void)
-{
-	if(pausems_count > 0) pausems_count--;
+void myTickHook( void *ptr ){
+	main_MEF_Update();
 }
 
 int main(void)
 {
+	boardConfig();
 	initHardware();
-
-	while (1)
+	/* Init Ticks counter => TICKRATE_MS */
+	tickConfig( TICKRATE_MS );
+	/* Add Tick Hook */
+	tickCallbackSet( myTickHook, (void*)NULL );
+	main_MEF_Init();
+	for(;;)
 	{
 		Board_LED_Toggle(LED);
-		pausems(DELAY_MS);
+		delay(500);
 	}
 }
 

@@ -1,0 +1,13 @@
+#ifndef RS232_H_
+
+#define RS232_H_
+
+#include "comm.h"
+#include "sapi.h"
+
+uint8_t RS232_Flag();
+void    RS232_GetBuffer     (uint8_t[SIZE_BUFFER] buffer);
+void    RS232_SetState      (estado_t state);
+void    RS232_SetBaudRate   (uint32_t baudRate);
+void    RS232_Write         (uint8_t[SIZE_BUFFER] data);
+#endif

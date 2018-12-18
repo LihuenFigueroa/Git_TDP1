@@ -1,86 +1,8 @@
-01:25:12 **** Build of configuration Default for project Firmware_v2 ****
+05:53:16 **** Build of configuration Default for project Firmware_v2 ****
 make 
 Build project...
 
 make[1]: se entra en el directorio '/cygdrive/c/CIAA/Git_TDP1/Firmware_v2'
-*** compiling C file modules/lpc4337_m4/sapi/src/sapi_gpio.c ***
-*** compiling C file modules/lpc4337_m4/sapi/src/sapi_stdio.c ***
-modules/lpc4337_m4/sapi/src/sapi_stdio.c:66:0: warning: "putchar" redefined
- #define putchar(c)      outbyte(c)
- ^
-In file included from modules/lpc4337_m4/board/inc/board_api.h:36:0,
-                 from modules/lpc4337_m4/board/inc/board.h:208,
-                 from modules/lpc4337_m4/sapi/inc/sapi_datatypes.h:43,
-                 from modules/lpc4337_m4/sapi/inc/sapi.h:41,
-                 from modules/lpc4337_m4/sapi/inc/sapi_stdio.h:41,
-                 from modules/lpc4337_m4/sapi/src/sapi_stdio.c:62:
-c:\ciaa\cygwin\usr\arm-none-eabi\arm-none-eabi\include\stdio.h:721:0: note: this is the location of the previous definition
- #define putchar(x) putc(x, stdout)
- ^
-*** compiling C file modules/lpc4337_m4/sapi/src/sapi_spi.c ***
-*** compiling C file modules/lpc4337_m4/sapi/src/sapi_convert.c ***
-*** compiling C file modules/lpc4337_m4/sapi/src/sapi_adc.c ***
-*** compiling C file modules/lpc4337_m4/sapi/src/sapi_magnetometer_hmc5883l.c ***
-*** compiling C file modules/lpc4337_m4/sapi/src/sapi_sct.c ***
-*** compiling C file modules/lpc4337_m4/sapi/src/sapi_sleep.c ***
-*** compiling C file modules/lpc4337_m4/sapi/src/sapi_board.c ***
-*** compiling C file modules/lpc4337_m4/sapi/src/sapi_print.c ***
-*** compiling C file modules/lpc4337_m4/sapi/src/sapi_circularBuffer.c ***
-*** compiling C file modules/lpc4337_m4/sapi/src/sapi_lcd.c ***
-*** compiling C file modules/lpc4337_m4/sapi/src/sapi_servo.c ***
-*** compiling C file modules/lpc4337_m4/sapi/src/sapi_rgb.c ***
-*** compiling C file modules/lpc4337_m4/sapi/src/sapi_magnetometer_qmc5883l.c ***
-*** compiling C file modules/lpc4337_m4/sapi/src/sapi_esp8266.c ***
-*** compiling C file modules/lpc4337_m4/sapi/src/sapi_timer.c ***
-modules/lpc4337_m4/sapi/src/sapi_timer.c:89:4: warning: missing braces around initializer [-Wmissing-braces]
-    doNothing, errorOcurred, errorOcurred, errorOcurred,
-    ^
-modules/lpc4337_m4/sapi/src/sapi_timer.c:89:4: warning: (near initialization for 'timer_dd[0]') [-Wmissing-braces]
-*** compiling C file modules/lpc4337_m4/sapi/src/sapi_i2c.c ***
-*** compiling C file modules/lpc4337_m4/sapi/src/sapi_tick.c ***
-*** compiling C file modules/lpc4337_m4/sapi/src/sapi_ultrasonic_hcsr04.c ***
-*** compiling C file modules/lpc4337_m4/sapi/src/sapi_dht11.c ***
-*** compiling C file modules/lpc4337_m4/sapi/src/sapi_rtc.c ***
-*** compiling C file modules/lpc4337_m4/sapi/src/sapi_dac.c ***
-*** compiling C file modules/lpc4337_m4/sapi/src/sapi_delay.c ***
-*** compiling C file modules/lpc4337_m4/sapi/src/sapi_keypad.c ***
-*** compiling C file modules/lpc4337_m4/sapi/src/sapi_cyclesCounter.c ***
-*** compiling C file modules/lpc4337_m4/sapi/src/sapi_uart.c ***
-*** compiling C file modules/lpc4337_m4/sapi/src/sapi_7_segment_display.c ***
-*** compiling C file modules/lpc4337_m4/sapi/src/sapi_pwm.c ***
-*** compiling C file modules/lpc4337_m4/sapi/src/sapi_datatypes.c ***
-*** archiving static library sapi ***
-   text	   data	    bss	    dec	    hex	filename
-   1314	      0	      0	   1314	    522	sapi_gpio.o (ex out/lpc4337_m4/libsapi.a)
-   1131	      1	      1	   1133	    46d	sapi_stdio.o (ex out/lpc4337_m4/libsapi.a)
-    416	      0	      0	    416	    1a0	sapi_spi.o (ex out/lpc4337_m4/libsapi.a)
-    805	      0	     37	    842	    34a	sapi_convert.o (ex out/lpc4337_m4/libsapi.a)
-    268	      0	      0	    268	    10c	sapi_adc.o (ex out/lpc4337_m4/libsapi.a)
-    604	      0	      0	    604	    25c	sapi_magnetometer_hmc5883l.o (ex out/lpc4337_m4/libsapi.a)
-    672	     28	      0	    700	    2bc	sapi_sct.o (ex out/lpc4337_m4/libsapi.a)
-     16	      0	      0	     16	     10	sapi_sleep.o (ex out/lpc4337_m4/libsapi.a)
-    256	      0	      0	    256	    100	sapi_board.o (ex out/lpc4337_m4/libsapi.a)
-    295	      0	      0	    295	    127	sapi_print.o (ex out/lpc4337_m4/libsapi.a)
-    492	      0	      2	    494	    1ee	sapi_circularBuffer.o (ex out/lpc4337_m4/libsapi.a)
-    752	      0	      0	    752	    2f0	sapi_lcd.o (ex out/lpc4337_m4/libsapi.a)
-   1565	     72	      0	   1637	    665	sapi_servo.o (ex out/lpc4337_m4/libsapi.a)
-   2616	      0	    104	   2720	    aa0	sapi_rgb.o (ex out/lpc4337_m4/libsapi.a)
-    516	      0	      0	    516	    204	sapi_magnetometer_qmc5883l.o (ex out/lpc4337_m4/libsapi.a)
-   3096	      1	    130	   3227	    c9b	sapi_esp8266.o (ex out/lpc4337_m4/libsapi.a)
-   1864	     64	      0	   1928	    788	sapi_timer.o (ex out/lpc4337_m4/libsapi.a)
-    496	      0	      0	    496	    1f0	sapi_i2c.o (ex out/lpc4337_m4/libsapi.a)
-    544	      0	      8	    552	    228	sapi_tick.o (ex out/lpc4337_m4/libsapi.a)
-   1468	     76	      0	   1544	    608	sapi_ultrasonic_hcsr04.o (ex out/lpc4337_m4/libsapi.a)
-    976	      0	    337	   1313	    521	sapi_dht11.o (ex out/lpc4337_m4/libsapi.a)
-    256	      0	      1	    257	    101	sapi_rtc.o (ex out/lpc4337_m4/libsapi.a)
-    160	      0	      0	    160	     a0	sapi_dac.o (ex out/lpc4337_m4/libsapi.a)
-    584	      0	      0	    584	    248	sapi_delay.o (ex out/lpc4337_m4/libsapi.a)
-    460	      0	      0	    460	    1cc	sapi_keypad.o (ex out/lpc4337_m4/libsapi.a)
-    252	     12	      0	    264	    108	sapi_cyclesCounter.o (ex out/lpc4337_m4/libsapi.a)
-   2727	      0	     28	   2755	    ac3	sapi_uart.o (ex out/lpc4337_m4/libsapi.a)
-    256	     26	      0	    282	    11a	sapi_7_segment_display.o (ex out/lpc4337_m4/libsapi.a)
-    519	     11	      0	    530	    212	sapi_pwm.o (ex out/lpc4337_m4/libsapi.a)
-     24	      0	      0	     24	     18	sapi_datatypes.o (ex out/lpc4337_m4/libsapi.a)
 *** compiling C file modules/lpc4337_m4/base/src/cr_start_m0.c ***
 *** compiling C file modules/lpc4337_m4/base/src/sysinit.c ***
 *** compiling C file modules/lpc4337_m4/base/src/cr_startup_lpc43xx.c ***
@@ -182,78 +104,15 @@ modules/lpc4337_m4/board/src/board.c:50:17: warning: 'lcd_cfg_val' defined but n
     808	      0	      0	    808	    328	hsadc_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
       0	      0	      0	      0	      0	gpiogroup_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
    2072	      0	      0	   2072	    818	ccan_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
-*** compiling C file testUART_USB/src/main.c ***
-testUART_USB/src/main.c: In function 'interrupcionUSB':
-testUART_USB/src/main.c:71:1: warning: no return statement in function returning non-void [-Wreturn-type]
- }
- ^
-testUART_USB/src/main.c: In function 'interrupcion232':
-testUART_USB/src/main.c:83:1: warning: no return statement in function returning non-void [-Wreturn-type]
- }
- ^
-testUART_USB/src/main.c: In function 'configKeypad':
-testUART_USB/src/main.c:107:12: warning: unused variable 'keypressed' [-Wunused-variable]
-   uint16_t keypressed=0;
-            ^
-testUART_USB/src/main.c: In function 'configUSB':
-testUART_USB/src/main.c:116:39: warning: passing argument 2 of 'uartRxInterruptCallbackSet' from incompatible pointer type
-  uartRxInterruptCallbackSet(UART_USB ,&interrupcionUSB);  // pointer to function
-                                       ^
-In file included from modules/lpc4337_m4/sapi/inc/sapi.h:51:0,
-                 from testUART_USB/src/main.c:44:
-modules/lpc4337_m4/sapi/inc/sapi_uart.h:118:6: note: expected 'callBackFuncPtr_t' but argument is of type 'void (* (*)(void))(void *)'
- void uartRxInterruptCallbackSet( 
-      ^
-testUART_USB/src/main.c: In function 'configRS_232':
-testUART_USB/src/main.c:122:39: warning: passing argument 2 of 'uartRxInterruptCallbackSet' from incompatible pointer type
-  uartRxInterruptCallbackSet(UART_232 ,&interrupcion232);  // pointer to function
-                                       ^
-In file included from modules/lpc4337_m4/sapi/inc/sapi.h:51:0,
-                 from testUART_USB/src/main.c:44:
-modules/lpc4337_m4/sapi/inc/sapi_uart.h:118:6: note: expected 'callBackFuncPtr_t' but argument is of type 'void (* (*)(void))(void *)'
- void uartRxInterruptCallbackSet( 
-      ^
-testUART_USB/src/main.c: In function 'main':
-testUART_USB/src/main.c:132:6: warning: unused variable 'var' [-Wunused-variable]
-  int var;
-      ^
-In file included from testUART_USB/src/main.c:45:0:
-testUART_USB/src/main.c: At top level:
-testUART_USB/inc/aten.h:19:16: warning: 'actualAten' defined but not used [-Wunused-variable]
- static uint8_t actualAten;
-                ^
-*** compiling C file testUART_USB/src/aten.c ***
-testUART_USB/src/aten.c: In function 'Aten_SetValue':
-testUART_USB/src/aten.c:12:3: warning: implicit declaration of function 'Aten_Write' [-Wimplicit-function-declaration]
-   Aten_Write(value);
-   ^
-testUART_USB/src/aten.c: At top level:
-testUART_USB/src/aten.c:17:6: warning: conflicting types for 'Aten_Write'
- void Aten_Write(uint8_t value) {
-      ^
-testUART_USB/src/aten.c:12:3: note: previous implicit declaration of 'Aten_Write' was here
-   Aten_Write(value);
-   ^
-*** linking project testUART_USB ***
-   text	   data	    bss	    dec	    hex	filename
-  12032	      8	     84	  12124	   2f5c	out/lpc4337_m4/testUART_USB.axf
-copy from `out/lpc4337_m4/testUART_USB.axf' [elf32-littlearm] to `out/lpc4337_m4/testUART_USB.bin' [binary]
-*** post-build ***
+*** compiling C file paterf/src/rs232.c ***
+In file included from paterf/inc/rs232.h:5:0,
+                 from paterf/src/rs232.c:5:
+paterf/inc/comm.h:7:18: fatal error: sapi.h: No such file or directory
+ #include "sapi.h"
+                  ^
+compilation terminated.
+make[1]: *** [rs232.o] Error 1
+make: *** [all] Error 2
+Makefile:105: fallo en las instrucciones para el objetivo 'rs232.o'
 make[1]: se sale del directorio '/cygdrive/c/CIAA/Git_TDP1/Firmware_v2'
-
-Build complete.
-
-01:26:59 **** Incremental Build of configuration Default for project Firmware_v2 ****
-make 
-Build project...
-
-make[1]: se entra en el directorio '/cygdrive/c/CIAA/Git_TDP1/Firmware_v2'
-*** linking project testUART_USB ***
-   text	   data	    bss	    dec	    hex	filename
-  12032	      8	     84	  12124	   2f5c	out/lpc4337_m4/testUART_USB.axf
-copy from `out/lpc4337_m4/testUART_USB.axf' [elf32-littlearm] to `out/lpc4337_m4/testUART_USB.bin' [binary]
-*** post-build ***
-make[1]: se sale del directorio '/cygdrive/c/CIAA/Git_TDP1/Firmware_v2'
-
-Build complete.
-
+Makefile:86: fallo en las instrucciones para el objetivo 'all'

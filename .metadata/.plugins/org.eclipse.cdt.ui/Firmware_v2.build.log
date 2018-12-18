@@ -1,17 +1,121 @@
-01:26:59 **** Incremental Build of configuration Default for project Firmware_v2 ****
+05:53:16 **** Build of configuration Default for project Firmware_v2 ****
 make 
 Build project...
 
 make[1]: se entra en el directorio '/cygdrive/c/CIAA/Git_TDP1/Firmware_v2'
-*** linking project testUART_USB ***
+*** compiling C file modules/lpc4337_m4/base/src/cr_start_m0.c ***
+*** compiling C file modules/lpc4337_m4/base/src/sysinit.c ***
+*** compiling C file modules/lpc4337_m4/base/src/cr_startup_lpc43xx.c ***
+*** archiving static library base ***
    text	   data	    bss	    dec	    hex	filename
-  12032	      8	     84	  12124	   2f5c	out/lpc4337_m4/testUART_USB.axf
-copy from `out/lpc4337_m4/testUART_USB.axf' [elf32-littlearm] to `out/lpc4337_m4/testUART_USB.bin' [binary]
-*** post-build ***
+    320	      0	      0	    320	    140	cr_start_m0.o (ex out/lpc4337_m4/libbase.a)
+     40	      0	      0	     40	     28	sysinit.o (ex out/lpc4337_m4/libbase.a)
+    680	      0	      0	    680	    2a8	cr_startup_lpc43xx.o (ex out/lpc4337_m4/libbase.a)
+*** compiling C file modules/lpc4337_m4/board/src/lpc_phy_smsc87x0.c ***
+*** compiling C file modules/lpc4337_m4/board/src/board_sysinit.c ***
+*** compiling C file modules/lpc4337_m4/board/src/board.c ***
+modules/lpc4337_m4/board/src/board.c:50:17: warning: 'lcd_cfg_val' defined but not used [-Wunused-variable]
+ static uint32_t lcd_cfg_val;
+                 ^
+*** compiling C file modules/lpc4337_m4/board/src/mem_tests.c ***
+*** archiving static library board ***
+   text	   data	    bss	    dec	    hex	filename
+    876	      0	     18	    894	    37e	lpc_phy_smsc87x0.o (ex out/lpc4337_m4/libboard.a)
+    388	      0	      0	    388	    184	board_sysinit.o (ex out/lpc4337_m4/libboard.a)
+   1970	      0	      4	   1974	    7b6	board.o (ex out/lpc4337_m4/libboard.a)
+   1096	      0	      0	   1096	    448	mem_tests.o (ex out/lpc4337_m4/libboard.a)
+*** compiling C file modules/lpc4337_m4/chip/src/pinint_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/otp_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/gpio_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/emc_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/chip_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/wwdt_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/sdif_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/spi_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/i2s_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/clock_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/pmc_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/ring_buffer.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/stopwatch_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/ssp_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/uart_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/enet_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/i2c_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/sdmmc_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/timer_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/ritimer_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/sct_pwm_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/fpu_init.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/adc_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/sysinit_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/iap_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/i2cm_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/evrt_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/sct_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/rtc_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/gpdma_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/atimer_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/eeprom_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/aes_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/lcd_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/dac_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/sdio_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/hsadc_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/gpiogroup_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/ccan_18xx_43xx.c ***
+*** archiving static library chip ***
+   text	   data	    bss	    dec	    hex	filename
+      0	      0	      0	      0	      0	pinint_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+    464	      0	     40	    504	    1f8	otp_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+    620	      0	      0	    620	    26c	gpio_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+   1452	      0	      0	   1452	    5ac	emc_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+    252	      0	      0	    252	     fc	chip_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+    132	      0	      0	    132	     84	wwdt_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+    696	      0	      0	    696	    2b8	sdif_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+   1056	      0	      0	   1056	    420	spi_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+   1336	      0	      0	   1336	    538	i2s_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+   4254	      0	      8	   4262	   10a6	clock_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+     56	      0	      0	     56	     38	pmc_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+    980	      0	      0	    980	    3d4	ring_buffer.o (ex out/lpc4337_m4/libchip.a)
+    388	      0	     12	    400	    190	stopwatch_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+   2320	      0	      0	   2320	    910	ssp_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+   2176	      0	      1	   2177	    881	uart_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+    676	      0	      4	    680	    2a8	enet_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+   3712	     56	     80	   3848	    f08	i2c_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+   3164	      0	      4	   3168	    c60	sdmmc_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+    308	      0	      0	    308	    134	timer_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+    244	      0	      0	    244	     f4	ritimer_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+    432	      0	      0	    432	    1b0	sct_pwm_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+    116	      0	      0	    116	     74	fpu_init.o (ex out/lpc4337_m4/libchip.a)
+   1100	      0	      0	   1100	    44c	adc_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+    600	      0	      0	    600	    258	sysinit_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+    652	      0	      0	    652	    28c	iap_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+   1684	      0	      0	   1684	    694	i2cm_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+    420	      0	      0	    420	    1a4	evrt_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+    188	      0	      0	    188	     bc	sct_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+    996	      0	      0	    996	    3e4	rtc_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+   2696	    120	      8	   2824	    b08	gpdma_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+    144	      0	      0	    144	     90	atimer_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+    360	      0	      0	    360	    168	eeprom_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+    648	      0	     56	    704	    2c0	aes_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+    924	      1	      0	    925	    39d	lcd_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+    156	      0	      0	    156	     9c	dac_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+   2644	      4	    320	   2968	    b98	sdio_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+    808	      0	      0	    808	    328	hsadc_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+      0	      0	      0	      0	      0	gpiogroup_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+   2072	      0	      0	   2072	    818	ccan_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+*** compiling C file paterf/src/rs232.c ***
+In file included from paterf/inc/rs232.h:5:0,
+                 from paterf/src/rs232.c:5:
+paterf/inc/comm.h:7:18: fatal error: sapi.h: No such file or directory
+ #include "sapi.h"
+                  ^
+compilation terminated.
+make[1]: *** [rs232.o] Error 1
+make: *** [all] Error 2
+Makefile:105: fallo en las instrucciones para el objetivo 'rs232.o'
 make[1]: se sale del directorio '/cygdrive/c/CIAA/Git_TDP1/Firmware_v2'
+Makefile:86: fallo en las instrucciones para el objetivo 'all'
 
-Build complete.
-
-
-01:27:02 Build Finished (took 2s.619ms)
+05:53:33 Build Finished (took 17s.294ms)
 

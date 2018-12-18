@@ -10,7 +10,7 @@
 #include "chip.h"
 #include "main_MEF.h"
 #include "lcd.h"
-#include "COMM.h"
+#include "comm.h"
 
 #define MAX_ATEN 127
 
@@ -21,6 +21,49 @@ static void configKeypad(keypad_t* keypad){
 		keypadConfig(keypad,filas,4,columnas,4);
 }
 
+static void fill_lcd_buffer_normal(char data[32]){
+	uint8_t value=Aten_Get_Actual_Aten();
+	char digitos[3];
+	int i=0;
+	while(value!=0){
+		digitos[i]=value % 10;
+		value=value /10;
+		i++;
+	}
+
+	buffer[0] =	 'A';
+	buffer[1] =	 'T';
+	buffer[2] =	 'E';
+	buffer[3] =	 'N';
+	buffer[4] =	 'U';
+	buffer[5] =	 'A';
+	buffer[6] =	 'C';
+	buffer[7] =	 'I';
+	buffer[8] =	 'O';
+	buffer[9] =  'N';
+	buffer[10] = ' ';
+	buffer[11] = ':';
+	buffer[12] = ' ';
+	buffer[13] = digitos[2]+0x30;
+	buffer[14] = digitos[1]+0x30;
+	buffer[15] = digitos[0]+0x30;
+	buffer[16] = ' ';
+	buffer[17] = ' ';
+	buffer[18] = ' ';
+	buffer[19] = ' ';
+	buffer[20] = ' ';
+	buffer[21] = ' ';
+	buffer[22] = ' ';
+	buffer[23] = ' ';
+	buffer[24] = ' ';
+	buffer[25] = ' ';
+	buffer[26] = ' ';
+	buffer[27] = ' ';
+	buffer[28] = ' ';
+	buffer[29] = ' ';
+	buffer[30] = ' ';
+	buffer[31] = ' ';
+}
 
 
 static void main_MEF_Init(){
@@ -30,7 +73,7 @@ static void main_MEF_Init(){
 	/////////////////////////////////////////////////////
 
 	//////////////	COMUNICACION - INIT /////////////////
-
+	COMM_Init();
 	/////////////////////////////////////////////////////
 
 	/////////////		KEYPAD	- INIT		/////////////
