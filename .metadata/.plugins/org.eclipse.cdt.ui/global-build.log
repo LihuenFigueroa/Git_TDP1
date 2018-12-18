@@ -1,4 +1,4 @@
-05:53:16 **** Build of configuration Default for project Firmware_v2 ****
+10:36:10 **** Build of configuration Default for project Firmware_v2 ****
 make 
 Build project...
 
@@ -105,14 +105,16 @@ modules/lpc4337_m4/board/src/board.c:50:17: warning: 'lcd_cfg_val' defined but n
       0	      0	      0	      0	      0	gpiogroup_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
    2072	      0	      0	   2072	    818	ccan_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
 *** compiling C file paterf/src/rs232.c ***
-In file included from paterf/inc/rs232.h:5:0,
-                 from paterf/src/rs232.c:5:
-paterf/inc/comm.h:7:18: fatal error: sapi.h: No such file or directory
+In file included from paterf/src/rs232.c:5:0:
+paterf/inc/rs232.h:9:30: error: unknown type name 'estado_t'
+ void    RS232_SetState      (estado_t state);
+                              ^
+paterf/src/rs232.c:6:18: fatal error: sapi.h: No such file or directory
  #include "sapi.h"
                   ^
 compilation terminated.
 make[1]: *** [rs232.o] Error 1
-make: *** [all] Error 2
 Makefile:105: fallo en las instrucciones para el objetivo 'rs232.o'
+make: *** [all] Error 2
 make[1]: se sale del directorio '/cygdrive/c/CIAA/Git_TDP1/Firmware_v2'
 Makefile:86: fallo en las instrucciones para el objetivo 'all'

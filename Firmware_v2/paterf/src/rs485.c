@@ -1,5 +1,6 @@
 #include "rs485.h"
 #include "sapi.h"
+#include "comm.h"
 #define ACTUAL_UART UART_RS485
 static uint8_t[SIZE_BUFFER] buffer;
 static uint8_t pos = 0;

@@ -3,7 +3,6 @@
 #define RS232_H_
 
 #include "comm.h"
-#include "sapi.h"
 
 uint8_t RS232_Flag();
 void    RS232_GetBuffer     (uint8_t buffer[SIZE_BUFFER]);

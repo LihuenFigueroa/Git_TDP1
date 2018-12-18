@@ -3,15 +3,17 @@
 
 
 #include "rs232.h"
-
+#include "sapi.h"
+#include "comm.h"
 #define ACTUAL_UART UART_RS232
 static uint8_t buffer[SIZE_BUFFER];
 static uint8_t pos = 0;
 static uint8_t flag = 0;
 
 static callBackFuncPtr_t interrupcion(void){
+	uint8_t dato;
 	dato=uartRxRead( ACTUAL_UART );
-	if(dato==FIN_DE_COMANDO){
+	if(dato=='.'){
 		buffer[pos++] = '\0';
         flag = 1;
         pos = 0;

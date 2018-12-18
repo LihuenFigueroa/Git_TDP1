@@ -1,5 +1,6 @@
 #include "usb.h"
 #include "sapi.h"
+#include "comm.h"
 #define ACTUAL_UART UART_USB
 static uint8_t[SIZE_BUFFER] buffer;
 static uint8_t pos = 0;

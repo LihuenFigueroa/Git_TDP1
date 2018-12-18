@@ -4,12 +4,12 @@
 
 
 
-#include "sapi.h"
+#include "C:\CIAA\Git_TDP1\Firmware_v2\modules\lpc4337_m4\sapi\inc\sapi.h" // NO ME COMPILA LA SAPI
+
 #include "string.h"
 
 
 #define SIZE_BUFFER 20
-#define FIN_DE_COMANDO .
 
 enum estado_t { Primario, Secundario, Apagado };
 
