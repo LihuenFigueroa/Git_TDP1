@@ -3,12 +3,12 @@
 void Aten_Init() {
 	//poner aten en 127
 	gpioConfig(ATEN_1, GPIO_OUTPUT);
-	gpioConfig(ATEN_2, GPIO_OUTPUT);
-	gpioConfig(ATEN_4, GPIO_OUTPUT);
-	gpioConfig(ATEN_8, GPIO_OUTPUT);
-	gpioConfig(ATEN_16, GPIO_OUTPUT);
-	gpioConfig(ATEN_32, GPIO_OUTPUT);
-	gpioConfig(ATEN_64, GPIO_OUTPUT);
+	gpioConfig(ATEN_1, GPIO_OUTPUT);
+	gpioConfig(ATEN_1, GPIO_OUTPUT);
+	gpioConfig(ATEN_1, GPIO_OUTPUT);
+	gpioConfig(ATEN_1, GPIO_OUTPUT);
+	gpioConfig(ATEN_1, GPIO_OUTPUT);
+	gpioConfig(ATEN_1, GPIO_OUTPUT);
 
 	Aten_SetValue(127);
 }
@@ -89,8 +89,4 @@ uint8_t AtenPlus (){
 }
 uint8_t AtenMinus (){
 	return Aten_SetValue(actualAten-1);
-}
-
-uint8_t Aten_Get_Actual_Aten(){
-	return actualAten;
 }
