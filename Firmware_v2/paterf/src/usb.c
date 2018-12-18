@@ -39,7 +39,7 @@ void    USB_SetState      (estado_t state);
         uartRxInterruptSet(ACTUAL_UART, OFF );
     }
 }
-void    USB_SetBaudRate   (uint8_t baudRate){
+void    USB_SetBaudRate   (uint32_t baudRate){
     uartConfig(ACTUAL_UART,baudRate);
 }
 void    USB_Write         (uint8_t[SIZE_BUFFER] data){

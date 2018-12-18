@@ -39,7 +39,7 @@ void    RS232_SetState      (estado_t state);
         uartRxInterruptSet(ACTUAL_UART, OFF );
     }
 }
-void    RS232_SetBaudRate   (uint8_t baudRate){
+void    RS232_SetBaudRate   (uint32_t baudRate){
     uartConfig(ACTUAL_UART,baudRate);
 }
 void    RS232_Write         (uint8_t[SIZE_BUFFER] data){
