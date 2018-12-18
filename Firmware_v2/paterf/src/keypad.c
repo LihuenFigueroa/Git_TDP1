@@ -10,6 +10,7 @@
 
 #define SIZE_BUFFER_IN 3
 
+static uint16_t lastCommand;
 static uint16_t buffer[SIZE_BUFFER_IN];
 static unsigned char newState = 0;
 static unsigned char lastState = 0;
@@ -30,7 +31,8 @@ void KEYPAD_Init(void) {
  * Variables locales y su significado:
  *	Unsigned char i, [0;SIZE_BUFFER_IN -1]. �ndice necesario para estructura for
  ***********************************************************************/
-void KEYPAD_Buffer_Clear(void) {
+
+void KEYPAD_Buffer_Number_Clear(void) {
 	unsigned char i;
 	for (i = 0; i < SIZE_BUFFER_IN - 1; i++) {
 		buffer[i]=0;
@@ -60,7 +62,7 @@ void KEYPAD_Read_Buffer(uint16_t outBuffer[SIZE_BUFFER_IN]) {
 uint16_t KEYPAD_LastKey(void) {
 	if (lastKeyRead == 1) {
 		lastKeyRead = 0;
-		return buffer[SIZE_BUFFER_IN - 1];
+		return lastCommand;
 	} else {
 		return 0;
 	}
@@ -75,11 +77,18 @@ uint16_t KEYPAD_LastKey(void) {
  ***********************************************************************/
 static void KEYPAD_Buffer_Write_Key(uint16_t key) {
 	unsigned char i;
-	for (i = 0; i < SIZE_BUFFER_IN - 1; i++) {
-		buffer[i]=buffer[i+1];
+	if (key == 4 ||key == 8 ||key == 12 ||key == 16 ||key == 13 ||key == 15 )
+	{
+		lastCommand = key;
 	}
-	buffer[SIZE_BUFFER_IN - 1] = key;
-	bufferRead = 1;
+	else
+	{
+		for (i = 0; i < SIZE_BUFFER_IN - 1; i++) {
+			buffer[i]=buffer[i+1];
+		}
+		buffer[SIZE_BUFFER_IN - 1] = key;
+		bufferRead = 1;
+	}
 	lastKeyRead = 1;
 }
 
@@ -106,5 +115,20 @@ void KEYPAD_Interrupt(void) {
 	}
 }
 
+
+static uint8_t KEYPAD_Convert(uint8_t data)
+{
+	data = data - (data / keypad.keypadRowSize);
+	if (data >= 10){data = 0;}
+	return data;
+}
+uint8_t	 KEYPAD_GetValue(void){
+	uint8_t result = 0;
+	for(uint8_t i = 0; i < SIZE_BUFFER_IN; i++)
+	{
+		result += KEYPAD_Convert(buffer[i]) * pow(10,2-i);
+	}
+	
+}
 
 

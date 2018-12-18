@@ -7,6 +7,7 @@
         "chip.h": "c",
         "stdint.h": "c",
         "sapi_servo.h": "c",
-        "rs232.h": "c"
+        "rs232.h": "c",
+        "sapi_7_segment_display.h": "c"
     }
 }
