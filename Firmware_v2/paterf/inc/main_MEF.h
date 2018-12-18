@@ -9,6 +9,7 @@
 #define MAIN_MEF_H_
 
 #include "sapi.h"
+#include "com_MEF.h"
 
 typedef enum{
 	STATE_NORMAL,
@@ -25,9 +26,6 @@ static uint8_t value;
 
 static void main_MEF_Init();
 static void main_MEF_Update();
-static void main_MEF_ReturnWork();
-
-static void configKeypad(keypad_t* keypad);
 
 
 #endif /* MAIN_MEF_H_ */
