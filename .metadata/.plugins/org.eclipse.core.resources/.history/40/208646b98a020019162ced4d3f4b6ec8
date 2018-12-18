@@ -1,0 +1,43 @@
+#include "comm.h"
+
+uint8_t COMM_CheckSerials() {
+	if (USB_Flag()) {
+		USB_Buffer(buffer);
+		COMM_CheckCommand();
+	}
+	return 0;
+}
+
+uint8_t COMM_UsbCheckCommand(uint8_t v[SIZE_BUFFER]) {
+	char * p1 = strchr(v, ',');
+	*(p1) = '\0';
+	if (v == "EUSB") {
+		v = ++p1;
+		switch (v) {
+		case "O":
+			USB_SetState(Apagado);
+			break;
+		case "P":
+			USB_SetState(Primario);
+			break;
+		case "S":
+			USB_SetState(Secundario);
+			break;
+		case "?":
+			//consultar EEPROM
+			//consultar EEPROM
+			//consultar EEPROM
+			//consultar EEPROM
+			//consultar EEPROM
+			break;
+		}
+	}
+	if (v == "BRUSB") {
+		v = ++p1;
+		USB_Write(v);
+		RS232_Write(v);
+		RS495_Write(v);
+	}
+
+	return 0;
+}

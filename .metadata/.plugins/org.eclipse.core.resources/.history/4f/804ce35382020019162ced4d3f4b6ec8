@@ -1,0 +1,5 @@
+#include <comm.h>
+
+uint8_t COMM_CleanBuffer(uint8_t * v) {
+
+}
