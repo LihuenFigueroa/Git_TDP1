@@ -42,6 +42,7 @@
 #include "main.h"
 #include "board.h"
 #include "sapi.h"
+#include "aten.h"
 
 #define FIN_DE_COMANDO '#'
 /*==================[macros and definitions]=================================*/
@@ -63,6 +64,19 @@ static callBackFuncPtr_t interrupcionUSB(void){
 		uartTxWrite( UART_USB, 'K' );
 	}
 	else{
+		uartTxWrite( UART_USB, dato );
+		uartTxWrite( UART_232, dato );
+	}
+}
+
+static callBackFuncPtr_t interrupcion232(void){
+	dato=uartRxRead( UART_232 );
+	if(dato==FIN_DE_COMANDO){
+		uartTxWrite( UART_232, 'O' );
+		uartTxWrite( UART_232, 'K' );
+	}
+	else{
+		uartTxWrite( UART_232, dato );
 		uartTxWrite( UART_USB, dato );
 	}
 }
@@ -99,9 +113,14 @@ int main(void)
 	int var;
 	boardConfig();
 	initHardware();
+	Aten_Init();
+	Aten_SetValue(0);
 	uartConfig(UART_USB,9600);
+	uartConfig(UART_232,9600);
 	uartRxInterruptSet(UART_USB, ON );
+	uartRxInterruptSet(UART_232, ON );
 	uartRxInterruptCallbackSet(UART_USB ,&interrupcionUSB);  // pointer to function
+	uartRxInterruptCallbackSet(UART_232 ,&interrupcion232);  // pointer to function
 	for(;;){
 		Board_LED_Toggle(LED);
 		delay(500);

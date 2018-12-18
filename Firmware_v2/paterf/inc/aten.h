@@ -23,3 +23,4 @@ uint8_t Aten_SetValue (uint8_t value);
 uint8_t AtenPlus ();
 uint8_t AtenMinus ();
 
+#endif
