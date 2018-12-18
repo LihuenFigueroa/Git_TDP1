@@ -82,7 +82,3 @@ uint8_t AtenPlus (){
 uint8_t AtenMinus (){
 	return Aten_SetValue(actualAten-1);
 }
-
-uint8_t Aten_Get_Actual_Aten(){
-	return actualAten;
-}

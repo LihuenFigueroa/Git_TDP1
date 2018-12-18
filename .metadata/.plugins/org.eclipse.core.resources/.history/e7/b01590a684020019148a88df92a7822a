@@ -1,0 +1,21 @@
+/*
+ * main_MEF.c
+ *
+ *  Created on: 18/12/2018
+ *      Author: Lihuen
+ */
+
+#include "sapi.h"
+#include "board.h"
+#include "chip.h"
+#include "main_MEF.h"
+
+static void initHardware(void)
+{
+	Board_Init();
+	SystemCoreClockUpdate();
+
+}
+
+
+

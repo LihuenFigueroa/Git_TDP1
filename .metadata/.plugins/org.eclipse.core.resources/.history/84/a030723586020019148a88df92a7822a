@@ -1,0 +1,26 @@
+/*
+ * main_MEF.c
+ *
+ *  Created on: 18/12/2018
+ *      Author: Lihuen
+ */
+
+#include "sapi.h"
+#include "board.h"
+#include "chip.h"
+#include "main_MEF.h"
+#include "lcd.h"
+
+static void main_MEF_Init(){
+	///////////////		LCD	- INIT		/////////////////
+	LCD_init(DISPLAY_8X5 | _2_LINES, DISPLAY_ON | CURSOR_ON | CURSOR_BLINK);
+	LCD_Clear_Buffer();
+	/////////////////////////////////////////////////////
+
+	//////////////	COMUNICACION - INIT /////////////////
+	comFSM.comFSM_Init();
+	state=STATE_NORMAL;
+
+}
+
+
