@@ -94,6 +94,7 @@ void KEYPAD_Interrupt(void) {
 	uint16_t key;
 	lastState = newState;
 	newState = keypadRead(&key);
+	key++;
 	if (newState != 0) {
 		if (newState == lastState) {
 			if (buffer[SIZE_BUFFER_IN - 1] != key) {

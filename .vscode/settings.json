@@ -6,6 +6,7 @@
         "sapi_keypad.h": "c",
         "chip.h": "c",
         "stdint.h": "c",
-        "sapi_servo.h": "c"
+        "sapi_servo.h": "c",
+        "rs232.h": "c"
     }
 }
