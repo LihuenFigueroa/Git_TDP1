@@ -2818,6 +2818,7 @@ Binding(CTRL+SHIFT+H,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cViewScope,,,system)
+<<<<<<< HEAD
 !SESSION 2018-12-18 10:39:41.157 -----------------------------------------------
 eclipse.buildId=4.4.0.I20140606-1215
 java.version=1.8.0_20
@@ -2829,12 +2830,29 @@ Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.
 !ENTRY org.eclipse.jface 2 0 2018-12-18 10:48:38.218
 !MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
 !SUBENTRY 1 org.eclipse.jface 2 0 2018-12-18 10:48:38.218
+=======
+!SESSION 2018-12-18 10:34:39.210 -----------------------------------------------
+eclipse.buildId=4.4.0.I20140606-1215
+java.version=1.8.0_20
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=es_ES
+Framework arguments:  -product org.eclipse.epp.package.cpp.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.cpp.product
+
+!ENTRY org.eclipse.jface 2 0 2018-12-18 10:41:10.685
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2018-12-18 10:41:10.685
+>>>>>>> Desarrollo_PATERF_MEF
 !MESSAGE A conflict occurred for F3:
 Binding(F3,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.opendecl,Open Declaration,
 		Open an editor on the selected element's declaration(s),
 		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1b74661,
+=======
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1d6f0e1,
+>>>>>>> Desarrollo_PATERF_MEF
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cEditorScope,,,system)
@@ -2842,17 +2860,29 @@ Binding(F3,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.opendecl,Open Declaration,
 		Open an editor on the selected element's declaration(s),
 		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1b74661,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cViewScope,,,system)
 !SUBENTRY 1 org.eclipse.jface 2 0 2018-12-18 10:48:38.218
+=======
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1d6f0e1,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2018-12-18 10:41:10.685
+>>>>>>> Desarrollo_PATERF_MEF
 !MESSAGE A conflict occurred for ALT+SHIFT+R:
 Binding(ALT+SHIFT+R,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.text.rename.element,Rename - Refactoring ,
 		Rename the selected element,
 		Category(org.eclipse.cdt.ui.category.refactoring,Refactor - C++,C/C++ Refactorings,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@17feb38,
+=======
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@116e9d2,
+>>>>>>> Desarrollo_PATERF_MEF
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cEditorScope,,,system)
@@ -2860,6 +2890,7 @@ Binding(ALT+SHIFT+R,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.text.rename.element,Rename - Refactoring ,
 		Rename the selected element,
 		Category(org.eclipse.cdt.ui.category.refactoring,Refactor - C++,C/C++ Refactorings,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@17feb38,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
@@ -2883,12 +2914,23 @@ Binding(F4,
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cViewScope,,,system)
 !SUBENTRY 1 org.eclipse.jface 2 0 2018-12-18 10:48:38.218
+=======
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@116e9d2,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2018-12-18 10:41:10.685
+>>>>>>> Desarrollo_PATERF_MEF
 !MESSAGE A conflict occurred for ALT+CTRL+I:
 Binding(ALT+CTRL+I,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.include.browser,Open Include Browser,
 		Open an include browser on the selected element,
 		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@f356b,
+=======
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@312eb,
+>>>>>>> Desarrollo_PATERF_MEF
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cEditorScope,,,system)
@@ -2896,17 +2938,29 @@ Binding(ALT+CTRL+I,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.include.browser,Open Include Browser,
 		Open an include browser on the selected element,
 		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@f356b,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cViewScope,,,system)
 !SUBENTRY 1 org.eclipse.jface 2 0 2018-12-18 10:48:38.218
+=======
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@312eb,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2018-12-18 10:41:10.685
+>>>>>>> Desarrollo_PATERF_MEF
 !MESSAGE A conflict occurred for CTRL+SHIFT+G:
 Binding(CTRL+SHIFT+G,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.search.findrefs,References,
 		Search for references to the selected element in the workspace,
 		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@13ef145,
+=======
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@65e842,
+>>>>>>> Desarrollo_PATERF_MEF
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cEditorScope,,,system)
@@ -2914,17 +2968,29 @@ Binding(CTRL+SHIFT+G,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.search.findrefs,References,
 		Search for references to the selected element in the workspace,
 		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@13ef145,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cViewScope,,,system)
 !SUBENTRY 1 org.eclipse.jface 2 0 2018-12-18 10:48:38.218
+=======
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@65e842,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2018-12-18 10:41:10.685
+>>>>>>> Desarrollo_PATERF_MEF
 !MESSAGE A conflict occurred for CTRL+G:
 Binding(CTRL+G,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.search.finddecl,Declaration,
 		Search for declarations of the selected element in the workspace,
 		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@12ce4f1,
+=======
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@965e17,
+>>>>>>> Desarrollo_PATERF_MEF
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cEditorScope,,,system)
@@ -2932,17 +2998,29 @@ Binding(CTRL+G,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.search.finddecl,Declaration,
 		Search for declarations of the selected element in the workspace,
 		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@12ce4f1,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cViewScope,,,system)
 !SUBENTRY 1 org.eclipse.jface 2 0 2018-12-18 10:48:38.218
+=======
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@965e17,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2018-12-18 10:41:10.685
+>>>>>>> Desarrollo_PATERF_MEF
 !MESSAGE A conflict occurred for ALT+CTRL+H:
 Binding(ALT+CTRL+H,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.call.hierarchy,Open Call Hierarchy,
 		Open the call hierarchy for the selected element,
 		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@dd135d,
+=======
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4874ae,
+>>>>>>> Desarrollo_PATERF_MEF
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cEditorScope,,,system)
@@ -2950,17 +3028,29 @@ Binding(ALT+CTRL+H,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.call.hierarchy,Open Call Hierarchy,
 		Open the call hierarchy for the selected element,
 		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@dd135d,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cViewScope,,,system)
 !SUBENTRY 1 org.eclipse.jface 2 0 2018-12-18 10:48:38.218
+=======
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@4874ae,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2018-12-18 10:41:10.685
+>>>>>>> Desarrollo_PATERF_MEF
 !MESSAGE A conflict occurred for CTRL+SHIFT+H:
 Binding(CTRL+SHIFT+H,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.navigate.open.type.in.hierarchy,Open Type in Hierarchy,
 		Open a type in the type hierarchy view,
 		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@170dd80,
+=======
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@44b1c6,
+>>>>>>> Desarrollo_PATERF_MEF
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cEditorScope,,,system)
@@ -2968,17 +3058,47 @@ Binding(CTRL+SHIFT+H,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.navigate.open.type.in.hierarchy,Open Type in Hierarchy,
 		Open a type in the type hierarchy view,
 		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@170dd80,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cViewScope,,,system)
 !SUBENTRY 1 org.eclipse.jface 2 0 2018-12-18 10:48:38.218
+=======
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@44b1c6,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2018-12-18 10:41:10.685
+!MESSAGE A conflict occurred for F4:
+Binding(F4,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.type.hierarchy,Open Type Hierarchy,
+		Open a type hierarchy on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1b666b4,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(F4,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.type.hierarchy,Open Type Hierarchy,
+		Open a type hierarchy on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1b666b4,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2018-12-18 10:41:10.685
+>>>>>>> Desarrollo_PATERF_MEF
 !MESSAGE A conflict occurred for CTRL+SHIFT+T:
 Binding(CTRL+SHIFT+T,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.navigate.opentype,Open Element,
 		Open an element in an Editor,
 		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1f6b6f2,
+=======
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@13af433,
+>>>>>>> Desarrollo_PATERF_MEF
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cEditorScope,,,system)
@@ -2986,11 +3106,16 @@ Binding(CTRL+SHIFT+T,
 	ParameterizedCommand(Command(org.eclipse.cdt.ui.navigate.opentype,Open Element,
 		Open an element in an Editor,
 		Category(org.eclipse.cdt.ui.category.source,Source,Source commands,true),
+<<<<<<< HEAD
 		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1f6b6f2,
+=======
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@13af433,
+>>>>>>> Desarrollo_PATERF_MEF
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cViewScope,,,system)
 
+<<<<<<< HEAD
 !ENTRY org.eclipse.cdt.codan.core 4 1 2018-12-18 12:16:38.994
 !MESSAGE Internal Error
 !STACK 0
@@ -3017,12 +3142,27 @@ java.lang.IllegalArgumentException: Cannot modify exiting connector
 	at org.eclipse.cdt.codan.internal.ui.cxx.CodanCReconciler.reconciled(CodanCReconciler.java:57)
 	at org.eclipse.cdt.internal.ui.editor.CEditor.reconciled(CEditor.java:3016)
 	at org.eclipse.cdt.internal.ui.text.CReconcilingStrategy.reconcile(CReconcilingStrategy.java:99)
+=======
+!ENTRY org.eclipse.cdt.ui 4 0 2018-12-18 13:14:30.162
+!MESSAGE Error in CDT UI during reconcile
+!STACK 1
+C Model Exception: C Model Status [Element com_MEF.c does not exist.]
+	at org.eclipse.cdt.internal.core.model.CElement.newNotPresentException(CElement.java:484)
+	at org.eclipse.cdt.internal.core.model.TranslationUnit.makeConsistent(TranslationUnit.java:566)
+	at org.eclipse.cdt.internal.core.model.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:62)
+	at org.eclipse.cdt.internal.core.model.CModelOperation.execute(CModelOperation.java:341)
+	at org.eclipse.cdt.internal.core.model.CModelOperation.run(CModelOperation.java:607)
+	at org.eclipse.cdt.internal.core.model.CModelOperation.runOperation(CModelOperation.java:635)
+	at org.eclipse.cdt.internal.core.model.WorkingCopy.reconcile(WorkingCopy.java:367)
+	at org.eclipse.cdt.internal.ui.text.CReconcilingStrategy.reconcile(CReconcilingStrategy.java:78)
+>>>>>>> Desarrollo_PATERF_MEF
 	at org.eclipse.cdt.internal.ui.text.CReconcilingStrategy.reconcile(CReconcilingStrategy.java:63)
 	at org.eclipse.cdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:87)
 	at org.eclipse.cdt.internal.ui.text.CCompositeReconcilingStrategy.reconcile(CCompositeReconcilingStrategy.java:90)
 	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:77)
 	at org.eclipse.cdt.internal.ui.text.CReconciler.process(CReconciler.java:358)
 	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:206)
+<<<<<<< HEAD
 
 !ENTRY org.eclipse.cdt.dsf 4 -1 2018-12-18 14:56:32.663
 !MESSAGE Invocation exception when calling a service event handler method
@@ -3080,3 +3220,7 @@ Caused by: org.eclipse.swt.SWTException: Device is disposed
 	at org.eclipse.swt.widgets.Display.asyncExec(Display.java:709)
 	at org.eclipse.cdt.dsf.ui.concurrent.SimpleDisplayExecutor.execute(SimpleDisplayExecutor.java:77)
 	... 15 more
+=======
+!SUBENTRY 1 org.eclipse.cdt.core 4 969 2018-12-18 13:14:30.235
+!MESSAGE Element com_MEF.c does not exist.
+>>>>>>> Desarrollo_PATERF_MEF

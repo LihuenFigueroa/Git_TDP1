@@ -1,0 +1,18 @@
+/*
+ * buzzer.c
+ *
+ *  Created on: 18/12/2018
+ *      Author: Lihuen
+ */
+
+#include "buzzer.h"
+#include "sapi.h"
+#include "chip.h"
+
+void BUZZER_Init(){
+	gpioConfig(BUZZER_PIN,GPIO_OUTPUT);
+	gpioWrite(BUZZER_PIN,OFF);
+}
+
+
+

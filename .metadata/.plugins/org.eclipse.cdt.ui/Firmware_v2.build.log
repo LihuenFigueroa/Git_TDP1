@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 14:04:21 **** Incremental Build of configuration Default for project Firmware_v2 ****
 make 
 Build project...
@@ -14,4 +15,18 @@ Build complete.
 
 
 14:04:23 Build Finished (took 1s.479ms)
+=======
+11:25:43 **** Clean-only build of configuration Default for project Firmware_v2 ****
+make clean 
+Clean project...
+
+rm -f out/lpc4337_m4/obj/*.*
+rm -f out/lpc4337_m4/*.*
+rm -f *.launch
+
+Clean complete.
+
+
+11:25:44 Build Finished (took 1s.81ms)
+>>>>>>> Desarrollo_PATERF_MEF
 

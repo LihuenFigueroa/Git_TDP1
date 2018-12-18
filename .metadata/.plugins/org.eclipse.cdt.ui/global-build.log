@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 14:03:07 **** Build of configuration Default for project Firmware_v2 ****
 make 
 Build project...
@@ -416,3 +417,15 @@ make[1]: se sale del directorio '/cygdrive/c/Santiago/Universidad/35 Taller de P
 
 Build complete.
 
+=======
+11:25:43 **** Clean-only build of configuration Default for project Firmware_v2 ****
+make clean 
+Clean project...
+
+rm -f out/lpc4337_m4/obj/*.*
+rm -f out/lpc4337_m4/*.*
+rm -f *.launch
+
+Clean complete.
+
+>>>>>>> Desarrollo_PATERF_MEF
