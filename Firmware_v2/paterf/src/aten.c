@@ -2,6 +2,14 @@
 
 void Aten_Init() {
 	//poner aten en 127
+	gpioConfig(ATEN_1, GPIO_OUTPUT);
+	gpioConfig(ATEN_2, GPIO_OUTPUT);
+	gpioConfig(ATEN_4, GPIO_OUTPUT);
+	gpioConfig(ATEN_8, GPIO_OUTPUT);
+	gpioConfig(ATEN_16, GPIO_OUTPUT);
+	gpioConfig(ATEN_32, GPIO_OUTPUT);
+	gpioConfig(ATEN_64, GPIO_OUTPUT);
+
 	Aten_SetValue(127);
 }
 

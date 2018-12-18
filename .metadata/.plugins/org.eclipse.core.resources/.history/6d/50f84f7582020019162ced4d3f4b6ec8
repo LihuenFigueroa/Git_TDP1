@@ -1,0 +1,8 @@
+#include <sapi.h>
+
+#define SIZE_BUFFER 20
+
+static uint8_t buffer [SIZE_BUFFER];
+
+
+
