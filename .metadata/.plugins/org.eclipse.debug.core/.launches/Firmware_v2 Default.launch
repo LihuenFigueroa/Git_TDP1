@@ -46,10 +46,10 @@
 <booleanAttribute key="org.eclipse.cdt.dsf.gdb.UPDATE_THREADLIST_ON_SUSPEND" value="false"/>
 <intAttribute key="org.eclipse.cdt.launch.ATTR_BUILD_BEFORE_LAUNCH_ATTR" value="2"/>
 <stringAttribute key="org.eclipse.cdt.launch.COREFILE_PATH" value=""/>
-<stringAttribute key="org.eclipse.cdt.launch.PROGRAM_NAME" value="C:\CIAA\Git_TDP1\Firmware_v2\out\lpc4337_m4\testUART_USB.axf"/>
+<stringAttribute key="org.eclipse.cdt.launch.PROGRAM_NAME" value="C:\Santiago\Universidad\35 Taller de Proyecto I\Git_TDP1\Firmware_v2\out\lpc4337_m4\Shi_Zeijer.axf"/>
 <stringAttribute key="org.eclipse.cdt.launch.PROJECT_ATTR" value="Firmware_v2"/>
 <booleanAttribute key="org.eclipse.cdt.launch.PROJECT_BUILD_CONFIG_AUTO_ATTR" value="true"/>
-<stringAttribute key="org.eclipse.cdt.launch.PROJECT_BUILD_CONFIG_ID_ATTR" value="0.1964391291"/>
+<stringAttribute key="org.eclipse.cdt.launch.PROJECT_BUILD_CONFIG_ID_ATTR" value="0.1249136888"/>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
 <listEntry value="/Firmware_v2"/>
 </listAttribute>
