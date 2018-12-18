@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "sapi.h": "c",
+        "sapi_uart.h": "c",
+        "sapi_dac.h": "c",
+        "sapi_keypad.h": "c",
+        "chip.h": "c",
+        "stdint.h": "c",
+        "sapi_servo.h": "c"
+    }
+}
