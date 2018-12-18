@@ -1,6 +1,6 @@
 #include "comm.h"
 
-void COMM_Init() {
+void COMM_Init(){
 	USB_SetState(EEPROM_GetUSBState());
 	RS232_SetState(EEPROM_GetRS232State());
 	RS485_SetState(EEPROM_GetRS485State());
@@ -67,7 +67,11 @@ void COMM_Rs232CheckCommand(uint8_t v[SIZE_BUFFER]) {
 			USB_SetState(Secundario);
 			break;
 		case "?":
-			RS232_Write(EEPROM_GetRS232State());
+			//consultar EEPROM
+			//consultar EEPROM
+			//consultar EEPROM
+			//consultar EEPROM
+			//consultar EEPROM
 			break;
 		}
 	}
@@ -94,7 +98,11 @@ void COMM_Rs485CheckCommand(uint8_t v[SIZE_BUFFER]) {
 			USB_SetState(Secundario);
 			break;
 		case "?":
-			RS485_Write(EEPROM_GetRS485State());
+			//consultar EEPROM
+			//consultar EEPROM
+			//consultar EEPROM
+			//consultar EEPROM
+			//consultar EEPROM
 			break;
 		}
 	}

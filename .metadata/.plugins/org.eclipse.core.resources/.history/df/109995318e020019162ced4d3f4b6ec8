@@ -10,7 +10,6 @@ enum estado_t { Primario, Secundario, Apagado };
 
 static uint8_t buffer [SIZE_BUFFER];
 
-void COMM_Init();
 void COMM_CheckSerials();
 void COMM_UsbCheckCommand(uint8_t v[SIZE_BUFFER]);
 void COMM_Rs232CheckCommand(uint8_t v[SIZE_BUFFER]);
