@@ -48,7 +48,6 @@
 /*==================[macros and definitions]=================================*/
 char dato;
 char endComand[]="RECIBI CARACTER FIN DE COMANDO";
-static keypad_t keypad;
 /*==================[internal data declaration]==============================*/
 
 /*==================[internal functions declaration]=========================*/
@@ -123,6 +122,7 @@ static void configRS_232(){
 }
 
 
+
 /*==================[external functions definition]==========================*/
 
 
@@ -134,9 +134,7 @@ int main(void)
 	initHardware();
 	Aten_Init();
 	Aten_SetValue(0);
-	configKeypad(&keypad);
-	configUSB();
-	configRS_232();
+
 	for(;;){
 		Board_LED_Toggle(LED);
 		delay(500);

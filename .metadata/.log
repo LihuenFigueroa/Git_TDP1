@@ -2586,3 +2586,63 @@ java.io.IOException: Pipe closed
 !MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIRunControl$9@3a1fd7): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Interrupt failed. null' resulted in an error.
 !SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2018-12-17 22:52:52.444
 !MESSAGE Interrupt failed.
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2018-12-18 01:28:38.620
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.debug.ui.viewmodel.SteppingController$3@17070ea): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-exec-finish
+Error message from debugger back end:
+Warning:\nCannot insert breakpoint 0.\nCannot access memory at address 0xfffffff9\n java.lang.Exception: Warning:\nCannot insert breakpoint 0.\nCannot access memory at address 0xfffffff9\n' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2018-12-18 01:28:38.621
+!MESSAGE Failed to execute MI command:
+-exec-finish
+Error message from debugger back end:
+Warning:\nCannot insert breakpoint 0.\nCannot access memory at address 0xfffffff9\n
+!STACK 0
+java.lang.Exception: Warning:\nCannot insert breakpoint 0.\nCannot access memory at address 0xfffffff9\n
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:925)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:754)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2018-12-18 01:28:43.091
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.debug.ui.viewmodel.SteppingController$3@23d1c2): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-exec-finish
+Error message from debugger back end:
+Warning:\nCannot insert breakpoint 0.\nCannot access memory at address 0xfffffff9\n java.lang.Exception: Warning:\nCannot insert breakpoint 0.\nCannot access memory at address 0xfffffff9\n' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2018-12-18 01:28:43.092
+!MESSAGE Failed to execute MI command:
+-exec-finish
+Error message from debugger back end:
+Warning:\nCannot insert breakpoint 0.\nCannot access memory at address 0xfffffff9\n
+!STACK 0
+java.lang.Exception: Warning:\nCannot insert breakpoint 0.\nCannot access memory at address 0xfffffff9\n
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:925)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:754)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2018-12-18 01:28:44.392
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.debug.ui.viewmodel.SteppingController$3@b9fac8): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-exec-finish
+Error message from debugger back end:
+Warning:\nCannot insert breakpoint 0.\nCannot access memory at address 0xfffffff9\n java.lang.Exception: Warning:\nCannot insert breakpoint 0.\nCannot access memory at address 0xfffffff9\n' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2018-12-18 01:28:44.392
+!MESSAGE Failed to execute MI command:
+-exec-finish
+Error message from debugger back end:
+Warning:\nCannot insert breakpoint 0.\nCannot access memory at address 0xfffffff9\n
+!STACK 0
+java.lang.Exception: Warning:\nCannot insert breakpoint 0.\nCannot access memory at address 0xfffffff9\n
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:925)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:754)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2018-12-18 01:28:45.070
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.debug.ui.viewmodel.SteppingController$3@cc4a1f): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Failed to execute MI command:
+-exec-finish
+Error message from debugger back end:
+Warning:\nCannot insert breakpoint 0.\nCannot access memory at address 0xfffffff9\n java.lang.Exception: Warning:\nCannot insert breakpoint 0.\nCannot access memory at address 0xfffffff9\n' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2018-12-18 01:28:45.070
+!MESSAGE Failed to execute MI command:
+-exec-finish
+Error message from debugger back end:
+Warning:\nCannot insert breakpoint 0.\nCannot access memory at address 0xfffffff9\n
+!STACK 0
+java.lang.Exception: Warning:\nCannot insert breakpoint 0.\nCannot access memory at address 0xfffffff9\n
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:925)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:754)

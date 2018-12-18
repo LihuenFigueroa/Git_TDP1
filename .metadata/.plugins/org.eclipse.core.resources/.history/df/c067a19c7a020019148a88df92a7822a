@@ -116,13 +116,11 @@ static void configUSB(){
 	uartRxInterruptCallbackSet(UART_USB ,&interrupcionUSB);  // pointer to function
 }
 
-static void configRS_232(){
+static void configRS2_232(){
 	uartConfig(UART_232,9600);
 	uartRxInterruptSet(UART_232, ON );
 	uartRxInterruptCallbackSet(UART_232 ,&interrupcion232);  // pointer to function
 }
-
-
 /*==================[external functions definition]==========================*/
 
 
@@ -134,9 +132,9 @@ int main(void)
 	initHardware();
 	Aten_Init();
 	Aten_SetValue(0);
+
+
 	configKeypad(&keypad);
-	configUSB();
-	configRS_232();
 	for(;;){
 		Board_LED_Toggle(LED);
 		delay(500);

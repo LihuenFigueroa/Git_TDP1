@@ -1,4 +1,4 @@
-22:31:06 **** Build of configuration Default for project Firmware_v2 ****
+01:25:12 **** Build of configuration Default for project Firmware_v2 ****
 make 
 Build project...
 
@@ -184,15 +184,19 @@ modules/lpc4337_m4/board/src/board.c:50:17: warning: 'lcd_cfg_val' defined but n
    2072	      0	      0	   2072	    818	ccan_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
 *** compiling C file testUART_USB/src/main.c ***
 testUART_USB/src/main.c: In function 'interrupcionUSB':
-testUART_USB/src/main.c:70:1: warning: no return statement in function returning non-void [-Wreturn-type]
+testUART_USB/src/main.c:71:1: warning: no return statement in function returning non-void [-Wreturn-type]
  }
  ^
 testUART_USB/src/main.c: In function 'interrupcion232':
-testUART_USB/src/main.c:82:1: warning: no return statement in function returning non-void [-Wreturn-type]
+testUART_USB/src/main.c:83:1: warning: no return statement in function returning non-void [-Wreturn-type]
  }
  ^
-testUART_USB/src/main.c: In function 'main':
-testUART_USB/src/main.c:122:39: warning: passing argument 2 of 'uartRxInterruptCallbackSet' from incompatible pointer type
+testUART_USB/src/main.c: In function 'configKeypad':
+testUART_USB/src/main.c:107:12: warning: unused variable 'keypressed' [-Wunused-variable]
+   uint16_t keypressed=0;
+            ^
+testUART_USB/src/main.c: In function 'configUSB':
+testUART_USB/src/main.c:116:39: warning: passing argument 2 of 'uartRxInterruptCallbackSet' from incompatible pointer type
   uartRxInterruptCallbackSet(UART_USB ,&interrupcionUSB);  // pointer to function
                                        ^
 In file included from modules/lpc4337_m4/sapi/inc/sapi.h:51:0,
@@ -200,7 +204,8 @@ In file included from modules/lpc4337_m4/sapi/inc/sapi.h:51:0,
 modules/lpc4337_m4/sapi/inc/sapi_uart.h:118:6: note: expected 'callBackFuncPtr_t' but argument is of type 'void (* (*)(void))(void *)'
  void uartRxInterruptCallbackSet( 
       ^
-testUART_USB/src/main.c:123:39: warning: passing argument 2 of 'uartRxInterruptCallbackSet' from incompatible pointer type
+testUART_USB/src/main.c: In function 'configRS_232':
+testUART_USB/src/main.c:122:39: warning: passing argument 2 of 'uartRxInterruptCallbackSet' from incompatible pointer type
   uartRxInterruptCallbackSet(UART_232 ,&interrupcion232);  // pointer to function
                                        ^
 In file included from modules/lpc4337_m4/sapi/inc/sapi.h:51:0,
@@ -208,7 +213,8 @@ In file included from modules/lpc4337_m4/sapi/inc/sapi.h:51:0,
 modules/lpc4337_m4/sapi/inc/sapi_uart.h:118:6: note: expected 'callBackFuncPtr_t' but argument is of type 'void (* (*)(void))(void *)'
  void uartRxInterruptCallbackSet( 
       ^
-testUART_USB/src/main.c:113:6: warning: unused variable 'var' [-Wunused-variable]
+testUART_USB/src/main.c: In function 'main':
+testUART_USB/src/main.c:132:6: warning: unused variable 'var' [-Wunused-variable]
   int var;
       ^
 In file included from testUART_USB/src/main.c:45:0:
@@ -230,49 +236,21 @@ testUART_USB/src/aten.c:12:3: note: previous implicit declaration of 'Aten_Write
    ^
 *** linking project testUART_USB ***
    text	   data	    bss	    dec	    hex	filename
-  11756	      8	     68	  11832	   2e38	out/lpc4337_m4/testUART_USB.axf
+  12032	      8	     84	  12124	   2f5c	out/lpc4337_m4/testUART_USB.axf
 copy from `out/lpc4337_m4/testUART_USB.axf' [elf32-littlearm] to `out/lpc4337_m4/testUART_USB.bin' [binary]
 *** post-build ***
 make[1]: se sale del directorio '/cygdrive/c/CIAA/Git_TDP1/Firmware_v2'
 
 Build complete.
 
-22:32:10 **** Incremental Build of configuration Default for project Firmware_v2 ****
+01:26:59 **** Incremental Build of configuration Default for project Firmware_v2 ****
 make 
 Build project...
 
 make[1]: se entra en el directorio '/cygdrive/c/CIAA/Git_TDP1/Firmware_v2'
 *** linking project testUART_USB ***
    text	   data	    bss	    dec	    hex	filename
-  11756	      8	     68	  11832	   2e38	out/lpc4337_m4/testUART_USB.axf
-copy from `out/lpc4337_m4/testUART_USB.axf' [elf32-littlearm] to `out/lpc4337_m4/testUART_USB.bin' [binary]
-*** post-build ***
-make[1]: se sale del directorio '/cygdrive/c/CIAA/Git_TDP1/Firmware_v2'
-
-Build complete.
-
-22:46:37 **** Incremental Build of configuration Default for project Firmware_v2 ****
-make 
-Build project...
-
-make[1]: se entra en el directorio '/cygdrive/c/CIAA/Git_TDP1/Firmware_v2'
-*** linking project testUART_USB ***
-   text	   data	    bss	    dec	    hex	filename
-  11756	      8	     68	  11832	   2e38	out/lpc4337_m4/testUART_USB.axf
-copy from `out/lpc4337_m4/testUART_USB.axf' [elf32-littlearm] to `out/lpc4337_m4/testUART_USB.bin' [binary]
-*** post-build ***
-make[1]: se sale del directorio '/cygdrive/c/CIAA/Git_TDP1/Firmware_v2'
-
-Build complete.
-
-22:53:53 **** Incremental Build of configuration Default for project Firmware_v2 ****
-make 
-Build project...
-
-make[1]: se entra en el directorio '/cygdrive/c/CIAA/Git_TDP1/Firmware_v2'
-*** linking project testUART_USB ***
-   text	   data	    bss	    dec	    hex	filename
-  11756	      8	     68	  11832	   2e38	out/lpc4337_m4/testUART_USB.axf
+  12032	      8	     84	  12124	   2f5c	out/lpc4337_m4/testUART_USB.axf
 copy from `out/lpc4337_m4/testUART_USB.axf' [elf32-littlearm] to `out/lpc4337_m4/testUART_USB.bin' [binary]
 *** post-build ***
 make[1]: se sale del directorio '/cygdrive/c/CIAA/Git_TDP1/Firmware_v2'

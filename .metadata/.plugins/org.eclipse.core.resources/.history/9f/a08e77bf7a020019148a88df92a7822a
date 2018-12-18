@@ -121,8 +121,6 @@ static void configRS_232(){
 	uartRxInterruptSet(UART_232, ON );
 	uartRxInterruptCallbackSet(UART_232 ,&interrupcion232);  // pointer to function
 }
-
-
 /*==================[external functions definition]==========================*/
 
 
