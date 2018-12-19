@@ -10,7 +10,7 @@
 
 #include "sapi.h"
 
-static void EEPROM_Write(unsigned char page, unsigned char offset, uint32_t data);
-static uint32_t EEPROM_Read(unsigned char page, unsigned char offset);
+void EEPROM_Write(unsigned char page, unsigned char offset, uint32_t data);
+uint32_t EEPROM_Read(unsigned char page, unsigned char offset);
 
 #endif /* eeprom_H_ */

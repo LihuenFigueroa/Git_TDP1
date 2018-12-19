@@ -1,4 +1,4 @@
-23:14:46 **** Incremental Build of configuration Default for project Firmware_v2 ****
+23:53:22 **** Incremental Build of configuration Default for project Firmware_v2 ****
 make 
 Build project...
 
@@ -13,5 +13,5 @@ make[1]: se sale del directorio '/cygdrive/c/Santiago/Universidad/35 Taller de P
 Build complete.
 
 
-23:14:48 Build Finished (took 1s.542ms)
+23:53:23 Build Finished (took 1s.545ms)
 

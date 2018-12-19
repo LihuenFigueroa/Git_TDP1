@@ -10,7 +10,7 @@
 #include "chip.h"
 
 
-static void EEPROM_Write(unsigned char page, unsigned char offset, uint32_t data){
+void EEPROM_Write(unsigned char page, unsigned char offset, uint32_t data){
 	uint32_t * pEEData = (uint32_t *)EEPROM_ADDRESS(page, offset); /* dirección de la palabra a escribir */
 
 		Chip_EEPROM_Init(LPC_EEPROM);
@@ -24,7 +24,7 @@ static void EEPROM_Write(unsigned char page, unsigned char offset, uint32_t data
 }
 
 /*==================[external functions definition]==========================*/
-static uint32_t EEPROM_Read(unsigned char page, unsigned char offset){
+uint32_t EEPROM_Read(unsigned char page, unsigned char offset){
 	uint32_t * pEEData = (uint32_t *)EEPROM_ADDRESS(page, offset); /* dirección de la palabra a escribir */
 
 		Chip_EEPROM_Init(LPC_EEPROM);

@@ -105,7 +105,7 @@ int main(void)
 	uartConfig(UART_USB,9600);
 	uartRxInterruptSet(UART_USB, ON );
 	uartRxInterruptCallbackSet(UART_USB ,&interrupcionUSB);  // pointer to function
-	EEPROM_Write(0,0,65);
+	EEPROM_Write(0,4,9600);
 	for(;;){
 		Board_LED_Toggle(LED);
 		delay(500);
