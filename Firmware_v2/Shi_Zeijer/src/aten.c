@@ -13,16 +13,7 @@ void Aten_Init() {
 	Aten_SetValue(127);
 }
 
-uint8_t Aten_SetValue(uint8_t value) {
-	if ((value > 127) || (value<0)) {
-		return 1;
-	} else {
-		Aten_Write(value);
-	}
-	return 0;
-}
-
-void Aten_Write(uint8_t value) {
+static void Aten_Write(uint8_t value) {
 
 	actualAten = 0;
 
@@ -82,6 +73,15 @@ void Aten_Write(uint8_t value) {
 	} else {
 		gpioWrite(ATEN_1, OFF);
 	}
+}
+
+uint8_t Aten_SetValue(uint16_t value) {
+	if ((value > 127) || (value<0)) {
+		return 1;
+	} else {
+		Aten_Write(value);
+	}
+	return 0;
 }
 
 uint8_t AtenPlus (){

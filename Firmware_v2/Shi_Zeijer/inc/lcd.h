@@ -63,6 +63,7 @@ void LCD_Interrupt(void);
 void LCD_Reset_Pos(void);
 void LCD_Clear_Buffer(void);
 void LCD_Write_Buffer_At_Pos(uint8_t data, uint8_t pos);
+void LCD_Set_PosCur(uint8_t x,uint8_t y);
 #define BUS_CLOCK 8000
 
 #endif /* LCD_H_ */

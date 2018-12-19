@@ -15,9 +15,9 @@ void BUZZER_Init(){
 
 void BUZZER_Ring(){
 	int i;
-	for (i = 0; i < 4; i++) {
-		gpioWrite(BUZZER_PIN,ON);
-		delay(8);
+	for (i = 0; i < 9; i++) {
+		gpioWrite(BUZZER_PIN,i%2);
+		delay(100);
 	}
 }
 

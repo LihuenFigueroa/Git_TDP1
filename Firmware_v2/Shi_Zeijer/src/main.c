@@ -41,19 +41,27 @@
 
 #include "main.h"
 #include "sapi.h"
+#include "lcd.h"
 #include "main_MEF.h"
+#include "buzzer.h"
 
 #define TICKRATE_1MS	(1)				/* 1000 ticks per second */
-#define TICKRATE_MS		20	/* 1000 ticks per second */
+#define TICKRATE_MS		1	/* 1000 ticks per second */
 
 /*==================[macros and definitions]=================================*/
 
 /*==================[internal data declaration]==============================*/
-volatile bool SysTick_Time_Flag = false;
+volatile bool SysTick_LCD_Flag = false;
+volatile bool SysTick_MEF_Flag  = false;
+uint8_t count = 0;
 /*==================[internal functions declaration]=========================*/
 
 void myTickHook( void *ptr ){
-	SysTick_Time_Flag = true;
+	SysTick_LCD_Flag = true;
+	if (count++ == 20)
+	{
+		SysTick_MEF_Flag = true;
+	}
 }
 /** @brief hardware initialization function
  *	@return none
@@ -79,15 +87,20 @@ int main(void)
 	/* Add Tick Hook */
 	tickCallbackSet( myTickHook, (void*)NULL );
 	main_MEF_Init();
+	BUZZER_Ring();
 	for(;;)
 	{
-		if (SysTick_Time_Flag)
+		if (SysTick_LCD_Flag)
+		{
+			LCD_Interrupt();
+			SysTick_LCD_Flag = 0;
+		}
+		if (SysTick_MEF_Flag)
 		{
 			main_MEF_Update();
-			SysTick_Time_Flag = 0;
+			SysTick_MEF_Flag = 0;
+			Board_LED_Toggle(LED);
 		}
-		Board_LED_Toggle(LED);
-		delay(500);
 	}
 }
 
