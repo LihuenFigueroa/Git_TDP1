@@ -137,6 +137,8 @@ int main(void)
 	configKeypad(&keypad);
 	configUSB();
 	configRS_232();
+	uartTxWrite(UART_232,"HOLA:Lucas");
+	uartTxWrite(UART_USB,"HOLA:Lucas");
 	for(;;){
 		Board_LED_Toggle(LED);
 		delay(500);

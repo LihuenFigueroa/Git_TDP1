@@ -1,11 +1,11 @@
-23:53:22 **** Incremental Build of configuration Default for project Firmware_v2 ****
+18:57:33 **** Incremental Build of configuration Default for project Firmware_v2 ****
 make 
 Build project...
 
 make[1]: se entra en el directorio '/cygdrive/c/Santiago/Universidad/35 Taller de Proyecto I/Git_TDP1/Firmware_v2'
 *** linking project Shi_Zeijer ***
    text	   data	    bss	    dec	    hex	filename
-  22156	     16	    316	  22488	   57d8	out/lpc4337_m4/Shi_Zeijer.axf
+  24240	   1092	    316	  25648	   6430	out/lpc4337_m4/Shi_Zeijer.axf
 copy from `out/lpc4337_m4/Shi_Zeijer.axf' [elf32-littlearm] to `out/lpc4337_m4/Shi_Zeijer.bin' [binary]
 *** post-build ***
 make[1]: se sale del directorio '/cygdrive/c/Santiago/Universidad/35 Taller de Proyecto I/Git_TDP1/Firmware_v2'
@@ -13,5 +13,5 @@ make[1]: se sale del directorio '/cygdrive/c/Santiago/Universidad/35 Taller de P
 Build complete.
 
 
-23:53:23 Build Finished (took 1s.545ms)
+18:57:35 Build Finished (took 2s.349ms)
 

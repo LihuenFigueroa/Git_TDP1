@@ -84,10 +84,10 @@ uint8_t Aten_SetValue(uint16_t value) {
 	return 0;
 }
 
-uint8_t AtenPlus (){
+uint8_t Aten_Plus (){
 	return Aten_SetValue(actualAten+1);
 }
-uint8_t AtenMinus (){
+uint8_t Aten_Minus (){
 	return Aten_SetValue(actualAten-1);
 }
 
