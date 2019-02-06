@@ -1,6 +1,0 @@
-#include <sapi.h>
-
-static uint8_t buffer [20];
-
-uint8_t COMM_CleanBuffer(uint8_t * param);
-
