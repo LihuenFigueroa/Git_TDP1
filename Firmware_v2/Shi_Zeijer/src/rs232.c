@@ -19,6 +19,12 @@ static callBackFuncPtr_t interrupcion232(void){
 	else{
         if (!flag){
             buffer[pos++] = dato;
+            if (pos == SIZE_BUFFER)
+            {
+            	buffer[SIZE_BUFFER-1] = '\0';
+            	flag = 1;
+            	pos = 0;
+            }
         }
 	}
 }
@@ -33,7 +39,8 @@ void    RS232_GetBuffer     (uint8_t command[SIZE_BUFFER]){
     }
     flag = 0;
 }
-void    RS232_SetState      (estado_t state){
+void    RS232_Init		  	(estado_t state, uint32_t baudRate ){
+    uartConfig(ACTUAL_UART,baudRate);
     if (state == Primario)
     {
         uartRxInterruptSet(ACTUAL_UART, ON );
@@ -44,9 +51,7 @@ void    RS232_SetState      (estado_t state){
         uartRxInterruptSet(ACTUAL_UART, OFF );
     }
 }
-void    RS232_SetBaudRate   (uint32_t baudRate){
-    uartConfig(ACTUAL_UART,baudRate);
-}
+
 void    RS232_Write         (uint8_t *data){
     if (EEPROM_GetRS232State() != Apagado)
     {

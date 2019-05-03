@@ -263,28 +263,31 @@ void com_MEF_Update(uint16_t key) {
 			case 4: // TECLA A, ENTER
 				oldState = STATE_SHOW_RS232;
 				state = STATE_CONFIG_RS232_S;
+				sState = Primario;
 				break;
 			case 8: // TECLA B, BACK
+				oldState = STATE_SHOW_RS232;
+				state = STATE_CONFIG_RS232_BD;
 				KEYPAD_Buffer_Number_Clear();
-				state = oldState;
 				//oldState no cambiaria...(?)
 				break;
-			case 13: // TECLA *, VOY A STATE_SHOW_USB
+			case 13: // TECLA *, VOY A STATE_SHOW_RS485
 				oldState = STATE_SHOW_RS232;
 				state = STATE_SHOW_USB;
 				break;
-			case 15: // TECLA #, VOY A STATE_SHOW_RS485
+			case 15: // TECLA #, VOY A STATE_SHOW_RS232
 				oldState = STATE_SHOW_RS232;
 				state = STATE_SHOW_RS485;
 				break;
-			default: //NOP
+
+			default:
+				//NOP
 				break;
 			}
-
 		}
 		break;
 	case STATE_SHOW_RS485:
-		fill_lcd_buffer_show_com_485(data, EEPROM_GetRS485State(),EEPROM_GetRS485BaudRate());
+		fill_lcd_buffer_show_com_485(data,EEPROM_GetRS485State(),EEPROM_GetRS485BaudRate());
 		LCD_Write_Buffer(data);
 		LCD_cursor_blink_off();
 		LCD_cursor_off();
@@ -293,21 +296,25 @@ void com_MEF_Update(uint16_t key) {
 			case 4: // TECLA A, ENTER
 				oldState = STATE_SHOW_RS485;
 				state = STATE_CONFIG_RS485_S;
+				sState = Primario;
 				break;
 			case 8: // TECLA B, BACK
+				oldState = STATE_SHOW_RS485;
+				state = STATE_CONFIG_RS485_BD;
 				KEYPAD_Buffer_Number_Clear();
-				state = oldState;
 				//oldState no cambiaria...(?)
 				break;
 			case 13: // TECLA *, VOY A STATE_SHOW_RS485
 				oldState = STATE_SHOW_RS485;
 				state = STATE_SHOW_RS232;
 				break;
-			case 15: // TECLA #, VOY A STATE_SHOW_RS232
+			case 15: // TECLA #, VOY A STATE_SHOW_RS485
 				oldState = STATE_SHOW_RS485;
 				state = STATE_SHOW_USB;
 				break;
-			default: //NOP
+
+			default:
+				//NOP
 				break;
 			}
 		}
@@ -321,8 +328,10 @@ void com_MEF_Update(uint16_t key) {
 		if (key) {
 			switch (key) {
 			case 4: // TECLA A, BD CONFIG
+				EEPROM_SetUSBState(sState);
+				USB_Init(EEPROM_GetUSBState(),EEPROM_GetUSBBaudRate());
+				state = oldState;
 				oldState = STATE_CONFIG_USB_S;
-				state = STATE_CONFIG_USB_BD;
 				break;
 			case 8: // TECLA B, BACK
 				KEYPAD_Buffer_Number_Clear();
@@ -330,7 +339,7 @@ void com_MEF_Update(uint16_t key) {
 				break;
 			case 13: // SET STATE AS PRIMARY
 				sState = (sState - 1) % 3;
-				if (sState == 255){sState = Primario;}
+				if (sState == 255){sState = Apagado;}
 				break;
 			case 15: // SET STATE AS SECUNDARY
 				sState = (sState + 1) % 3;
@@ -342,72 +351,66 @@ void com_MEF_Update(uint16_t key) {
 
 		break;
 	case STATE_CONFIG_RS232_S:
+		fill_lcd_buffer_show_com_232(data,sState,EEPROM_GetRS232BaudRate());
+		LCD_Write_Buffer(data);
 		LCD_Set_PosCur(13, 0);
 		LCD_cursor_blink_on();
 		LCD_cursor_on();
 		if (key) {
 			switch (key) {
 			case 4: // TECLA A, BD CONFIG
+				EEPROM_SetRS232State(sState);
+				RS232_Init(EEPROM_GetRS232State(),EEPROM_GetRS232BaudRate());
+				state = oldState;
 				oldState = STATE_CONFIG_RS232_S;
-				state = STATE_CONFIG_RS232_BD;
 				break;
 			case 8: // TECLA B, BACK
 				KEYPAD_Buffer_Number_Clear();
 				state = oldState;
 				break;
-			case 1: // SET STATE AS PRIMARY
-				EEPROM_SetRS232State(Primario);
-				oldState = STATE_CONFIG_RS232_S;
-				state = STATE_SHOW_RS232;
+			case 13: // SET STATE AS PRIMARY
+				sState = (sState - 1) % 3;
+				if (sState == 255){sState = Apagado;}
 				break;
-			case 2: // SET STATE AS SECUNDARY
-				EEPROM_SetRS232State(Secundario);
-				oldState = STATE_CONFIG_RS232_S;
-				state = STATE_SHOW_RS232;
-				break;
-			case 3: // SET STATE AS OFF
-				EEPROM_SetRS232State(Apagado);
-				oldState = STATE_CONFIG_RS232_S;
-				state = STATE_SHOW_RS232;
+			case 15: // SET STATE AS SECUNDARY
+				sState = (sState + 1) % 3;
 				break;
 			default: // NOP
 				break;
 			}
 		}
+
 		break;
 	case STATE_CONFIG_RS485_S:
+		fill_lcd_buffer_show_com_485(data,sState,EEPROM_GetRS485BaudRate());
+		LCD_Write_Buffer(data);
 		LCD_Set_PosCur(13, 0);
 		LCD_cursor_blink_on();
 		LCD_cursor_on();
 		if (key) {
 			switch (key) {
 			case 4: // TECLA A, BD CONFIG
+				EEPROM_SetRS485State(sState);
+				RS485_Init(EEPROM_GetRS485State(),EEPROM_GetRS485BaudRate());
+				state = oldState;
 				oldState = STATE_CONFIG_RS485_S;
-				state = STATE_CONFIG_RS485_BD;
 				break;
 			case 8: // TECLA B, BACK
 				KEYPAD_Buffer_Number_Clear();
 				state = oldState;
 				break;
-			case 1: // SET STATE AS PRIMARY
-				EEPROM_SetRS485State(Primario);
-				oldState = STATE_CONFIG_RS485_S;
-				state = STATE_SHOW_RS485;
+			case 13: // SET STATE AS PRIMARY
+				sState = (sState - 1) % 3;
+				if (sState == 255){sState = Apagado;}
 				break;
-			case 2: // SET STATE AS SECUNDARY
-				EEPROM_SetRS485State(Secundario);
-				oldState = STATE_CONFIG_RS485_S;
-				state = STATE_SHOW_RS485;
-				break;
-			case 3: // SET STATE AS OFF
-				EEPROM_SetRS485State(Apagado);
-				oldState = STATE_CONFIG_RS485_S;
-				state = STATE_SHOW_RS485;
+			case 15: // SET STATE AS SECUNDARY
+				sState = (sState + 1) % 3;
 				break;
 			default: // NOP
 				break;
 			}
 		}
+
 		break;
 	case STATE_CONFIG_USB_BD:
 		fill_lcd_buffer_show_com_usb(data,EEPROM_GetUSBState(),KEYPAD_GetValue(8));
@@ -420,6 +423,7 @@ void com_MEF_Update(uint16_t key) {
 			case 4: // TECLA A, ENTER
 				value = KEYPAD_GetValue(8);
 				EEPROM_SetUSBBaudRate(value);
+				USB_Init(EEPROM_GetUSBState(),EEPROM_GetUSBBaudRate());
 				oldState = STATE_CONFIG_USB_BD;
 				state = STATE_SHOW_USB;
 				break;
@@ -441,14 +445,17 @@ void com_MEF_Update(uint16_t key) {
 		}
 		break;
 	case STATE_CONFIG_RS232_BD:
-		//fill_lcd_buffer_show_com_232(data);
-		LCD_pos_xy(15, 1);
+		fill_lcd_buffer_show_com_232(data,EEPROM_GetRS232State(),KEYPAD_GetValue(8));
+		LCD_Write_Buffer(data);
+		LCD_Set_PosCur(15, 1);
 		LCD_cursor_blink_on();
+		LCD_cursor_on();
 		if (key) {
 			switch (key) {
 			case 4: // TECLA A, ENTER
 				value = KEYPAD_GetValue(8);
 				EEPROM_SetRS232BaudRate(value);
+				RS232_Init(EEPROM_GetRS232State(),EEPROM_GetRS232BaudRate());
 				oldState = STATE_CONFIG_RS232_BD;
 				state = STATE_SHOW_RS232;
 				break;
@@ -465,21 +472,22 @@ void com_MEF_Update(uint16_t key) {
 			case 16: // NOP
 				break;
 			default: //CUALQUIER NUMERO XD
-				//fill_lcd_buffer_show_com_232(data);
-				LCD_Write_Buffer(data);
 				break;
 			}
 		}
 		break;
 	case STATE_CONFIG_RS485_BD:
-		//fill_lcd_buffer_show_com_485(data);
-		LCD_pos_xy(15, 1);
+		fill_lcd_buffer_show_com_485(data,EEPROM_GetRS485State(),KEYPAD_GetValue(8));
+		LCD_Write_Buffer(data);
+		LCD_Set_PosCur(15, 1);
 		LCD_cursor_blink_on();
+		LCD_cursor_on();
 		if (key) {
 			switch (key) {
 			case 4: // TECLA A, ENTER
 				value = KEYPAD_GetValue(8);
 				EEPROM_SetRS485BaudRate(value);
+				RS485_Init(EEPROM_GetRS485State(),EEPROM_GetRS485BaudRate());
 				oldState = STATE_CONFIG_RS485_BD;
 				state = STATE_SHOW_RS485;
 				break;
@@ -496,8 +504,6 @@ void com_MEF_Update(uint16_t key) {
 			case 16: // NOP
 				break;
 			default: //CUALQUIER NUMERO XD
-				//fill_lcd_buffer_show_com_485(data);
-				LCD_Write_Buffer(data);
 				break;
 			}
 		}
