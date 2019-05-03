@@ -18,9 +18,9 @@
 
 
 void Aten_Init();
-uint8_t Aten_SetValue (uint8_t value);
-uint8_t AtenPlus ();
-uint8_t AtenMinus ();
+uint8_t Aten_SetValue(uint16_t value);
+uint8_t Aten_Plus ();
+uint8_t Aten_Minus ();
 uint8_t Aten_Get_Actual_Aten(void);
 
 #endif

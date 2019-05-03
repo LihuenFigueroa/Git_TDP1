@@ -13,16 +13,7 @@ void Aten_Init() {
 	Aten_SetValue(127);
 }
 
-uint8_t Aten_SetValue(uint8_t value) {
-	if ((value > 127) || (value<0)) {
-		return 1;
-	} else {
-		Aten_Write(value);
-	}
-	return 0;
-}
-
-void Aten_Write(uint8_t value) {
+static void Aten_Write(uint8_t value) {
 
 	actualAten = 0;
 
@@ -84,10 +75,19 @@ void Aten_Write(uint8_t value) {
 	}
 }
 
-uint8_t AtenPlus (){
+uint8_t Aten_SetValue(uint16_t value) {
+	if ((value > 127) || (value<0)) {
+		return 1;
+	} else {
+		Aten_Write(value);
+	}
+	return 0;
+}
+
+uint8_t Aten_Plus (){
 	return Aten_SetValue(actualAten+1);
 }
-uint8_t AtenMinus (){
+uint8_t Aten_Minus (){
 	return Aten_SetValue(actualAten-1);
 }
 

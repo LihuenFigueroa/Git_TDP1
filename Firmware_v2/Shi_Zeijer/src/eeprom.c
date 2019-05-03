@@ -1,9 +1,8 @@
 #include "eeprom.h"
 #include "chip.h"
 
-
-static void EEPROM_Write(uint8_t page, uint8_t offset, uint32_t data){
-	uint32_t * pEEData = (uint32_t *)EEPROM_ADDRESS(page, offset); /* direcciï¿½n de la palabra a escribir */
+void EEPROM_Write(unsigned char page, unsigned char offset, uint32_t data){
+	uint32_t * pEEData = (uint32_t *)EEPROM_ADDRESS(page, offset); /* dirección de la palabra a escribir */
 
 		Chip_EEPROM_Init(LPC_EEPROM);
 
@@ -15,8 +14,8 @@ static void EEPROM_Write(uint8_t page, uint8_t offset, uint32_t data){
 		Chip_EEPROM_WaitForIntStatus(LPC_EEPROM, EEPROM_INT_ENDOFPROG);
 }
 
-static uint32_t EEPROM_Read(uint8_t page, uint8_t offset){
-	uint32_t * pEEData = (uint32_t *)EEPROM_ADDRESS(page, offset); /* direcciï¿½n de la palabra a escribir */
+uint32_t EEPROM_Read(unsigned char page, unsigned char offset){
+	uint32_t * pEEData = (uint32_t *)EEPROM_ADDRESS(page, offset); /* dirección de la palabra a escribir */
 
 		Chip_EEPROM_Init(LPC_EEPROM);
 
@@ -28,35 +27,35 @@ void        EEPROM_SetUSBState      (estado_t estado){
     EEPROM_Write(0,0,estado);
 }
 void        EEPROM_SetRS232State    (estado_t estado){
-    EEPROM_Write(0,1,estado);
+    EEPROM_Write(0,4,estado);
 }
 void        EEPROM_SetRS485State    (estado_t estado){
-    EEPROM_Write(0,2,estado);
+    EEPROM_Write(0,8,estado);
 }
 estado_t    EEPROM_GetUSBState      (void){
     return EEPROM_Read(0, 0);
 }
 estado_t    EEPROM_GetRS232State    (void){
-    return EEPROM_Read(0, 1);
-}
-estado_t    EEPROM_GetRS485State    (void){
-    return EEPROM_Read(0, 2);
-}
-void        EEPROM_SetUSBBaudRate      (uint32_t baudRate){
-    EEPROM_Write(0,3,baudRate);
-}
-void        EEPROM_SetRS232BaudRate    (uint32_t baudRate){
-    EEPROM_Write(0,4,baudRate);
-}   
-void        EEPROM_SetRS485BaudRate    (uint32_t baudRate){
-    EEPROM_Write(0,5,baudRate);
-}
-uint32_t    EEPROM_GetUSBBaudRate      (void){
-    return EEPROM_Read(0, 3);
-}
-uint32_t    EEPROM_GetRS232BaudRate    (void){
     return EEPROM_Read(0, 4);
 }
+estado_t    EEPROM_GetRS485State    (void){
+    return EEPROM_Read(0, 8);
+}
+void        EEPROM_SetUSBBaudRate      (uint32_t baudRate){
+    EEPROM_Write(0,12,baudRate);
+}
+void        EEPROM_SetRS232BaudRate    (uint32_t baudRate){
+    EEPROM_Write(0,16,baudRate);
+}   
+void        EEPROM_SetRS485BaudRate    (uint32_t baudRate){
+    EEPROM_Write(0,20,baudRate);
+}
+uint32_t    EEPROM_GetUSBBaudRate      (void){
+    return EEPROM_Read(0, 12);
+}
+uint32_t    EEPROM_GetRS232BaudRate    (void){
+    return EEPROM_Read(0, 16);
+}
 uint32_t    EEPROM_GetRS485BaudRate    (void){
-    return EEPROM_Read(0, 5);
+    return EEPROM_Read(0, 20);
 }

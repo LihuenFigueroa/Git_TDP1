@@ -8,7 +8,7 @@
 #include "keypad.h"
 
 
-#define SIZE_BUFFER_IN 3
+#define SIZE_BUFFER_IN 8
 
 static uint16_t lastCommand;
 static uint16_t buffer[SIZE_BUFFER_IN];
@@ -34,7 +34,7 @@ void KEYPAD_Init(void) {
 
 void KEYPAD_Buffer_Number_Clear(void) {
 	unsigned char i;
-	for (i = 0; i < SIZE_BUFFER_IN - 1; i++) {
+	for (i = 0; i < SIZE_BUFFER_IN ; i++) {
 		buffer[i]=0;
 	}
 }
@@ -123,24 +123,22 @@ static uint8_t KEYPAD_Convert(uint8_t data)
 	if (data >= 10){data = 0;}
 	return data;
 }
-uint8_t	 KEYPAD_GetValue(void){
-	uint8_t result = 0;
-	for(uint8_t i = 0; i < SIZE_BUFFER_IN; i++)
+uint32_t KEYPAD_GetValue(uint8_t cant){
+	uint32_t result = 0;
+	uint32_t pow = 1;
+	uint8_t j = 0;
+	for(uint8_t i = SIZE_BUFFER_IN - cant; i < SIZE_BUFFER_IN ; i++)
 	{
-		switch (i) {
-			case 0:
-				result += KEYPAD_Convert(buffer[i]) * 100;
-				break;
-			case 1:
-				result += KEYPAD_Convert(buffer[i]) * 10;
-				break;
-			case 2:
-				result += KEYPAD_Convert(buffer[i]);
-				break;
+		pow = 1;
+		for (j = 0; j < SIZE_BUFFER_IN - i - 1 ; ++j) {
+			pow *= 10;
 		}
-
+		result += KEYPAD_Convert(buffer[i]) * pow;
 	}
 	return result;
+}
+uint16_t KEYPAD_ReadLastKey(void){
+	return lastCommand;
 }
 
 

@@ -1,8 +1,11 @@
 #include "usb.h"
+#include "board.h"
 #include "sapi.h"
 #include "comm.h"
 #include "eeprom.h"
+
 #define ACTUAL_UART UART_USB
+
 static uint8_t buffer[SIZE_BUFFER] ;
 static uint8_t pos = 0;
 static uint8_t flag = 0;
@@ -18,6 +21,12 @@ static callBackFuncPtr_t interrupcionUSB(void){
 	else{
         if (!flag){
             buffer[pos++] = dato;
+            if (pos == SIZE_BUFFER)
+            {
+            	buffer[SIZE_BUFFER-1] = '\0';
+            	flag = 1;
+            	pos = 0;
+            }
         }
 	}
 }
@@ -31,7 +40,8 @@ void    USB_GetBuffer     (uint8_t command[SIZE_BUFFER] ){
     }
     flag = 0;
 }
-void    USB_SetState      (estado_t state){
+void    USB_Init		  (estado_t state, uint32_t baudRate ){
+    uartConfig(ACTUAL_UART,baudRate);
     if (state == Primario)
     {
         uartRxInterruptSet(ACTUAL_UART, ON );
@@ -42,9 +52,7 @@ void    USB_SetState      (estado_t state){
         uartRxInterruptSet(ACTUAL_UART, OFF );
     }
 }
-void    USB_SetBaudRate   (uint32_t baudRate){
-    uartConfig(ACTUAL_UART,baudRate);
-}
+
 void    USB_Write         (uint8_t *data ){
     if (EEPROM_GetUSBState() != Apagado)
     {

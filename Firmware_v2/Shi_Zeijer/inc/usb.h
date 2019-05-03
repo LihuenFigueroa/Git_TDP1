@@ -6,7 +6,6 @@
 
 uint8_t USB_Flag();
 void    USB_GetBuffer     (uint8_t buffer[SIZE_BUFFER] );
-void    USB_SetState      (estado_t state);
-void    USB_SetBaudRate   (uint32_t baudRate);
+void    USB_Init		  (estado_t state, uint32_t baudRate );
 void    USB_Write         (uint8_t *data );
 #endif

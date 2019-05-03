@@ -43,6 +43,7 @@ union ubyte {
 
 // Display configuration global variable
 static int8_t lcd_mode;
+static uint8_t poscur;
 static uint8_t pos;
 static uint8_t buffer[32];
 //**************************************************************************
@@ -53,6 +54,10 @@ static uint8_t buffer[32];
 //**************************************************************************
 
 //*************************************************************************//
+void LCD_Set_PosCur(uint8_t x,uint8_t y)
+{
+	poscur = (16*y)+(x);
+}
 void LCD_delay_ms(uint64_t delay_ms) {
    volatile uint64_t i;
    volatile uint64_t delay;
@@ -291,6 +296,7 @@ void LCD_Interrupt(void) {
 	for (i=255;i>0;i--);
 	LCD_write_int8_t(buffer[pos]);
 	pos = (pos + 1) % SIZE_BUFFER_OUT;
+	LCD_pos_xy(poscur % (SIZE_BUFFER_OUT / 2), poscur / (SIZE_BUFFER_OUT / 2));
 }
 void LCD_Reset_Pos(void) {
 	pos = 0;

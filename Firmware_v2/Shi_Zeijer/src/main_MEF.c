@@ -1,6 +1,6 @@
 /*
  * main_MEF.c
- *
+
  *  Created on: 18/12/2018
  *      Author: Lihuen
  */
@@ -11,141 +11,104 @@
 #include "lcd.h"
 #include "comm.h"
 #include "buzzer.h"
-
+#include "aten.h"
+#include "keypad.h"
+#include "com_MEF.h"
 #define MAX_ATEN 127
-
-
-static void fill_lcd_buffer_normal(char buffer[32]){
-	uint8_t value=Aten_Get_Actual_Aten();
-	char digitos[3];
-	int i=0;
-	while(value!=0){
-		digitos[i]=value % 10;
-		value=value /10;
+typedef enum {
+	STATE_NORMAL, STATE_CONFIG_ATEN, STATE_CONFIG_COM
+} States;
+static States state;
+static States oldState;
+static uint16_t key;
+static uint8_t data[32];
+static uint32_t value;
+static const uint8_t clear[16] = { 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32,
+		32, 32, 32, 32, 32 };
+static void fill_lcd_buffer_normal(uint8_t buffer[16]) {
+	uint16_t value = Aten_Get_Actual_Aten();
+	uint8_t digitos[3] = { 0, 0, 0 };
+	uint16_t i = 0;
+	while (value != 0) {
+		digitos[i] = value % 10;
+		value = value / 10;
 		i++;
 	}
 
-	buffer[0] =	 'A';
-	buffer[1] =	 'T';
-	buffer[2] =	 'E';
-	buffer[3] =	 'N';
-	buffer[4] =	 'U';
-	buffer[5] =	 'A';
-	buffer[6] =	 'C';
-	buffer[7] =	 'I';
-	buffer[8] =	 'O';
-	buffer[9] =  'N';
+	buffer[0] = 'A';
+	buffer[1] = 'T';
+	buffer[2] = 'E';
+	buffer[3] = 'N';
+	buffer[4] = 'U';
+	buffer[5] = 'A';
+	buffer[6] = 'C';
+	buffer[7] = 'I';
+	buffer[8] = 'O';
+	buffer[9] = 'N';
 	buffer[10] = ' ';
 	buffer[11] = ':';
 	buffer[12] = ' ';
-	buffer[13] = digitos[2]+0x30;
-	buffer[14] = digitos[1]+0x30;
-	buffer[15] = digitos[0]+0x30;
-	buffer[16] = ' ';
-	buffer[17] = ' ';
-	buffer[18] = ' ';
-	buffer[19] = ' ';
-	buffer[20] = ' ';
-	buffer[21] = ' ';
-	buffer[22] = ' ';
-	buffer[23] = ' ';
-	buffer[24] = ' ';
-	buffer[25] = ' ';
-	buffer[26] = ' ';
-	buffer[27] = ' ';
-	buffer[28] = ' ';
-	buffer[29] = ' ';
-	buffer[30] = ' ';
-	buffer[31] = ' ';
+	buffer[13] = digitos[2] + 0x30;
+	buffer[14] = digitos[1] + 0x30;
+	buffer[15] = digitos[0] + 0x30;
+
+}
+static void fill_lcd_buffer_att(uint8_t buffer[16]) {
+	uint16_t value = KEYPAD_GetValue(3);
+	uint8_t digitos[3] = { 0, 0, 0 };
+	uint16_t i = 0;
+	while (value != 0) {
+		digitos[i] = value % 10;
+		value = value / 10;
+		i++;
+	}
+
+	buffer[0] = 'A';
+	buffer[1] = 'T';
+	buffer[2] = 'E';
+	buffer[3] = 'N';
+	buffer[4] = 'U';
+	buffer[5] = 'A';
+	buffer[6] = 'C';
+	buffer[7] = 'I';
+	buffer[8] = 'O';
+	buffer[9] = 'N';
+	buffer[10] = ' ';
+	buffer[11] = ':';
+	buffer[12] = ' ';
+	buffer[13] = digitos[2] + 0x30;
+	buffer[14] = digitos[1] + 0x30;
+	buffer[15] = digitos[0] + 0x30;
+
+}
+static void fill_lcd_buffer_aten_err(uint8_t buffer[16]) {
+	uint16_t value = KEYPAD_GetValue(3);
+	uint8_t digitos[3] = { 0, 0, 0 };
+	uint16_t i = 0;
+	while (value != 0) {
+		digitos[i] = value % 10;
+		value = value / 10;
+		i++;
+	}
+	buffer[0] = ' ';
+	buffer[1] = 'A';
+	buffer[2] = 'T';
+	buffer[3] = 'E';
+	buffer[4] = 'N';
+	buffer[5] = ' ';
+	buffer[6] = 'I';
+	buffer[7] = 'N';
+	buffer[8] = 'V';
+	buffer[9] = 'A';
+	buffer[10] = 'L';
+	buffer[11] = 'I';
+	buffer[12] = 'D';
+	buffer[13] = 'A';
+	buffer[14] = ' ';
+	buffer[15] = ' ';
 }
 
-static void fill_lcd_buffer_aten(char buffer[32]){
-	uint8_t value=KEYPAD_GetValue();
-		char digitos[3];
-		int i=0;
-		while(value!=0){
-			digitos[i]=value % 10;
-			value=value /10;
-			i++;
-		}
-		buffer[0] =	 'A';
-		buffer[1] =	 'T';
-		buffer[2] =	 'E';
-		buffer[3] =	 'N';
-		buffer[4] =	 'U';
-		buffer[5] =	 'A';
-		buffer[6] =	 'C';
-		buffer[7] =	 'I';
-		buffer[8] =	 'O';
-		buffer[9] =  'N';
-		buffer[10] = ' ';
-		buffer[11] = ':';
-		buffer[12] = ' ';
-		buffer[13] = digitos[2]+0x30;
-		buffer[14] = digitos[1]+0x30;
-		buffer[15] = digitos[0]+0x30;
-		buffer[16] = ' ';
-		buffer[17] = ' ';
-		buffer[18] = ' ';
-		buffer[19] = ' ';
-		buffer[20] = ' ';
-		buffer[21] = ' ';
-		buffer[22] = ' ';
-		buffer[23] = ' ';
-		buffer[24] = ' ';
-		buffer[25] = ' ';
-		buffer[26] = ' ';
-		buffer[27] = ' ';
-		buffer[28] = ' ';
-		buffer[29] = ' ';
-		buffer[30] = ' ';
-		buffer[31] = ' ';
-}
-
-static void fill_lcd_buffer_aten_err(char buffer[32]){
-	uint8_t value=KEYPAD_GetValue();
-		char digitos[3];
-		int i=0;
-		while(value!=0){
-			digitos[i]=value % 10;
-			value=value /10;
-			i++;
-		}
-		buffer[0] =	 'A';
-		buffer[1] =	 'T';
-		buffer[2] =	 'E';
-		buffer[3] =	 'N';
-		buffer[4] =	 'U';
-		buffer[5] =	 'A';
-		buffer[6] =	 'C';
-		buffer[7] =	 'I';
-		buffer[8] =	 'O';
-		buffer[9] =  'N';
-		buffer[10] = ' ';
-		buffer[11] = ':';
-		buffer[12] = ' ';
-		buffer[13] = digitos[2] + 0x30;
-		buffer[14] = digitos[1] + 0x30;
-		buffer[15] = digitos[0] + 0x30;
-		buffer[16] = ' ';
-		buffer[17] = 'A';
-		buffer[18] = 'T';
-		buffer[19] = 'E';
-		buffer[20] = 'N';
-		buffer[21] = ' ';
-		buffer[22] = 'I';
-		buffer[23] = 'N';
-		buffer[24] = 'V';
-		buffer[25] = 'A';
-		buffer[26] = 'L';
-		buffer[27] = 'I';
-		buffer[28] = 'D';
-		buffer[29] = 'A';
-		buffer[30] = ' ';
-		buffer[31] = ' ';
-}
-
-static void main_MEF_Init(){
+void main_MEF_Init() {
 	///////////////		LCD	- INIT		/////////////////
 	LCD_init(DISPLAY_8X5 | _2_LINES, DISPLAY_ON | CURSOR_ON | CURSOR_BLINK);
 	LCD_Clear_Buffer();
@@ -166,111 +129,131 @@ static void main_MEF_Init(){
 	/////////////		BUZZER	- INIT		/////////////
 	BUZZER_Init();
 	/////////////////////////////////////////////////////
-	state=STATE_NORMAL;
-	oldState=STATE_NORMAL;
+	fill_lcd_buffer_normal(data);
+	LCD_Write_Buffer_Line(data, 0);
+	state = STATE_NORMAL;
+	oldState = STATE_NORMAL;
 }
 
-static void main_MEF_Update(){
+void main_MEF_Update() {
+	uint8_t *param;
 	KEYPAD_Interrupt();
-	LCD_Interrupt();
-	switch(state){
+	switch (state) {
 	case STATE_NORMAL:
-		fill_lcd_buffer_normal(data);
-		LCD_Write_Buffer(data);
-		key=KEYPAD_LastKey();
-		if(key){ // Si se apreto alguna tecla...
-			switch(key){
+		LCD_cursor_off();
+		LCD_cursor_blink_off();
+		key = KEYPAD_LastKey();
+		if (key) { // Si se apreto alguna tecla...
+			switch (key) {
 			case 4: // TECLA A, UN +
-				AtenPlus();
+				Aten_Plus();
+				fill_lcd_buffer_normal(data);
+				LCD_Write_Buffer_Line(data, 0);
 				break;
-			case 8:// TECLA B, UN -
-				AtenMinus();
+			case 8: // TECLA B, UN -
+				Aten_Minus();
+				fill_lcd_buffer_normal(data);
+				LCD_Write_Buffer_Line(data, 0);
 				break;
-			case 12:// TECLA C, CONFIG ATENUACION
-				oldState=STATE_NORMAL;
-				state=STATE_CONFIG_ATEN;
+			case 12: // TECLA C, CONFIG ATENUACION
+				oldState = STATE_NORMAL;
+				state = STATE_CONFIG_ATEN;
+				KEYPAD_Buffer_Number_Clear();
 				break;
-			case 16:// TECLA D, CONFIG COMUNICACION
-				oldState=STATE_NORMAL;
-				state=STATE_CONFIG_COM;
+			case 16: // TECLA D, CONFIG COMUNICACION
+				oldState = STATE_NORMAL;
+				state = STATE_CONFIG_COM;
 				com_MEF_Init();
 				break;
 			default:
-				oldState=STATE_NORMAL;
-				state=STATE_NORMAL;
+				oldState = STATE_NORMAL;
+				state = STATE_NORMAL;
 				break;
 			}
 		}
-		else{ // Si no se apreto alguna tecla...
-			//tengo que escuchar comunicacion
-			COMM_CheckSerials();
+		if (COMM_CheckSerials(&param)){
+			switch (param[0]) {
+				case '+':
+					Aten_Plus();
+					break;
+				case '-':
+					Aten_Minus();
+					break;
+				default:
+					Aten_SetValue(atoi(param));
+					break;
+			}
+			fill_lcd_buffer_normal(data);
+			LCD_Write_Buffer_Line(data, 0);
 		}
 		break;
 	case STATE_CONFIG_ATEN:
-		KEYPAD_Buffer_Number_Clear();
-		fill_lcd_buffer_aten(data);
-		LCD_Write_Buffer(data);
-		key=KEYPAD_LastKey();
-			if(key){ // Si se apreto alguna tecla...
-				switch(key){
-				case 4: // TECLA A, UN ACEPTAR
-					value=KEYPAD_GetValue();
-					// debo validarlo primero //
-					if(!value>MAX_ATEN){
-						Aten_SetValue(value);
-						oldState=STATE_CONFIG_ATEN;
-						state=STATE_NORMAL;
-					}
-					else{ // NO ES UN VALOR DE ATENUACION VALIDO
-						fill_lcd_buffer_aten_err(data);
-						KEYPAD_Buffer_Clear();
-						LCD_Write_Buffer(data);
-						BUZZER_Ring();
-						oldState=STATE_CONFIG_ATEN;
-						state=STATE_CONFIG_ATEN;
-					}
-					break;
-				case 8:// TECLA B, UN CANCELAR
-					KEYPAD_Buffer_Clear();
-					oldState=STATE_CONFIG_ATEN;
-					state=STATE_NORMAL;
-					break;
-				case 12:// TECLA C, NOP
-					oldState=STATE_CONFIG_ATEN;
-					state=STATE_CONFIG_ATEN;
-					break;
-				case 13:// TECLA *, NOP
-					oldState=STATE_CONFIG_ATEN;
-					state=STATE_CONFIG_ATEN;
-					break;
-				case 15:// TECLA #, NOP
-					oldState=STATE_CONFIG_ATEN;
-					state=STATE_CONFIG_ATEN;
-					break;
-				default: // CUALQUIER NUMERO XD
-					fill_lcd_buffer_aten(data); // ACA ADENTRO CONVIERTO EN ASCII LOS NUMEROS DEL TECLADO
-					LCD_Write_Buffer(data);
-					oldState=STATE_CONFIG_ATEN;
-					state=STATE_CONFIG_ATEN;
-					break;
+		fill_lcd_buffer_att(data);
+		LCD_Set_PosCur(15, 0);
+		LCD_cursor_on();
+		LCD_cursor_blink_on();
+		LCD_Write_Buffer_Line(data, 0);
+		key = KEYPAD_LastKey();
+		if (key) { // Si se apreto alguna tecla...
+			LCD_Write_Buffer_Line(clear, 1);
+			switch (key) {
+			case 4: // TECLA A, UN ACEPTAR
+				value = KEYPAD_GetValue(3);
+				// debo validarlo primero //
+				if (!Aten_SetValue(value)) {
+					oldState = STATE_CONFIG_ATEN;
+					state = STATE_NORMAL;
+					fill_lcd_buffer_normal(data);
+					LCD_Write_Buffer_Line(data, 0);
+				} else { // NO ES UN VALOR DE ATENUACION VALIDO
+					fill_lcd_buffer_aten_err(data);
+					KEYPAD_Buffer_Number_Clear();
+					LCD_Write_Buffer_Line(data, 1);
+					BUZZER_Ring();
+					oldState = STATE_CONFIG_ATEN;
+					state = STATE_CONFIG_ATEN;
 				}
+				break;
+			case 8: // TECLA B, UN CANCELAR
+				KEYPAD_Buffer_Number_Clear();
+				fill_lcd_buffer_normal(data); // ACA ADENTRO CONVIERTO EN ASCII LOS NUMEROS DEL TECLADO
+				LCD_Write_Buffer_Line(data, 0);
+				oldState = STATE_CONFIG_ATEN;
+				state = STATE_NORMAL;
+				break;
+			case 12: // TECLA C, NOP
+				KEYPAD_Buffer_Number_Clear();
+				break;
+			case 13: // TECLA *, NOP
+				break;
+			case 15: // TECLA #, NOP
+				break;
+			case 16:
+				break;
+			default: // CUALQUIER NUMERO XD
+				fill_lcd_buffer_normal(data); // ACA ADENTRO CONVIERTO EN ASCII LOS NUMEROS DEL TECLADO
+				LCD_Write_Buffer_Line(data, 1);
+				oldState = STATE_CONFIG_ATEN;
+				state = STATE_CONFIG_ATEN;
+				break;
 			}
-			else{ // Si no se apreto alguna tecla...
-				//tengo que escuchar comunicacion
-				COMM_CheckSerials();
-			}
+		}
+
 		break;
 
 	case STATE_CONFIG_COM:
-		com_MEF_Update();
-		key=KEYPAD_LastKey();
-		if((key)&&(key==16)){ // Si me tocaron una tecla Y esa fue la D...
-			oldState=STATE_CONFIG_COM;
-			state=STATE_NORMAL;
+		key = KEYPAD_LastKey();
+		if (key == 16) { // Si me tocaron una tecla Y esa fue la D...
+			oldState = STATE_CONFIG_COM;
+			state = STATE_NORMAL;
+			fill_lcd_buffer_normal(data);
+			LCD_Write_Buffer_Line(data, 0);
+			LCD_Write_Buffer_Line(clear, 1);
+		} else {
+			com_MEF_Update(key);
 		}
 		break;
 	}
-
 
 }
 

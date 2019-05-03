@@ -1,32 +1,499 @@
-<<<<<<< HEAD
-14:04:21 **** Incremental Build of configuration Default for project Firmware_v2 ****
+11:28:07 **** Build of configuration Default for project Firmware_v2 ****
 make 
 Build project...
 
-make[1]: se entra en el directorio '/cygdrive/c/Santiago/Universidad/35 Taller de Proyecto I/Git_TDP1/Firmware_v2'
+make[1]: se entra en el directorio '/cygdrive/c/CIAA/Git_TDP1/Firmware_v2'
+*** compiling C file modules/lpc4337_m4/sapi/src/sapi_gpio.c ***
+*** compiling C file modules/lpc4337_m4/sapi/src/sapi_stdio.c ***
+modules/lpc4337_m4/sapi/src/sapi_stdio.c:66:0: warning: "putchar" redefined
+ #define putchar(c)      outbyte(c)
+ ^
+In file included from modules/lpc4337_m4/board/inc/board_api.h:36:0,
+                 from modules/lpc4337_m4/board/inc/board.h:208,
+                 from modules/lpc4337_m4/sapi/inc/sapi_datatypes.h:43,
+                 from modules/lpc4337_m4/sapi/inc/sapi.h:41,
+                 from modules/lpc4337_m4/sapi/inc/sapi_stdio.h:41,
+                 from modules/lpc4337_m4/sapi/src/sapi_stdio.c:62:
+c:\ciaa\cygwin\usr\arm-none-eabi\arm-none-eabi\include\stdio.h:721:0: note: this is the location of the previous definition
+ #define putchar(x) putc(x, stdout)
+ ^
+*** compiling C file modules/lpc4337_m4/sapi/src/sapi_spi.c ***
+*** compiling C file modules/lpc4337_m4/sapi/src/sapi_convert.c ***
+*** compiling C file modules/lpc4337_m4/sapi/src/sapi_adc.c ***
+*** compiling C file modules/lpc4337_m4/sapi/src/sapi_magnetometer_hmc5883l.c ***
+*** compiling C file modules/lpc4337_m4/sapi/src/sapi_sct.c ***
+*** compiling C file modules/lpc4337_m4/sapi/src/sapi_sleep.c ***
+*** compiling C file modules/lpc4337_m4/sapi/src/sapi_board.c ***
+*** compiling C file modules/lpc4337_m4/sapi/src/sapi_print.c ***
+*** compiling C file modules/lpc4337_m4/sapi/src/sapi_circularBuffer.c ***
+*** compiling C file modules/lpc4337_m4/sapi/src/sapi_lcd.c ***
+*** compiling C file modules/lpc4337_m4/sapi/src/sapi_servo.c ***
+*** compiling C file modules/lpc4337_m4/sapi/src/sapi_rgb.c ***
+*** compiling C file modules/lpc4337_m4/sapi/src/sapi_magnetometer_qmc5883l.c ***
+*** compiling C file modules/lpc4337_m4/sapi/src/sapi_esp8266.c ***
+*** compiling C file modules/lpc4337_m4/sapi/src/sapi_timer.c ***
+modules/lpc4337_m4/sapi/src/sapi_timer.c:89:4: warning: missing braces around initializer [-Wmissing-braces]
+    doNothing, errorOcurred, errorOcurred, errorOcurred,
+    ^
+modules/lpc4337_m4/sapi/src/sapi_timer.c:89:4: warning: (near initialization for 'timer_dd[0]') [-Wmissing-braces]
+*** compiling C file modules/lpc4337_m4/sapi/src/sapi_i2c.c ***
+*** compiling C file modules/lpc4337_m4/sapi/src/sapi_tick.c ***
+*** compiling C file modules/lpc4337_m4/sapi/src/sapi_ultrasonic_hcsr04.c ***
+*** compiling C file modules/lpc4337_m4/sapi/src/sapi_dht11.c ***
+*** compiling C file modules/lpc4337_m4/sapi/src/sapi_rtc.c ***
+*** compiling C file modules/lpc4337_m4/sapi/src/sapi_dac.c ***
+*** compiling C file modules/lpc4337_m4/sapi/src/sapi_delay.c ***
+*** compiling C file modules/lpc4337_m4/sapi/src/sapi_keypad.c ***
+*** compiling C file modules/lpc4337_m4/sapi/src/sapi_cyclesCounter.c ***
+*** compiling C file modules/lpc4337_m4/sapi/src/sapi_uart.c ***
+*** compiling C file modules/lpc4337_m4/sapi/src/sapi_7_segment_display.c ***
+*** compiling C file modules/lpc4337_m4/sapi/src/sapi_pwm.c ***
+*** compiling C file modules/lpc4337_m4/sapi/src/sapi_datatypes.c ***
+*** archiving static library sapi ***
+   text	   data	    bss	    dec	    hex	filename
+   1314	      0	      0	   1314	    522	sapi_gpio.o (ex out/lpc4337_m4/libsapi.a)
+   1131	      1	      1	   1133	    46d	sapi_stdio.o (ex out/lpc4337_m4/libsapi.a)
+    416	      0	      0	    416	    1a0	sapi_spi.o (ex out/lpc4337_m4/libsapi.a)
+    805	      0	     37	    842	    34a	sapi_convert.o (ex out/lpc4337_m4/libsapi.a)
+    268	      0	      0	    268	    10c	sapi_adc.o (ex out/lpc4337_m4/libsapi.a)
+    604	      0	      0	    604	    25c	sapi_magnetometer_hmc5883l.o (ex out/lpc4337_m4/libsapi.a)
+    672	     28	      0	    700	    2bc	sapi_sct.o (ex out/lpc4337_m4/libsapi.a)
+     16	      0	      0	     16	     10	sapi_sleep.o (ex out/lpc4337_m4/libsapi.a)
+    256	      0	      0	    256	    100	sapi_board.o (ex out/lpc4337_m4/libsapi.a)
+    295	      0	      0	    295	    127	sapi_print.o (ex out/lpc4337_m4/libsapi.a)
+    492	      0	      2	    494	    1ee	sapi_circularBuffer.o (ex out/lpc4337_m4/libsapi.a)
+    752	      0	      0	    752	    2f0	sapi_lcd.o (ex out/lpc4337_m4/libsapi.a)
+   1565	     72	      0	   1637	    665	sapi_servo.o (ex out/lpc4337_m4/libsapi.a)
+   2616	      0	    104	   2720	    aa0	sapi_rgb.o (ex out/lpc4337_m4/libsapi.a)
+    516	      0	      0	    516	    204	sapi_magnetometer_qmc5883l.o (ex out/lpc4337_m4/libsapi.a)
+   3096	      1	    130	   3227	    c9b	sapi_esp8266.o (ex out/lpc4337_m4/libsapi.a)
+   1864	     64	      0	   1928	    788	sapi_timer.o (ex out/lpc4337_m4/libsapi.a)
+    496	      0	      0	    496	    1f0	sapi_i2c.o (ex out/lpc4337_m4/libsapi.a)
+    544	      0	      8	    552	    228	sapi_tick.o (ex out/lpc4337_m4/libsapi.a)
+   1468	     76	      0	   1544	    608	sapi_ultrasonic_hcsr04.o (ex out/lpc4337_m4/libsapi.a)
+    976	      0	    337	   1313	    521	sapi_dht11.o (ex out/lpc4337_m4/libsapi.a)
+    256	      0	      1	    257	    101	sapi_rtc.o (ex out/lpc4337_m4/libsapi.a)
+    160	      0	      0	    160	     a0	sapi_dac.o (ex out/lpc4337_m4/libsapi.a)
+    584	      0	      0	    584	    248	sapi_delay.o (ex out/lpc4337_m4/libsapi.a)
+    460	      0	      0	    460	    1cc	sapi_keypad.o (ex out/lpc4337_m4/libsapi.a)
+    252	     12	      0	    264	    108	sapi_cyclesCounter.o (ex out/lpc4337_m4/libsapi.a)
+   2727	      0	     28	   2755	    ac3	sapi_uart.o (ex out/lpc4337_m4/libsapi.a)
+    256	     26	      0	    282	    11a	sapi_7_segment_display.o (ex out/lpc4337_m4/libsapi.a)
+    519	     11	      0	    530	    212	sapi_pwm.o (ex out/lpc4337_m4/libsapi.a)
+     24	      0	      0	     24	     18	sapi_datatypes.o (ex out/lpc4337_m4/libsapi.a)
+*** compiling C file modules/lpc4337_m4/base/src/cr_start_m0.c ***
+*** compiling C file modules/lpc4337_m4/base/src/sysinit.c ***
+*** compiling C file modules/lpc4337_m4/base/src/cr_startup_lpc43xx.c ***
+*** archiving static library base ***
+   text	   data	    bss	    dec	    hex	filename
+    320	      0	      0	    320	    140	cr_start_m0.o (ex out/lpc4337_m4/libbase.a)
+     40	      0	      0	     40	     28	sysinit.o (ex out/lpc4337_m4/libbase.a)
+    680	      0	      0	    680	    2a8	cr_startup_lpc43xx.o (ex out/lpc4337_m4/libbase.a)
+*** compiling C file modules/lpc4337_m4/board/src/lpc_phy_smsc87x0.c ***
+*** compiling C file modules/lpc4337_m4/board/src/board_sysinit.c ***
+*** compiling C file modules/lpc4337_m4/board/src/board.c ***
+modules/lpc4337_m4/board/src/board.c:50:17: warning: 'lcd_cfg_val' defined but not used [-Wunused-variable]
+ static uint32_t lcd_cfg_val;
+                 ^
+*** compiling C file modules/lpc4337_m4/board/src/mem_tests.c ***
+*** archiving static library board ***
+   text	   data	    bss	    dec	    hex	filename
+    876	      0	     18	    894	    37e	lpc_phy_smsc87x0.o (ex out/lpc4337_m4/libboard.a)
+    388	      0	      0	    388	    184	board_sysinit.o (ex out/lpc4337_m4/libboard.a)
+   1970	      0	      4	   1974	    7b6	board.o (ex out/lpc4337_m4/libboard.a)
+   1096	      0	      0	   1096	    448	mem_tests.o (ex out/lpc4337_m4/libboard.a)
+*** compiling C file modules/lpc4337_m4/chip/src/pinint_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/otp_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/gpio_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/emc_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/chip_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/wwdt_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/sdif_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/spi_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/i2s_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/clock_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/pmc_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/ring_buffer.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/stopwatch_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/ssp_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/uart_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/enet_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/i2c_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/sdmmc_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/timer_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/ritimer_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/sct_pwm_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/fpu_init.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/adc_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/sysinit_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/iap_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/i2cm_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/evrt_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/sct_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/rtc_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/gpdma_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/atimer_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/eeprom_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/aes_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/lcd_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/dac_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/sdio_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/hsadc_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/gpiogroup_18xx_43xx.c ***
+*** compiling C file modules/lpc4337_m4/chip/src/ccan_18xx_43xx.c ***
+*** archiving static library chip ***
+   text	   data	    bss	    dec	    hex	filename
+      0	      0	      0	      0	      0	pinint_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+    464	      0	     40	    504	    1f8	otp_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+    620	      0	      0	    620	    26c	gpio_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+   1452	      0	      0	   1452	    5ac	emc_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+    252	      0	      0	    252	     fc	chip_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+    132	      0	      0	    132	     84	wwdt_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+    696	      0	      0	    696	    2b8	sdif_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+   1056	      0	      0	   1056	    420	spi_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+   1336	      0	      0	   1336	    538	i2s_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+   4254	      0	      8	   4262	   10a6	clock_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+     56	      0	      0	     56	     38	pmc_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+    980	      0	      0	    980	    3d4	ring_buffer.o (ex out/lpc4337_m4/libchip.a)
+    388	      0	     12	    400	    190	stopwatch_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+   2320	      0	      0	   2320	    910	ssp_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+   2176	      0	      1	   2177	    881	uart_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+    676	      0	      4	    680	    2a8	enet_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+   3712	     56	     80	   3848	    f08	i2c_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+   3164	      0	      4	   3168	    c60	sdmmc_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+    308	      0	      0	    308	    134	timer_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+    244	      0	      0	    244	     f4	ritimer_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+    432	      0	      0	    432	    1b0	sct_pwm_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+    116	      0	      0	    116	     74	fpu_init.o (ex out/lpc4337_m4/libchip.a)
+   1100	      0	      0	   1100	    44c	adc_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+    600	      0	      0	    600	    258	sysinit_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+    652	      0	      0	    652	    28c	iap_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+   1684	      0	      0	   1684	    694	i2cm_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+    420	      0	      0	    420	    1a4	evrt_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+    188	      0	      0	    188	     bc	sct_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+    996	      0	      0	    996	    3e4	rtc_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+   2696	    120	      8	   2824	    b08	gpdma_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+    144	      0	      0	    144	     90	atimer_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+    360	      0	      0	    360	    168	eeprom_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+    648	      0	     56	    704	    2c0	aes_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+    924	      1	      0	    925	    39d	lcd_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+    156	      0	      0	    156	     9c	dac_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+   2644	      4	    320	   2968	    b98	sdio_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+    808	      0	      0	    808	    328	hsadc_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+      0	      0	      0	      0	      0	gpiogroup_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+   2072	      0	      0	   2072	    818	ccan_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+*** compiling C file Shi_Zeijer/src/rs232.c ***
+Shi_Zeijer/src/rs232.c: In function 'interrupcion232':
+Shi_Zeijer/src/rs232.c:30:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+Shi_Zeijer/src/rs232.c: In function 'RS232_Init':
+Shi_Zeijer/src/rs232.c:47:46: warning: passing argument 2 of 'uartRxInterruptCallbackSet' from incompatible pointer type
+      uartRxInterruptCallbackSet(ACTUAL_UART ,&interrupcion232);  // pointer to function
+                                              ^
+In file included from modules/lpc4337_m4/sapi/inc/sapi.h:51:0,
+                 from Shi_Zeijer/inc/comm.h:6,
+                 from Shi_Zeijer/inc/rs232.h:5,
+                 from Shi_Zeijer/src/rs232.c:1:
+modules/lpc4337_m4/sapi/inc/sapi_uart.h:118:6: note: expected 'callBackFuncPtr_t' but argument is of type 'void (* (*)(void))(void *)'
+ void uartRxInterruptCallbackSet( 
+      ^
+*** compiling C file Shi_Zeijer/src/main_MEF.c ***
+Shi_Zeijer/src/main_MEF.c: In function 'fill_lcd_buffer_aten_err':
+Shi_Zeijer/src/main_MEF.c:86:10: warning: variable 'digitos' set but not used [-Wunused-but-set-variable]
+  uint8_t digitos[3] = { 0, 0, 0 };
+          ^
+Shi_Zeijer/src/main_MEF.c: In function 'main_MEF_Update':
+Shi_Zeijer/src/main_MEF.c:183:6: warning: implicit declaration of function 'atoi' [-Wimplicit-function-declaration]
+      Aten_SetValue(atoi(param));
+      ^
+Shi_Zeijer/src/main_MEF.c:198:26: warning: passing argument 1 of 'LCD_Write_Buffer_Line' discards 'const' qualifier from pointer target type
+    LCD_Write_Buffer_Line(clear, 1);
+                          ^
+In file included from Shi_Zeijer/src/main_MEF.c:11:0:
+Shi_Zeijer/inc/lcd.h:61:6: note: expected 'uint8_t *' but argument is of type 'const uint8_t *'
+ void LCD_Write_Buffer_Line(uint8_t data[32],uint8_t line);
+      ^
+Shi_Zeijer/src/main_MEF.c:251:26: warning: passing argument 1 of 'LCD_Write_Buffer_Line' discards 'const' qualifier from pointer target type
+    LCD_Write_Buffer_Line(clear, 1);
+                          ^
+In file included from Shi_Zeijer/src/main_MEF.c:11:0:
+Shi_Zeijer/inc/lcd.h:61:6: note: expected 'uint8_t *' but argument is of type 'const uint8_t *'
+ void LCD_Write_Buffer_Line(uint8_t data[32],uint8_t line);
+      ^
+*** compiling C file Shi_Zeijer/src/rs485.c ***
+Shi_Zeijer/src/rs485.c: In function 'interrupcion485':
+Shi_Zeijer/src/rs485.c:29:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+Shi_Zeijer/src/rs485.c: In function 'RS485_Init':
+Shi_Zeijer/src/rs485.c:46:46: warning: passing argument 2 of 'uartRxInterruptCallbackSet' from incompatible pointer type
+      uartRxInterruptCallbackSet(ACTUAL_UART ,&interrupcion485);  // pointer to function
+                                              ^
+In file included from modules/lpc4337_m4/sapi/inc/sapi.h:51:0,
+                 from Shi_Zeijer/inc/comm.h:6,
+                 from Shi_Zeijer/inc/rs485.h:5,
+                 from Shi_Zeijer/src/rs485.c:1:
+modules/lpc4337_m4/sapi/inc/sapi_uart.h:118:6: note: expected 'callBackFuncPtr_t' but argument is of type 'void (* (*)(void))(void *)'
+ void uartRxInterruptCallbackSet( 
+      ^
+*** compiling C file Shi_Zeijer/src/eeprom.c ***
+*** compiling C file Shi_Zeijer/src/keypad.c ***
+*** compiling C file Shi_Zeijer/src/main.c ***
+Shi_Zeijer/src/main.c: In function 'main':
+Shi_Zeijer/src/main.c:91:12: warning: pointer targets in passing argument 1 of 'USB_Write' differ in signedness [-Wpointer-sign]
+  USB_Write("Hola.");
+            ^
+In file included from Shi_Zeijer/src/main.c:47:0:
+Shi_Zeijer/inc/usb.h:10:9: note: expected 'uint8_t *' but argument is of type 'char *'
+ void    USB_Write         (uint8_t *data );
+         ^
+*** compiling C file Shi_Zeijer/src/com_MEF.c ***
+Shi_Zeijer/src/com_MEF.c: In function 'com_MEF_Init':
+Shi_Zeijer/src/com_MEF.c:216:31: warning: pointer targets in passing argument 1 of 'fill_lcd_buffer_show_com_usb' differ in signedness [-Wpointer-sign]
+  fill_lcd_buffer_show_com_usb(data,EEPROM_GetUSBState(),EEPROM_GetUSBBaudRate());
+                               ^
+Shi_Zeijer/src/com_MEF.c:29:13: note: expected 'char *' but argument is of type 'uint8_t *'
+ static void fill_lcd_buffer_show_com_usb(char buffer[32], estado_t USB_estado,uint32_t USB_baud_rate) {
+             ^
+Shi_Zeijer/src/com_MEF.c: In function 'com_MEF_Update':
+Shi_Zeijer/src/com_MEF.c:224:32: warning: pointer targets in passing argument 1 of 'fill_lcd_buffer_show_com_usb' differ in signedness [-Wpointer-sign]
+   fill_lcd_buffer_show_com_usb(data,EEPROM_GetUSBState(),EEPROM_GetUSBBaudRate());
+                                ^
+Shi_Zeijer/src/com_MEF.c:29:13: note: expected 'char *' but argument is of type 'uint8_t *'
+ static void fill_lcd_buffer_show_com_usb(char buffer[32], estado_t USB_estado,uint32_t USB_baud_rate) {
+             ^
+Shi_Zeijer/src/com_MEF.c:323:32: warning: pointer targets in passing argument 1 of 'fill_lcd_buffer_show_com_usb' differ in signedness [-Wpointer-sign]
+   fill_lcd_buffer_show_com_usb(data,sState,EEPROM_GetUSBBaudRate());
+                                ^
+Shi_Zeijer/src/com_MEF.c:29:13: note: expected 'char *' but argument is of type 'uint8_t *'
+ static void fill_lcd_buffer_show_com_usb(char buffer[32], estado_t USB_estado,uint32_t USB_baud_rate) {
+             ^
+Shi_Zeijer/src/com_MEF.c:332:5: warning: implicit declaration of function 'USB_Init' [-Wimplicit-function-declaration]
+     USB_Init(EEPROM_GetUSBState(),EEPROM_GetUSBBaudRate());
+     ^
+Shi_Zeijer/src/com_MEF.c:363:5: warning: implicit declaration of function 'RS232_Init' [-Wimplicit-function-declaration]
+     RS232_Init(EEPROM_GetRS232State(),EEPROM_GetRS232BaudRate());
+     ^
+Shi_Zeijer/src/com_MEF.c:394:5: warning: implicit declaration of function 'RS485_Init' [-Wimplicit-function-declaration]
+     RS485_Init(EEPROM_GetRS485State(),EEPROM_GetRS485BaudRate());
+     ^
+Shi_Zeijer/src/com_MEF.c:416:32: warning: pointer targets in passing argument 1 of 'fill_lcd_buffer_show_com_usb' differ in signedness [-Wpointer-sign]
+   fill_lcd_buffer_show_com_usb(data,EEPROM_GetUSBState(),KEYPAD_GetValue(8));
+                                ^
+Shi_Zeijer/src/com_MEF.c:29:13: note: expected 'char *' but argument is of type 'uint8_t *'
+ static void fill_lcd_buffer_show_com_usb(char buffer[32], estado_t USB_estado,uint32_t USB_baud_rate) {
+             ^
+*** compiling C file Shi_Zeijer/src/lcd.c ***
+*** compiling C file Shi_Zeijer/src/usb.c ***
+Shi_Zeijer/src/usb.c: In function 'interrupcionUSB':
+Shi_Zeijer/src/usb.c:32:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+Shi_Zeijer/src/usb.c: In function 'USB_Init':
+Shi_Zeijer/src/usb.c:48:46: warning: passing argument 2 of 'uartRxInterruptCallbackSet' from incompatible pointer type
+      uartRxInterruptCallbackSet(ACTUAL_UART ,&interrupcionUSB);  // pointer to function
+                                              ^
+In file included from modules/lpc4337_m4/sapi/inc/sapi.h:51:0,
+                 from Shi_Zeijer/inc/comm.h:6,
+                 from Shi_Zeijer/inc/usb.h:4,
+                 from Shi_Zeijer/src/usb.c:1:
+modules/lpc4337_m4/sapi/inc/sapi_uart.h:118:6: note: expected 'callBackFuncPtr_t' but argument is of type 'void (* (*)(void))(void *)'
+ void uartRxInterruptCallbackSet( 
+      ^
+*** compiling C file Shi_Zeijer/src/comm.c ***
+Shi_Zeijer/src/comm.c: In function 'string_compare':
+Shi_Zeijer/src/comm.c:25:59: warning: operation on 'i' may be undefined [-Wsequence-point]
+  while ((str1[i] == str2[i]) & (str1[i] != '\0') & (str2[i++] != '\0'))
+                                                           ^
+Shi_Zeijer/src/comm.c:25:59: warning: operation on 'i' may be undefined [-Wsequence-point]
+Shi_Zeijer/src/comm.c:25:59: warning: operation on 'i' may be undefined [-Wsequence-point]
+Shi_Zeijer/src/comm.c: In function 'COMM_CheckCommand':
+Shi_Zeijer/src/comm.c:35:24: warning: pointer targets in passing argument 1 of 'strchr' differ in signedness [-Wpointer-sign]
+  uint8_t * p1 = strchr(v, ',');
+                        ^
+In file included from c:\ciaa\cygwin\usr\arm-none-eabi\arm-none-eabi\include\stdio.h:29:0,
+                 from modules/lpc4337_m4/board/inc/board_api.h:36,
+                 from modules/lpc4337_m4/board/inc/board.h:208,
+                 from modules/lpc4337_m4/sapi/inc/sapi_datatypes.h:43,
+                 from modules/lpc4337_m4/sapi/inc/sapi.h:41,
+                 from Shi_Zeijer/src/comm.c:1:
+c:\ciaa\cygwin\usr\arm-none-eabi\arm-none-eabi\include\string.h:27:8: note: expected 'const char *' but argument is of type 'uint8_t *'
+ char  *_EXFUN(strchr,(const char *, int));
+        ^
+Shi_Zeijer/src/comm.c:35:17: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+  uint8_t * p1 = strchr(v, ',');
+                 ^
+Shi_Zeijer/src/comm.c:38:25: warning: pointer targets in passing argument 2 of 'string_compare' differ in signedness [-Wpointer-sign]
+   if (string_compare(v, "EUSB")) {
+                         ^
+Shi_Zeijer/src/comm.c:23:15: note: expected 'uint8_t *' but argument is of type 'char *'
+ static bool_t string_compare(uint8_t *str1, uint8_t *str2) {
+               ^
+Shi_Zeijer/src/comm.c:56:12: warning: pointer targets in passing argument 1 of 'write' differ in signedness [-Wpointer-sign]
+      write("Apagado");
+            ^
+Shi_Zeijer/src/comm.c:17:13: note: expected 'uint8_t *' but argument is of type 'char *'
+ static void write(uint8_t *data) {
+             ^
+Shi_Zeijer/src/comm.c:59:12: warning: pointer targets in passing argument 1 of 'write' differ in signedness [-Wpointer-sign]
+      write("Primaria");
+            ^
+Shi_Zeijer/src/comm.c:17:13: note: expected 'uint8_t *' but argument is of type 'char *'
+ static void write(uint8_t *data) {
+             ^
+Shi_Zeijer/src/comm.c:62:12: warning: pointer targets in passing argument 1 of 'write' differ in signedness [-Wpointer-sign]
+      write("Secundaria");
+            ^
+Shi_Zeijer/src/comm.c:17:13: note: expected 'uint8_t *' but argument is of type 'char *'
+ static void write(uint8_t *data) {
+             ^
+Shi_Zeijer/src/comm.c:68:25: warning: pointer targets in passing argument 2 of 'string_compare' differ in signedness [-Wpointer-sign]
+   if (string_compare(v, "BRUSB")) {
+                         ^
+Shi_Zeijer/src/comm.c:23:15: note: expected 'uint8_t *' but argument is of type 'char *'
+ static bool_t string_compare(uint8_t *str1, uint8_t *str2) {
+               ^
+Shi_Zeijer/src/comm.c:79:5: warning: implicit declaration of function 'atoi' [-Wimplicit-function-declaration]
+     EEPROM_SetUSBBaudRate(atoi(v));
+     ^
+Shi_Zeijer/src/comm.c:84:25: warning: pointer targets in passing argument 2 of 'string_compare' differ in signedness [-Wpointer-sign]
+   if (string_compare(v, "E232")) {
+                         ^
+Shi_Zeijer/src/comm.c:23:15: note: expected 'uint8_t *' but argument is of type 'char *'
+ static bool_t string_compare(uint8_t *str1, uint8_t *str2) {
+               ^
+Shi_Zeijer/src/comm.c:102:12: warning: pointer targets in passing argument 1 of 'write' differ in signedness [-Wpointer-sign]
+      write("Apagado");
+            ^
+Shi_Zeijer/src/comm.c:17:13: note: expected 'uint8_t *' but argument is of type 'char *'
+ static void write(uint8_t *data) {
+             ^
+Shi_Zeijer/src/comm.c:105:12: warning: pointer targets in passing argument 1 of 'write' differ in signedness [-Wpointer-sign]
+      write("Primaria");
+            ^
+Shi_Zeijer/src/comm.c:17:13: note: expected 'uint8_t *' but argument is of type 'char *'
+ static void write(uint8_t *data) {
+             ^
+Shi_Zeijer/src/comm.c:108:12: warning: pointer targets in passing argument 1 of 'write' differ in signedness [-Wpointer-sign]
+      write("Secundaria");
+            ^
+Shi_Zeijer/src/comm.c:17:13: note: expected 'uint8_t *' but argument is of type 'char *'
+ static void write(uint8_t *data) {
+             ^
+Shi_Zeijer/src/comm.c:114:25: warning: pointer targets in passing argument 2 of 'string_compare' differ in signedness [-Wpointer-sign]
+   if (string_compare(v, "BR232")) {
+                         ^
+Shi_Zeijer/src/comm.c:23:15: note: expected 'uint8_t *' but argument is of type 'char *'
+ static bool_t string_compare(uint8_t *str1, uint8_t *str2) {
+               ^
+Shi_Zeijer/src/comm.c:130:25: warning: pointer targets in passing argument 2 of 'string_compare' differ in signedness [-Wpointer-sign]
+   if (string_compare(v, "E485")) {
+                         ^
+Shi_Zeijer/src/comm.c:23:15: note: expected 'uint8_t *' but argument is of type 'char *'
+ static bool_t string_compare(uint8_t *str1, uint8_t *str2) {
+               ^
+Shi_Zeijer/src/comm.c:148:12: warning: pointer targets in passing argument 1 of 'write' differ in signedness [-Wpointer-sign]
+      write("Apagado");
+            ^
+Shi_Zeijer/src/comm.c:17:13: note: expected 'uint8_t *' but argument is of type 'char *'
+ static void write(uint8_t *data) {
+             ^
+Shi_Zeijer/src/comm.c:151:12: warning: pointer targets in passing argument 1 of 'write' differ in signedness [-Wpointer-sign]
+      write("Primaria");
+            ^
+Shi_Zeijer/src/comm.c:17:13: note: expected 'uint8_t *' but argument is of type 'char *'
+ static void write(uint8_t *data) {
+             ^
+Shi_Zeijer/src/comm.c:154:12: warning: pointer targets in passing argument 1 of 'write' differ in signedness [-Wpointer-sign]
+      write("Secundaria");
+            ^
+Shi_Zeijer/src/comm.c:17:13: note: expected 'uint8_t *' but argument is of type 'char *'
+ static void write(uint8_t *data) {
+             ^
+Shi_Zeijer/src/comm.c:160:25: warning: pointer targets in passing argument 2 of 'string_compare' differ in signedness [-Wpointer-sign]
+   if (string_compare(v, "BR485")) {
+                         ^
+Shi_Zeijer/src/comm.c:23:15: note: expected 'uint8_t *' but argument is of type 'char *'
+ static bool_t string_compare(uint8_t *str1, uint8_t *str2) {
+               ^
+Shi_Zeijer/src/comm.c:175:25: warning: pointer targets in passing argument 2 of 'string_compare' differ in signedness [-Wpointer-sign]
+   if (string_compare(v, "ATEN")) {
+                         ^
+Shi_Zeijer/src/comm.c:23:15: note: expected 'uint8_t *' but argument is of type 'char *'
+ static bool_t string_compare(uint8_t *str1, uint8_t *str2) {
+               ^
+Shi_Zeijer/src/comm.c:181:9: warning: pointer targets in passing argument 1 of 'write' differ in signedness [-Wpointer-sign]
+   write("Comando Invalido");
+         ^
+Shi_Zeijer/src/comm.c:17:13: note: expected 'uint8_t *' but argument is of type 'char *'
+ static void write(uint8_t *data) {
+             ^
+Shi_Zeijer/src/comm.c:183:31: warning: pointer targets in passing argument 2 of 'string_compare' differ in signedness [-Wpointer-sign]
+  if (!string_compare(command, "EUSB") && !string_compare(command, "BRUSB")
+                               ^
+Shi_Zeijer/src/comm.c:23:15: note: expected 'uint8_t *' but argument is of type 'char *'
+ static bool_t string_compare(uint8_t *str1, uint8_t *str2) {
+               ^
+Shi_Zeijer/src/comm.c:183:67: warning: pointer targets in passing argument 2 of 'string_compare' differ in signedness [-Wpointer-sign]
+  if (!string_compare(command, "EUSB") && !string_compare(command, "BRUSB")
+                                                                   ^
+Shi_Zeijer/src/comm.c:23:15: note: expected 'uint8_t *' but argument is of type 'char *'
+ static bool_t string_compare(uint8_t *str1, uint8_t *str2) {
+               ^
+Shi_Zeijer/src/comm.c:184:32: warning: pointer targets in passing argument 2 of 'string_compare' differ in signedness [-Wpointer-sign]
+    && !string_compare(command, "E232")
+                                ^
+Shi_Zeijer/src/comm.c:23:15: note: expected 'uint8_t *' but argument is of type 'char *'
+ static bool_t string_compare(uint8_t *str1, uint8_t *str2) {
+               ^
+Shi_Zeijer/src/comm.c:185:32: warning: pointer targets in passing argument 2 of 'string_compare' differ in signedness [-Wpointer-sign]
+    && !string_compare(command, "BR232")
+                                ^
+Shi_Zeijer/src/comm.c:23:15: note: expected 'uint8_t *' but argument is of type 'char *'
+ static bool_t string_compare(uint8_t *str1, uint8_t *str2) {
+               ^
+Shi_Zeijer/src/comm.c:186:32: warning: pointer targets in passing argument 2 of 'string_compare' differ in signedness [-Wpointer-sign]
+    && !string_compare(command, "E485")
+                                ^
+Shi_Zeijer/src/comm.c:23:15: note: expected 'uint8_t *' but argument is of type 'char *'
+ static bool_t string_compare(uint8_t *str1, uint8_t *str2) {
+               ^
+Shi_Zeijer/src/comm.c:187:32: warning: pointer targets in passing argument 2 of 'string_compare' differ in signedness [-Wpointer-sign]
+    && !string_compare(command, "BR485")
+                                ^
+Shi_Zeijer/src/comm.c:23:15: note: expected 'uint8_t *' but argument is of type 'char *'
+ static bool_t string_compare(uint8_t *str1, uint8_t *str2) {
+               ^
+Shi_Zeijer/src/comm.c:188:32: warning: pointer targets in passing argument 2 of 'string_compare' differ in signedness [-Wpointer-sign]
+    && !string_compare(command, "ATEN")) {
+                                ^
+Shi_Zeijer/src/comm.c:23:15: note: expected 'uint8_t *' but argument is of type 'char *'
+ static bool_t string_compare(uint8_t *str1, uint8_t *str2) {
+               ^
+Shi_Zeijer/src/comm.c:189:9: warning: pointer targets in passing argument 1 of 'write' differ in signedness [-Wpointer-sign]
+   write("Comando Invalido");
+         ^
+Shi_Zeijer/src/comm.c:17:13: note: expected 'uint8_t *' but argument is of type 'char *'
+ static void write(uint8_t *data) {
+             ^
+Shi_Zeijer/src/comm.c:193:9: warning: pointer targets in passing argument 1 of 'write' differ in signedness [-Wpointer-sign]
+   write("OK.");
+         ^
+Shi_Zeijer/src/comm.c:17:13: note: expected 'uint8_t *' but argument is of type 'char *'
+ static void write(uint8_t *data) {
+             ^
+*** compiling C file Shi_Zeijer/src/aten.c ***
+*** compiling C file Shi_Zeijer/src/buzzer.c ***
 *** linking project Shi_Zeijer ***
    text	   data	    bss	    dec	    hex	filename
-  17272	     16	    260	  17548	   448c	out/lpc4337_m4/Shi_Zeijer.axf
+  24240	   1092	    316	  25648	   6430	out/lpc4337_m4/Shi_Zeijer.axf
 copy from `out/lpc4337_m4/Shi_Zeijer.axf' [elf32-littlearm] to `out/lpc4337_m4/Shi_Zeijer.bin' [binary]
 *** post-build ***
-make[1]: se sale del directorio '/cygdrive/c/Santiago/Universidad/35 Taller de Proyecto I/Git_TDP1/Firmware_v2'
+make[1]: se sale del directorio '/cygdrive/c/CIAA/Git_TDP1/Firmware_v2'
 
 Build complete.
 
 
-14:04:23 Build Finished (took 1s.479ms)
-=======
-11:25:43 **** Clean-only build of configuration Default for project Firmware_v2 ****
-make clean 
-Clean project...
-
-rm -f out/lpc4337_m4/obj/*.*
-rm -f out/lpc4337_m4/*.*
-rm -f *.launch
-
-Clean complete.
-
-
-11:25:44 Build Finished (took 1s.81ms)
->>>>>>> Desarrollo_PATERF_MEF
+11:28:51 Build Finished (took 44s.162ms)
 

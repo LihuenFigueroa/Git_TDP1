@@ -1,6 +1,6 @@
 /*
  * main_MEF.h
- *
+
  *  Created on: 18/12/2018
  *      Author: Lihuen
  */
@@ -9,23 +9,10 @@
 #define MAIN_MEF_H_
 
 #include "sapi.h"
-#include "com_MEF.h"
 
-typedef enum{
-	STATE_NORMAL,
-	STATE_CONFIG_ATEN,
-	STATE_CONFIG_COM
-} States;
 
-static States state;
-static States oldState;
-static keypad_t keypad;
-static uint16_t key;
-static char data[32];
-static uint8_t value;
-
-static void main_MEF_Init();
-static void main_MEF_Update();
+void main_MEF_Init();
+void main_MEF_Update();
 
 
 #endif /* MAIN_MEF_H_ */
