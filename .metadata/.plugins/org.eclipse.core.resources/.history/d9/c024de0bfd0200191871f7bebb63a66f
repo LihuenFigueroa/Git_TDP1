@@ -19,7 +19,7 @@ void COMM_Init() {
 
 
 void COMM_USBCheckCommand(uint8_t v[SIZE_BUFFER]) {
-	uint8_t * p1 = strchr(v, ',');
+	char * p1 = strchr(v, ',');
 	*(p1) = '\0';
 	if (v == "EUSB") {
 		v = ++p1;
@@ -56,7 +56,7 @@ void COMM_USBCheckCommand(uint8_t v[SIZE_BUFFER]) {
 	}
 }
 void COMM_RS232CheckCommand(uint8_t v[SIZE_BUFFER]) {
-	uint8_t * p1 = strchr(v, ',');
+	char * p1 = strchr(v, ',');
 	*(p1) = '\0';
 	if (v == "E232") {
 		v = ++p1;
@@ -94,7 +94,7 @@ void COMM_RS232CheckCommand(uint8_t v[SIZE_BUFFER]) {
 }
 
 void COMM_RS485CheckCommand(uint8_t v[SIZE_BUFFER]) {
-	uint8_t * p1 = strchr(v, ',');
+	char * p1 = strchr(v, ',');
 	*(p1) = '\0';
 	if (v == "E485") {
 		v = ++p1;

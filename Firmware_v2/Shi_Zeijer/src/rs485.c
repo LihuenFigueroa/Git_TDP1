@@ -18,12 +18,6 @@ static callBackFuncPtr_t interrupcion485(void){
 	else{
         if (!flag){
             buffer[pos++] = dato;
-            if (pos == SIZE_BUFFER)
-            {
-            	buffer[SIZE_BUFFER-1] = '\0';
-            	flag = 1;
-            	pos = 0;
-            }
         }
 	}
 }
@@ -38,8 +32,7 @@ void    RS485_GetBuffer     (uint8_t command[SIZE_BUFFER] ){
     }
     flag = 0;
 }
-void    RS485_Init		  (estado_t state, uint32_t baudRate ){
-    uartConfig(ACTUAL_UART,baudRate);
+void    RS485_SetState      (estado_t state){
     if (state == Primario)
     {
         uartRxInterruptSet(ACTUAL_UART, ON );
@@ -50,7 +43,9 @@ void    RS485_Init		  (estado_t state, uint32_t baudRate ){
         uartRxInterruptSet(ACTUAL_UART, OFF );
     }
 }
-
+void    RS485_SetBaudRate   (uint32_t baudRate){
+    uartConfig(ACTUAL_UART,baudRate);
+}
 void    RS485_Write         (uint8_t * data ){
     if (EEPROM_GetRS485State() != Apagado)
     {

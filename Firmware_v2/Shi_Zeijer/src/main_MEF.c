@@ -38,6 +38,7 @@ static void fill_lcd_buffer_normal(uint8_t buffer[16]){
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	buffer[0] = 'A';
 	buffer[1] = 'T';
 	buffer[2] = 'E';
@@ -49,6 +50,8 @@ static void fill_lcd_buffer_normal(uint8_t buffer[16]){
 	buffer[8] = 'O';
 	buffer[9] = 'N';
 =======
+=======
+>>>>>>> parent of 595d1f4... Final Para entregar
 	buffer[0] =	 'A';
 	buffer[1] =	 'T';
 	buffer[2] =	 'E';
@@ -59,6 +62,9 @@ static void fill_lcd_buffer_normal(uint8_t buffer[16]){
 	buffer[7] =	 'I';
 	buffer[8] =	 'O';
 	buffer[9] =  'N';
+<<<<<<< HEAD
+>>>>>>> parent of 595d1f4... Final Para entregar
+=======
 >>>>>>> parent of 595d1f4... Final Para entregar
 	buffer[10] = ' ';
 	buffer[11] = ':';
@@ -70,6 +76,7 @@ static void fill_lcd_buffer_normal(uint8_t buffer[16]){
 }
 static void fill_lcd_buffer_att(uint8_t buffer[16]){
 	uint16_t value = KEYPAD_GetValue(3);
+<<<<<<< HEAD
 <<<<<<< HEAD
 	uint8_t digitos[3] = { 0, 0, 0 };
 	uint16_t i = 0;
@@ -119,6 +126,16 @@ static void fill_lcd_buffer_normal(uint8_t data[32]){
 		i++;
 	}
 
+=======
+	uint8_t digitos[3] = {0,0,0};
+	uint16_t i=0;
+	while(value!=0){
+		digitos[i]=value % 10;
+		value=value /10;
+		i++;
+	}
+
+>>>>>>> parent of 595d1f4... Final Para entregar
 	buffer[0] =	 'A';
 	buffer[1] =	 'T';
 	buffer[2] =	 'E';
@@ -129,6 +146,9 @@ static void fill_lcd_buffer_normal(uint8_t data[32]){
 	buffer[7] =	 'I';
 	buffer[8] =	 'O';
 	buffer[9] =  'N';
+<<<<<<< HEAD
+>>>>>>> parent of 595d1f4... Final Para entregar
+=======
 >>>>>>> parent of 595d1f4... Final Para entregar
 	buffer[10] = ' ';
 	buffer[11] = ':';
@@ -138,6 +158,7 @@ static void fill_lcd_buffer_normal(uint8_t data[32]){
 	buffer[15] = digitos[0]+0x30;
 
 }
+<<<<<<< HEAD
 <<<<<<< HEAD
 static void fill_lcd_buffer_aten_err(uint8_t buffer[16]) {
 	uint16_t value = KEYPAD_GetValue(3);
@@ -199,6 +220,8 @@ static void fill_lcd_buffer_aten_err(uint8_t buffer[16]) {
 	data[31] = ' ';
 >>>>>>> parent of 9b6704a... AGREGADO MAIN MEF
 =======
+=======
+>>>>>>> parent of 595d1f4... Final Para entregar
 static void fill_lcd_buffer_aten_err(uint8_t buffer[16]){
 	uint16_t value=KEYPAD_GetValue(3);
 	uint8_t digitos[3] = {0,0,0};
@@ -224,16 +247,23 @@ static void fill_lcd_buffer_aten_err(uint8_t buffer[16]){
 		buffer[13] = 'A';
 		buffer[14] = ' ';
 		buffer[15] = ' ';
+<<<<<<< HEAD
+>>>>>>> parent of 595d1f4... Final Para entregar
+=======
 >>>>>>> parent of 595d1f4... Final Para entregar
 }
 */
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 void main_MEF_Init() {
 =======
 void main_MEF_Init(){
 >>>>>>> parent of 9b6704a... AGREGADO MAIN MEF
+=======
+void main_MEF_Init(){
+>>>>>>> parent of 595d1f4... Final Para entregar
 =======
 void main_MEF_Init(){
 >>>>>>> parent of 595d1f4... Final Para entregar
@@ -265,6 +295,7 @@ void main_MEF_Init(){
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 void main_MEF_Update() {
 	uint8_t *param;
 =======
@@ -277,12 +308,16 @@ void main_MEF_Update(){
 =======
  void main_MEF_Update(){
 >>>>>>> parent of 595d1f4... Final Para entregar
+=======
+ void main_MEF_Update(){
+>>>>>>> parent of 595d1f4... Final Para entregar
 	KEYPAD_Interrupt();
 	switch(state){
 	case STATE_NORMAL:
 <<<<<<< HEAD
 		LCD_cursor_off();
 		LCD_cursor_blink_off();
+<<<<<<< HEAD
 <<<<<<< HEAD
 		key = KEYPAD_LastKey();
 		if (key) { // Si se apreto alguna tecla...
@@ -294,6 +329,11 @@ void main_MEF_Update(){
 		if(key){ // Si se apreto alguna tecla...
 			switch(key){
 >>>>>>> parent of 9b6704a... AGREGADO MAIN MEF
+=======
+		key=KEYPAD_LastKey();
+		if(key){ // Si se apreto alguna tecla...
+			switch(key){
+>>>>>>> parent of 595d1f4... Final Para entregar
 =======
 		key=KEYPAD_LastKey();
 		if(key){ // Si se apreto alguna tecla...
@@ -316,9 +356,15 @@ void main_MEF_Update(){
 				break;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 			case 16: // TECLA D, CONFIG COMUNICACION
 				oldState = STATE_NORMAL;
 				state = STATE_CONFIG_COM;
+=======
+			case 16:// TECLA D, CONFIG COMUNICACION
+				oldState=STATE_NORMAL;
+				state=STATE_CONFIG_COM;
+>>>>>>> parent of 595d1f4... Final Para entregar
 =======
 			case 16:// TECLA D, CONFIG COMUNICACION
 				oldState=STATE_NORMAL;
@@ -337,6 +383,7 @@ void main_MEF_Update(){
 				break;
 			}
 		}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 		if (COMM_CheckSerials(&param)){
@@ -403,6 +450,9 @@ void main_MEF_Update(){
 =======
 			COMM_CheckSerials();
 >>>>>>> parent of 595d1f4... Final Para entregar
+=======
+			COMM_CheckSerials();
+>>>>>>> parent of 595d1f4... Final Para entregar
 		break;
 	case STATE_CONFIG_ATEN:
 		fill_lcd_buffer_att(data);
@@ -433,6 +483,7 @@ void main_MEF_Update(){
 					}
 					break;
 				case 8:// TECLA B, UN CANCELAR
+<<<<<<< HEAD
 					KEYPAD_Buffer_Number_Clear();
 					fill_lcd_buffer_normal(data); // ACA ADENTRO CONVIERTO EN ASCII LOS NUMEROS DEL TECLADO
 					LCD_Write_Buffer_Line(data,0);
@@ -441,6 +492,16 @@ void main_MEF_Update(){
 					break;
 				case 12:// TECLA C, NOP
 					KEYPAD_Buffer_Number_Clear();
+=======
+					KEYPAD_Buffer_Number_Clear();
+					fill_lcd_buffer_normal(data); // ACA ADENTRO CONVIERTO EN ASCII LOS NUMEROS DEL TECLADO
+					LCD_Write_Buffer_Line(data,0);
+					oldState=STATE_CONFIG_ATEN;
+					state=STATE_NORMAL;
+					break;
+				case 12:// TECLA C, NOP
+					KEYPAD_Buffer_Number_Clear();
+>>>>>>> parent of 595d1f4... Final Para entregar
 					oldState=STATE_CONFIG_ATEN;
 					state=STATE_CONFIG_ATEN;
 					break;

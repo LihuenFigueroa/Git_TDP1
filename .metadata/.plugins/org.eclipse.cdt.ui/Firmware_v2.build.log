@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 14:22:03 **** Build of configuration Default for project Firmware_v2 ****
 make all 
+=======
+23:53:22 **** Incremental Build of configuration Default for project Firmware_v2 ****
+make 
+>>>>>>> parent of 595d1f4... Final Para entregar
 Build project...
 
 make[1]: se entra en el directorio '/cygdrive/c/Users/Lihuen/Desktop/Firmware_v2'
@@ -51,6 +56,7 @@ modules/lpc4337_m4/sapi/src/sapi_timer.c:89:4: warning: (near initialization for
 *** compiling C file modules/lpc4337_m4/sapi/src/sapi_datatypes.c ***
 *** archiving static library sapi ***
    text	   data	    bss	    dec	    hex	filename
+<<<<<<< HEAD
    1314	      0	      0	   1314	    522	sapi_gpio.o (ex out/lpc4337_m4/libsapi.a)
    1131	      1	      1	   1133	    46d	sapi_stdio.o (ex out/lpc4337_m4/libsapi.a)
     416	      0	      0	    416	    1a0	sapi_spi.o (ex out/lpc4337_m4/libsapi.a)
@@ -300,4 +306,15 @@ Makefile:86: fallo en las instrucciones para el objetivo 'all'
 make: *** [all] Error 2
 
 14:22:48 Build Finished (took 45s.130ms)
+=======
+  22156	     16	    316	  22488	   57d8	out/lpc4337_m4/Shi_Zeijer.axf
+copy from `out/lpc4337_m4/Shi_Zeijer.axf' [elf32-littlearm] to `out/lpc4337_m4/Shi_Zeijer.bin' [binary]
+*** post-build ***
+make[1]: se sale del directorio '/cygdrive/c/Santiago/Universidad/35 Taller de Proyecto I/Git_TDP1/Firmware_v2'
+
+Build complete.
+
+
+23:53:23 Build Finished (took 1s.545ms)
+>>>>>>> parent of 595d1f4... Final Para entregar
 

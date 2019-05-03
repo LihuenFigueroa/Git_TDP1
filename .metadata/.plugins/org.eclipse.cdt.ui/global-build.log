@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 14:22:03 **** Build of configuration Default for project Firmware_v2 ****
 make all 
+=======
+23:52:35 **** Build of configuration Default for project Firmware_v2 ****
+make 
+>>>>>>> parent of 595d1f4... Final Para entregar
 Build project...
 
 make[1]: se entra en el directorio '/cygdrive/c/Users/Lihuen/Desktop/Firmware_v2'
@@ -184,11 +189,11 @@ modules/lpc4337_m4/board/src/board.c:50:17: warning: 'lcd_cfg_val' defined but n
    2072	      0	      0	   2072	    818	ccan_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
 *** compiling C file Shi_Zeijer/src/rs232.c ***
 Shi_Zeijer/src/rs232.c: In function 'interrupcion232':
-Shi_Zeijer/src/rs232.c:30:1: warning: no return statement in function returning non-void [-Wreturn-type]
+Shi_Zeijer/src/rs232.c:24:1: warning: no return statement in function returning non-void [-Wreturn-type]
  }
  ^
-Shi_Zeijer/src/rs232.c: In function 'RS232_Init':
-Shi_Zeijer/src/rs232.c:47:46: warning: passing argument 2 of 'uartRxInterruptCallbackSet' from incompatible pointer type
+Shi_Zeijer/src/rs232.c: In function 'RS232_SetState':
+Shi_Zeijer/src/rs232.c:40:46: warning: passing argument 2 of 'uartRxInterruptCallbackSet' from incompatible pointer type
       uartRxInterruptCallbackSet(ACTUAL_UART ,&interrupcion232);  // pointer to function
                                               ^
 In file included from modules/lpc4337_m4/sapi/inc/sapi.h:51:0,
@@ -199,6 +204,7 @@ modules/lpc4337_m4/sapi/inc/sapi_uart.h:118:6: note: expected 'callBackFuncPtr_t
  void uartRxInterruptCallbackSet( 
       ^
 *** compiling C file Shi_Zeijer/src/main_MEF.c ***
+<<<<<<< HEAD
 In file included from Shi_Zeijer/src/main_MEF.c:8:0:
 Shi_Zeijer/inc/main_MEF.h:12:1: error: expected identifier or '(' before '<<' token
  <<<<<<< HEAD
@@ -298,3 +304,248 @@ make[1]: *** [main_MEF.o] Error 1
 make[1]: se sale del directorio '/cygdrive/c/Users/Lihuen/Desktop/Firmware_v2'
 Makefile:86: fallo en las instrucciones para el objetivo 'all'
 make: *** [all] Error 2
+=======
+Shi_Zeijer/src/main_MEF.c: In function 'fill_lcd_buffer_aten_err':
+Shi_Zeijer/src/main_MEF.c:87:10: warning: variable 'digitos' set but not used [-Wunused-but-set-variable]
+  uint8_t digitos[3] = {0,0,0};
+          ^
+Shi_Zeijer/src/main_MEF.c: In function 'main_MEF_Update':
+Shi_Zeijer/src/main_MEF.c:184:27: warning: passing argument 1 of 'LCD_Write_Buffer_Line' discards 'const' qualifier from pointer target type
+     LCD_Write_Buffer_Line(clear,1);
+                           ^
+In file included from Shi_Zeijer/src/main_MEF.c:11:0:
+Shi_Zeijer/inc/lcd.h:61:6: note: expected 'uint8_t *' but argument is of type 'const uint8_t *'
+ void LCD_Write_Buffer_Line(uint8_t data[32],uint8_t line);
+      ^
+Shi_Zeijer/src/main_MEF.c:243:26: warning: passing argument 1 of 'LCD_Write_Buffer_Line' discards 'const' qualifier from pointer target type
+    LCD_Write_Buffer_Line(clear,1);
+                          ^
+In file included from Shi_Zeijer/src/main_MEF.c:11:0:
+Shi_Zeijer/inc/lcd.h:61:6: note: expected 'uint8_t *' but argument is of type 'const uint8_t *'
+ void LCD_Write_Buffer_Line(uint8_t data[32],uint8_t line);
+      ^
+*** compiling C file Shi_Zeijer/src/rs485.c ***
+Shi_Zeijer/src/rs485.c: In function 'interrupcion485':
+Shi_Zeijer/src/rs485.c:23:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+Shi_Zeijer/src/rs485.c: In function 'RS485_SetState':
+Shi_Zeijer/src/rs485.c:39:46: warning: passing argument 2 of 'uartRxInterruptCallbackSet' from incompatible pointer type
+      uartRxInterruptCallbackSet(ACTUAL_UART ,&interrupcion485);  // pointer to function
+                                              ^
+In file included from modules/lpc4337_m4/sapi/inc/sapi.h:51:0,
+                 from Shi_Zeijer/inc/comm.h:6,
+                 from Shi_Zeijer/inc/rs485.h:5,
+                 from Shi_Zeijer/src/rs485.c:1:
+modules/lpc4337_m4/sapi/inc/sapi_uart.h:118:6: note: expected 'callBackFuncPtr_t' but argument is of type 'void (* (*)(void))(void *)'
+ void uartRxInterruptCallbackSet( 
+      ^
+*** compiling C file Shi_Zeijer/src/eeprom.c ***
+*** compiling C file Shi_Zeijer/src/keypad.c ***
+*** compiling C file Shi_Zeijer/src/main.c ***
+*** compiling C file Shi_Zeijer/src/com_MEF.c ***
+Shi_Zeijer/src/com_MEF.c: In function 'com_MEF_Init':
+Shi_Zeijer/src/com_MEF.c:216:31: warning: pointer targets in passing argument 1 of 'fill_lcd_buffer_show_com_usb' differ in signedness [-Wpointer-sign]
+  fill_lcd_buffer_show_com_usb(data,EEPROM_GetUSBState(),EEPROM_GetUSBBaudRate());
+                               ^
+Shi_Zeijer/src/com_MEF.c:29:13: note: expected 'char *' but argument is of type 'uint8_t *'
+ static void fill_lcd_buffer_show_com_usb(char buffer[32], estado_t USB_estado,uint32_t USB_baud_rate) {
+             ^
+Shi_Zeijer/src/com_MEF.c: In function 'com_MEF_Update':
+Shi_Zeijer/src/com_MEF.c:224:32: warning: pointer targets in passing argument 1 of 'fill_lcd_buffer_show_com_usb' differ in signedness [-Wpointer-sign]
+   fill_lcd_buffer_show_com_usb(data,EEPROM_GetUSBState(),EEPROM_GetUSBBaudRate());
+                                ^
+Shi_Zeijer/src/com_MEF.c:29:13: note: expected 'char *' but argument is of type 'uint8_t *'
+ static void fill_lcd_buffer_show_com_usb(char buffer[32], estado_t USB_estado,uint32_t USB_baud_rate) {
+             ^
+Shi_Zeijer/src/com_MEF.c:316:32: warning: pointer targets in passing argument 1 of 'fill_lcd_buffer_show_com_usb' differ in signedness [-Wpointer-sign]
+   fill_lcd_buffer_show_com_usb(data,sState,EEPROM_GetUSBBaudRate());
+                                ^
+Shi_Zeijer/src/com_MEF.c:29:13: note: expected 'char *' but argument is of type 'uint8_t *'
+ static void fill_lcd_buffer_show_com_usb(char buffer[32], estado_t USB_estado,uint32_t USB_baud_rate) {
+             ^
+Shi_Zeijer/src/com_MEF.c:413:32: warning: pointer targets in passing argument 1 of 'fill_lcd_buffer_show_com_usb' differ in signedness [-Wpointer-sign]
+   fill_lcd_buffer_show_com_usb(data,EEPROM_GetUSBState(),KEYPAD_GetValue(8));
+                                ^
+Shi_Zeijer/src/com_MEF.c:29:13: note: expected 'char *' but argument is of type 'uint8_t *'
+ static void fill_lcd_buffer_show_com_usb(char buffer[32], estado_t USB_estado,uint32_t USB_baud_rate) {
+             ^
+*** compiling C file Shi_Zeijer/src/lcd.c ***
+*** compiling C file Shi_Zeijer/src/usb.c ***
+Shi_Zeijer/src/usb.c: In function 'interrupcionUSB':
+Shi_Zeijer/src/usb.c:23:1: warning: no return statement in function returning non-void [-Wreturn-type]
+ }
+ ^
+Shi_Zeijer/src/usb.c: In function 'USB_SetState':
+Shi_Zeijer/src/usb.c:38:46: warning: passing argument 2 of 'uartRxInterruptCallbackSet' from incompatible pointer type
+      uartRxInterruptCallbackSet(ACTUAL_UART ,&interrupcionUSB);  // pointer to function
+                                              ^
+In file included from modules/lpc4337_m4/sapi/inc/sapi.h:51:0,
+                 from Shi_Zeijer/inc/comm.h:6,
+                 from Shi_Zeijer/inc/usb.h:4,
+                 from Shi_Zeijer/src/usb.c:1:
+modules/lpc4337_m4/sapi/inc/sapi_uart.h:118:6: note: expected 'callBackFuncPtr_t' but argument is of type 'void (* (*)(void))(void *)'
+ void uartRxInterruptCallbackSet( 
+      ^
+*** compiling C file Shi_Zeijer/src/comm.c ***
+Shi_Zeijer/src/comm.c: In function 'COMM_USBCheckCommand':
+Shi_Zeijer/src/comm.c:22:24: warning: pointer targets in passing argument 1 of 'strchr' differ in signedness [-Wpointer-sign]
+  uint8_t * p1 = strchr(v, ',');
+                        ^
+In file included from c:\ciaa\cygwin\usr\arm-none-eabi\arm-none-eabi\include\stdio.h:29:0,
+                 from modules/lpc4337_m4/board/inc/board_api.h:36,
+                 from modules/lpc4337_m4/board/inc/board.h:208,
+                 from modules/lpc4337_m4/sapi/inc/sapi_datatypes.h:43,
+                 from modules/lpc4337_m4/sapi/inc/sapi.h:41,
+                 from Shi_Zeijer/src/comm.c:1:
+c:\ciaa\cygwin\usr\arm-none-eabi\arm-none-eabi\include\string.h:27:8: note: expected 'const char *' but argument is of type 'uint8_t *'
+ char  *_EXFUN(strchr,(const char *, int));
+        ^
+Shi_Zeijer/src/comm.c:22:17: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+  uint8_t * p1 = strchr(v, ',');
+                 ^
+Shi_Zeijer/src/comm.c:24:8: warning: comparison of distinct pointer types lacks a cast
+  if (v == "EUSB") {
+        ^
+Shi_Zeijer/src/comm.c:24:8: warning: comparison with string literal results in unspecified behavior [-Waddress]
+Shi_Zeijer/src/comm.c:39:17: warning: pointer targets in passing argument 1 of 'RS485_Write' differ in signedness [-Wpointer-sign]
+     RS485_Write("Apagado");
+                 ^
+In file included from Shi_Zeijer/src/comm.c:5:0:
+Shi_Zeijer/inc/rs485.h:12:9: note: expected 'uint8_t *' but argument is of type 'char *'
+ void    RS485_Write         (uint8_t *data);
+         ^
+Shi_Zeijer/src/comm.c:42:17: warning: pointer targets in passing argument 1 of 'RS485_Write' differ in signedness [-Wpointer-sign]
+     RS485_Write("Primaria");
+                 ^
+In file included from Shi_Zeijer/src/comm.c:5:0:
+Shi_Zeijer/inc/rs485.h:12:9: note: expected 'uint8_t *' but argument is of type 'char *'
+ void    RS485_Write         (uint8_t *data);
+         ^
+Shi_Zeijer/src/comm.c:45:17: warning: pointer targets in passing argument 1 of 'RS485_Write' differ in signedness [-Wpointer-sign]
+     RS485_Write("Secundaria");
+                 ^
+In file included from Shi_Zeijer/src/comm.c:5:0:
+Shi_Zeijer/inc/rs485.h:12:9: note: expected 'uint8_t *' but argument is of type 'char *'
+ void    RS485_Write         (uint8_t *data);
+         ^
+Shi_Zeijer/src/comm.c:50:9: warning: comparison of distinct pointer types lacks a cast
+   if (v == "BRUSB") {
+         ^
+Shi_Zeijer/src/comm.c:50:9: warning: comparison with string literal results in unspecified behavior [-Waddress]
+Shi_Zeijer/src/comm.c: In function 'COMM_RS232CheckCommand':
+Shi_Zeijer/src/comm.c:59:24: warning: pointer targets in passing argument 1 of 'strchr' differ in signedness [-Wpointer-sign]
+  uint8_t * p1 = strchr(v, ',');
+                        ^
+In file included from c:\ciaa\cygwin\usr\arm-none-eabi\arm-none-eabi\include\stdio.h:29:0,
+                 from modules/lpc4337_m4/board/inc/board_api.h:36,
+                 from modules/lpc4337_m4/board/inc/board.h:208,
+                 from modules/lpc4337_m4/sapi/inc/sapi_datatypes.h:43,
+                 from modules/lpc4337_m4/sapi/inc/sapi.h:41,
+                 from Shi_Zeijer/src/comm.c:1:
+c:\ciaa\cygwin\usr\arm-none-eabi\arm-none-eabi\include\string.h:27:8: note: expected 'const char *' but argument is of type 'uint8_t *'
+ char  *_EXFUN(strchr,(const char *, int));
+        ^
+Shi_Zeijer/src/comm.c:59:17: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+  uint8_t * p1 = strchr(v, ',');
+                 ^
+Shi_Zeijer/src/comm.c:61:8: warning: comparison of distinct pointer types lacks a cast
+  if (v == "E232") {
+        ^
+Shi_Zeijer/src/comm.c:61:8: warning: comparison with string literal results in unspecified behavior [-Waddress]
+Shi_Zeijer/src/comm.c:76:17: warning: pointer targets in passing argument 1 of 'RS485_Write' differ in signedness [-Wpointer-sign]
+     RS485_Write("Apagado");
+                 ^
+In file included from Shi_Zeijer/src/comm.c:5:0:
+Shi_Zeijer/inc/rs485.h:12:9: note: expected 'uint8_t *' but argument is of type 'char *'
+ void    RS485_Write         (uint8_t *data);
+         ^
+Shi_Zeijer/src/comm.c:79:17: warning: pointer targets in passing argument 1 of 'RS485_Write' differ in signedness [-Wpointer-sign]
+     RS485_Write("Primaria");
+                 ^
+In file included from Shi_Zeijer/src/comm.c:5:0:
+Shi_Zeijer/inc/rs485.h:12:9: note: expected 'uint8_t *' but argument is of type 'char *'
+ void    RS485_Write         (uint8_t *data);
+         ^
+Shi_Zeijer/src/comm.c:82:17: warning: pointer targets in passing argument 1 of 'RS485_Write' differ in signedness [-Wpointer-sign]
+     RS485_Write("Secundaria");
+                 ^
+In file included from Shi_Zeijer/src/comm.c:5:0:
+Shi_Zeijer/inc/rs485.h:12:9: note: expected 'uint8_t *' but argument is of type 'char *'
+ void    RS485_Write         (uint8_t *data);
+         ^
+Shi_Zeijer/src/comm.c:87:9: warning: comparison of distinct pointer types lacks a cast
+   if (v == "BR232") {
+         ^
+Shi_Zeijer/src/comm.c:87:9: warning: comparison with string literal results in unspecified behavior [-Waddress]
+Shi_Zeijer/src/comm.c: In function 'COMM_RS485CheckCommand':
+Shi_Zeijer/src/comm.c:97:24: warning: pointer targets in passing argument 1 of 'strchr' differ in signedness [-Wpointer-sign]
+  uint8_t * p1 = strchr(v, ',');
+                        ^
+In file included from c:\ciaa\cygwin\usr\arm-none-eabi\arm-none-eabi\include\stdio.h:29:0,
+                 from modules/lpc4337_m4/board/inc/board_api.h:36,
+                 from modules/lpc4337_m4/board/inc/board.h:208,
+                 from modules/lpc4337_m4/sapi/inc/sapi_datatypes.h:43,
+                 from modules/lpc4337_m4/sapi/inc/sapi.h:41,
+                 from Shi_Zeijer/src/comm.c:1:
+c:\ciaa\cygwin\usr\arm-none-eabi\arm-none-eabi\include\string.h:27:8: note: expected 'const char *' but argument is of type 'uint8_t *'
+ char  *_EXFUN(strchr,(const char *, int));
+        ^
+Shi_Zeijer/src/comm.c:97:17: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+  uint8_t * p1 = strchr(v, ',');
+                 ^
+Shi_Zeijer/src/comm.c:99:8: warning: comparison of distinct pointer types lacks a cast
+  if (v == "E485") {
+        ^
+Shi_Zeijer/src/comm.c:99:8: warning: comparison with string literal results in unspecified behavior [-Waddress]
+Shi_Zeijer/src/comm.c:114:17: warning: pointer targets in passing argument 1 of 'RS485_Write' differ in signedness [-Wpointer-sign]
+     RS485_Write("Apagado");
+                 ^
+In file included from Shi_Zeijer/src/comm.c:5:0:
+Shi_Zeijer/inc/rs485.h:12:9: note: expected 'uint8_t *' but argument is of type 'char *'
+ void    RS485_Write         (uint8_t *data);
+         ^
+Shi_Zeijer/src/comm.c:117:17: warning: pointer targets in passing argument 1 of 'RS485_Write' differ in signedness [-Wpointer-sign]
+     RS485_Write("Primaria");
+                 ^
+In file included from Shi_Zeijer/src/comm.c:5:0:
+Shi_Zeijer/inc/rs485.h:12:9: note: expected 'uint8_t *' but argument is of type 'char *'
+ void    RS485_Write         (uint8_t *data);
+         ^
+Shi_Zeijer/src/comm.c:120:17: warning: pointer targets in passing argument 1 of 'RS485_Write' differ in signedness [-Wpointer-sign]
+     RS485_Write("Secundaria");
+                 ^
+In file included from Shi_Zeijer/src/comm.c:5:0:
+Shi_Zeijer/inc/rs485.h:12:9: note: expected 'uint8_t *' but argument is of type 'char *'
+ void    RS485_Write         (uint8_t *data);
+         ^
+Shi_Zeijer/src/comm.c:127:8: warning: comparison of distinct pointer types lacks a cast
+  if (v == "BR485") {
+        ^
+Shi_Zeijer/src/comm.c:127:8: warning: comparison with string literal results in unspecified behavior [-Waddress]
+*** compiling C file Shi_Zeijer/src/aten.c ***
+*** compiling C file Shi_Zeijer/src/buzzer.c ***
+*** linking project Shi_Zeijer ***
+   text	   data	    bss	    dec	    hex	filename
+  22156	     16	    316	  22488	   57d8	out/lpc4337_m4/Shi_Zeijer.axf
+copy from `out/lpc4337_m4/Shi_Zeijer.axf' [elf32-littlearm] to `out/lpc4337_m4/Shi_Zeijer.bin' [binary]
+*** post-build ***
+make[1]: se sale del directorio '/cygdrive/c/Santiago/Universidad/35 Taller de Proyecto I/Git_TDP1/Firmware_v2'
+
+Build complete.
+
+23:53:22 **** Incremental Build of configuration Default for project Firmware_v2 ****
+make 
+Build project...
+
+make[1]: se entra en el directorio '/cygdrive/c/Santiago/Universidad/35 Taller de Proyecto I/Git_TDP1/Firmware_v2'
+*** linking project Shi_Zeijer ***
+   text	   data	    bss	    dec	    hex	filename
+  22156	     16	    316	  22488	   57d8	out/lpc4337_m4/Shi_Zeijer.axf
+copy from `out/lpc4337_m4/Shi_Zeijer.axf' [elf32-littlearm] to `out/lpc4337_m4/Shi_Zeijer.bin' [binary]
+*** post-build ***
+make[1]: se sale del directorio '/cygdrive/c/Santiago/Universidad/35 Taller de Proyecto I/Git_TDP1/Firmware_v2'
+
+Build complete.
+
+>>>>>>> parent of 595d1f4... Final Para entregar

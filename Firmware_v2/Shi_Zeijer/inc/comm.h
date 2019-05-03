@@ -7,6 +7,9 @@
 typedef enum { Primario, Secundario, Apagado } estado_t;
 
 void COMM_Init();
-uint8_t COMM_CheckSerials(uint8_t **param) ;
+void COMM_CheckSerials();
+void COMM_UsbCheckCommand(uint8_t v[SIZE_BUFFER]);
+void COMM_Rs232CheckCommand(uint8_t v[SIZE_BUFFER]);
+void COMM_Rs485CheckCommand(uint8_t v[SIZE_BUFFER]);
 
 #endif
