@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 11:28:07 **** Build of configuration Default for project Firmware_v2 ****
+=======
+23:53:22 **** Incremental Build of configuration Default for project Firmware_v2 ****
+>>>>>>> parent of 595d1f4... Final Para entregar
 make 
 Build project...
 
@@ -487,7 +491,7 @@ Shi_Zeijer/src/comm.c:17:13: note: expected 'uint8_t *' but argument is of type 
 *** compiling C file Shi_Zeijer/src/buzzer.c ***
 *** linking project Shi_Zeijer ***
    text	   data	    bss	    dec	    hex	filename
-  24240	   1092	    316	  25648	   6430	out/lpc4337_m4/Shi_Zeijer.axf
+  22156	     16	    316	  22488	   57d8	out/lpc4337_m4/Shi_Zeijer.axf
 copy from `out/lpc4337_m4/Shi_Zeijer.axf' [elf32-littlearm] to `out/lpc4337_m4/Shi_Zeijer.bin' [binary]
 *** post-build ***
 make[1]: se sale del directorio '/cygdrive/c/CIAA/Git_TDP1/Firmware_v2'
@@ -495,5 +499,9 @@ make[1]: se sale del directorio '/cygdrive/c/CIAA/Git_TDP1/Firmware_v2'
 Build complete.
 
 
+<<<<<<< HEAD
 11:28:51 Build Finished (took 44s.162ms)
+=======
+23:53:23 Build Finished (took 1s.545ms)
+>>>>>>> parent of 595d1f4... Final Para entregar
 

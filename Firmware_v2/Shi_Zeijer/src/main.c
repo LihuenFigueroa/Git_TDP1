@@ -44,7 +44,7 @@
 #include "lcd.h"
 #include "main_MEF.h"
 #include "buzzer.h"
-#include "usb.h"
+
 #define TICKRATE_1MS	(1)				/* 1000 ticks per second */
 #define TICKRATE_MS		1	/* 1000 ticks per second */
 
@@ -88,7 +88,6 @@ int main(void)
 	tickCallbackSet( myTickHook, (void*)NULL );
 	main_MEF_Init();
 	BUZZER_Ring();
-	USB_Write("Hola.");
 	for(;;)
 	{
 		if (SysTick_LCD_Flag)
