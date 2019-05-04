@@ -1,0 +1,20 @@
+/*
+ * eeprom_test.h
+ *
+ *  Created on: 15/12/2018
+ *      Author: Lihuen
+ */
+
+#ifndef EEPROM_TEST_H_
+#define EEPROM_TEST_H_
+
+#include "eeprom_18xx_43xx.h"
+#include "eeprom_18xx_43xx.c"
+#include "sapi.h"
+#include "chip.h"
+
+int32_t Board_EEPROM_writeByte(uint32_t addr,uint8_t value);
+int32_t Board_EEPROM_readByte(uint32_t addr);
+void Board_EEPROM_init(void);
+
+#endif /* EEPROM_TEST_H_ */

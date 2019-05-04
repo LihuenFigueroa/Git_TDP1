@@ -1,0 +1,18 @@
+#include <comm.h>
+
+uint8_t COMM_CheckSerials(){
+	if(USB_Flag()){
+		USB_Buffer(buffer);
+		COMM_CheckCommand();
+	}
+	if(USB_Flag()){
+		USB_Buffer(buffer);
+	}
+	if(USB_Flag()){
+		USB_Buffer(buffer);
+	}
+}
+
+uint8_t COMM_CheckCommand(){
+
+}

@@ -1,0 +1,7 @@
+#include <comm.h>
+
+uint8_t COMM_Check(){
+	if(USB_Flag()){
+		USB_Buffer(buffer);//pedir buffer
+	}
+}
