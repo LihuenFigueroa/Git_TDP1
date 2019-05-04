@@ -25,6 +25,7 @@ static uint8_t data[32];
 static uint32_t value;
 static const uint8_t clear[16] = { 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32,
 		32, 32, 32, 32, 32 };
+
 static void fill_lcd_buffer_normal(uint8_t buffer[16]) {
 	uint16_t value = Aten_Get_Actual_Aten();
 	uint8_t digitos[3] = { 0, 0, 0 };
