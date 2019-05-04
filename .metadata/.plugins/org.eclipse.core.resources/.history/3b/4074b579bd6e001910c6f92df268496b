@@ -215,6 +215,7 @@ void main_MEF_Update() {
 				respuesta[7]=aten_digitos[1];
 				respuesta[8]=aten_digitos[2];
 				write(respuesta);
+				write(aten_digitos);
 				break;
 			case '?':
 				aten = Aten_Get_Actual_Aten();
@@ -237,15 +238,7 @@ void main_MEF_Update() {
 			default:
 				aten = atoi(param);
 				Aten_SetValue(aten);
-				respuesta[0]='A';
-				respuesta[1]='T';
-				respuesta[2]='E';
-				respuesta[3]='N';
-				respuesta[4]=':';
-				respuesta[5]=' ';
-				writenln(respuesta);
 				write(param);
-
 			}
 			fill_lcd_buffer_normal(data);
 			LCD_Write_Buffer_Line(data, 0);

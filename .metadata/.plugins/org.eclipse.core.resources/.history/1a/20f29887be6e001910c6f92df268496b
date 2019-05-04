@@ -237,14 +237,8 @@ void main_MEF_Update() {
 			default:
 				aten = atoi(param);
 				Aten_SetValue(aten);
-				respuesta[0]='A';
-				respuesta[1]='T';
-				respuesta[2]='E';
-				respuesta[3]='N';
-				respuesta[4]=':';
-				respuesta[5]=' ';
-				writenln(respuesta);
-				write(param);
+
+				write(param[0]);
 
 			}
 			fill_lcd_buffer_normal(data);

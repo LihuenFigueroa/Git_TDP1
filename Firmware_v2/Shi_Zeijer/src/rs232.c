@@ -72,3 +72,14 @@ void    RS232_Write         (uint8_t *data){
         uartTxWrite( ACTUAL_UART, '\n');
     }
 }
+void    RS232_Writenln         (uint8_t *data){
+    if (EEPROM_GetRS232State() != Apagado)
+    {
+
+        for(uint8_t i = 0; (i < SIZE_BUFFER) && data[i] != '\0' ; i++)
+        {
+            uartTxWrite( ACTUAL_UART, data[i]);
+        }
+
+    }
+}

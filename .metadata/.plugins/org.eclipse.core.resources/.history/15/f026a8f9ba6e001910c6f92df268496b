@@ -140,7 +140,6 @@ void main_MEF_Update() {
 	uint8_t *param;
 	uint8_t aten;
 	uint8_t aten_digitos[4] = { 0, 0, 0, 0 };
-	uint8_t respuesta[10]={0,0,0,0,0,0,0,0,0,0}; // "ATEN: XXX"+'\0'
 	uint8_t i = 0;
 	KEYPAD_Interrupt();
 	switch (state) {
@@ -186,16 +185,10 @@ void main_MEF_Update() {
 					aten = aten / 10;
 					i++;
 				}
-				respuesta[0]='A';
-				respuesta[1]='T';
-				respuesta[2]='E';
-				respuesta[3]='N';
-				respuesta[4]=':';
-				respuesta[5]=' ';
-				respuesta[6]=aten_digitos[0];
-				respuesta[7]=aten_digitos[1];
-				respuesta[8]=aten_digitos[2];
-				write(respuesta);
+				write("ATENUACION: "+ aten_digitos);
+				for (i = 0; i < 4; i++) {
+					aten_digitos[i] = 0;
+				}
 				break;
 			case '-':
 				Aten_Minus();
@@ -205,16 +198,7 @@ void main_MEF_Update() {
 					aten = aten / 10;
 					i++;
 				}
-				respuesta[0]='A';
-				respuesta[1]='T';
-				respuesta[2]='E';
-				respuesta[3]='N';
-				respuesta[4]=':';
-				respuesta[5]=' ';
-				respuesta[6]=aten_digitos[0];
-				respuesta[7]=aten_digitos[1];
-				respuesta[8]=aten_digitos[2];
-				write(respuesta);
+				write(aten_digitos);
 				break;
 			case '?':
 				aten = Aten_Get_Actual_Aten();
@@ -223,29 +207,12 @@ void main_MEF_Update() {
 					aten = aten / 10;
 					i++;
 				}
-				respuesta[0]='A';
-				respuesta[1]='T';
-				respuesta[2]='E';
-				respuesta[3]='N';
-				respuesta[4]=':';
-				respuesta[5]=' ';
-				respuesta[6]=aten_digitos[0];
-				respuesta[7]=aten_digitos[1];
-				respuesta[8]=aten_digitos[2];
-				write(respuesta);
+				write(aten_digitos);
 				break;
 			default:
 				aten = atoi(param);
 				Aten_SetValue(aten);
-				respuesta[0]='A';
-				respuesta[1]='T';
-				respuesta[2]='E';
-				respuesta[3]='N';
-				respuesta[4]=':';
-				respuesta[5]=' ';
-				writenln(respuesta);
 				write(param);
-
 			}
 			fill_lcd_buffer_normal(data);
 			LCD_Write_Buffer_Line(data, 0);

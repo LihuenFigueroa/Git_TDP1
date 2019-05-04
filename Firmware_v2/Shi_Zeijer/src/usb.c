@@ -73,3 +73,16 @@ void    USB_Write         (uint8_t *data ){
         uartTxWrite( ACTUAL_UART, '\n');
     }
 }
+
+void    USB_Writenln         (uint8_t *data ){
+    if (EEPROM_GetUSBState() != Apagado)
+    {
+
+        for(uint8_t i = 0; (i < SIZE_BUFFER) && data[i] != '\0' ; i++)
+        {
+            uartTxWrite( ACTUAL_UART, data[i]);
+        }
+    }
+}
+
+
