@@ -6782,3 +6782,17 @@ Remote communication error.  Target disconnected.: No error.
 java.lang.Exception: Remote communication error.  Target disconnected.: No error.
 	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:925)
 	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:754)
+
+!ENTRY org.eclipse.debug.core 4 125 2019-05-04 20:01:36.149
+!MESSAGE Error logged from Debug Core: 
+!STACK 0
+java.io.IOException: Pipe closed
+	at java.io.PipedInputStream.read(PipedInputStream.java:307)
+	at java.io.PipedInputStream.read(PipedInputStream.java:377)
+	at java.io.BufferedInputStream.read1(BufferedInputStream.java:284)
+	at java.io.BufferedInputStream.read(BufferedInputStream.java:345)
+	at java.io.FilterInputStream.read(FilterInputStream.java:107)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.read(OutputStreamMonitor.java:147)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.access$1(OutputStreamMonitor.java:137)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor$1.run(OutputStreamMonitor.java:212)
+	at java.lang.Thread.run(Thread.java:745)

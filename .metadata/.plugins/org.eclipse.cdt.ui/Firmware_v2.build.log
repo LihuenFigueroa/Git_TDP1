@@ -1,4 +1,4 @@
-19:55:33 **** Incremental Build of configuration Default for project Firmware_v2 ****
+20:02:41 **** Incremental Build of configuration Default for project Firmware_v2 ****
 make all 
 Build project...
 
@@ -13,5 +13,5 @@ make[1]: se sale del directorio '/cygdrive/c/CIAA/Git_TDP1/Firmware_v2'
 Build complete.
 
 
-19:55:34 Build Finished (took 1s.338ms)
+20:02:42 Build Finished (took 1s.213ms)
 

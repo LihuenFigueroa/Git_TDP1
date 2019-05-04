@@ -177,12 +177,6 @@ void main_MEF_Update() {
 			}
 		}
 		if (COMM_CheckSerials(&param)) {
-			respuesta[0]='A';
-			respuesta[1]='T';
-			respuesta[2]='E';
-			respuesta[3]='N';
-			respuesta[4]=':';
-			respuesta[5]=' ';
 			switch (param[0]) {
 			case '+':
 				Aten_Plus();
@@ -192,6 +186,12 @@ void main_MEF_Update() {
 					aten = aten / 10;
 					i++;
 				}
+				respuesta[0]='A';
+				respuesta[1]='T';
+				respuesta[2]='E';
+				respuesta[3]='N';
+				respuesta[4]=':';
+				respuesta[5]=' ';
 				respuesta[6]=aten_digitos[0];
 				respuesta[7]=aten_digitos[1];
 				respuesta[8]=aten_digitos[2];
@@ -205,6 +205,12 @@ void main_MEF_Update() {
 					aten = aten / 10;
 					i++;
 				}
+				respuesta[0]='A';
+				respuesta[1]='T';
+				respuesta[2]='E';
+				respuesta[3]='N';
+				respuesta[4]=':';
+				respuesta[5]=' ';
 				respuesta[6]=aten_digitos[0];
 				respuesta[7]=aten_digitos[1];
 				respuesta[8]=aten_digitos[2];
@@ -217,6 +223,12 @@ void main_MEF_Update() {
 					aten = aten / 10;
 					i++;
 				}
+				respuesta[0]='A';
+				respuesta[1]='T';
+				respuesta[2]='E';
+				respuesta[3]='N';
+				respuesta[4]=':';
+				respuesta[5]=' ';
 				respuesta[6]=aten_digitos[0];
 				respuesta[7]=aten_digitos[1];
 				respuesta[8]=aten_digitos[2];
@@ -225,6 +237,12 @@ void main_MEF_Update() {
 			default:
 				aten = atoi(param);
 				Aten_SetValue(aten);
+				respuesta[0]='A';
+				respuesta[1]='T';
+				respuesta[2]='E';
+				respuesta[3]='N';
+				respuesta[4]=':';
+				respuesta[5]=' ';
 				writenln(respuesta);
 				write(param);
 
