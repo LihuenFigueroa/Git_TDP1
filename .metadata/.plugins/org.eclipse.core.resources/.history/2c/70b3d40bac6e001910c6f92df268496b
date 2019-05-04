@@ -210,3 +210,4 @@ uint8_t COMM_CheckSerials(uint8_t **param) {
 	}
 	return false;
 }
+

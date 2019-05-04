@@ -29,7 +29,7 @@ static bool_t string_compare(uint8_t *str1, uint8_t *str2) {
 
 static bool_t COMM_CheckCommand(uint8_t *v,uint8_t **param) {
 	uint8_t *command = v;
-	uint8_t digitos[9] = { 32, 32, 32, 32, 32, 32, 32, 32, 0 };
+	uint8_t digitos[3] = { 0 ,0 ,0};
 	uint8_t i = 0;
 	uint32_t baud_rate;
 	uint8_t * p1 = strchr(v, ',');

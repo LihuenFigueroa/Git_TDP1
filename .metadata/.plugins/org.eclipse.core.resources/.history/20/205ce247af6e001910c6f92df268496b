@@ -210,3 +210,12 @@ uint8_t COMM_CheckSerials(uint8_t **param) {
 	}
 	return false;
 }
+
+void int_to_ascii(uint8_t dato,uint8_t ** ascii){
+	uint8_t i=0;
+	while (dato != 0) {
+		*ascii[7 - i] = (dato % 10) + 0x30;
+		dato = dato / 10;
+		i++;
+	}
+}

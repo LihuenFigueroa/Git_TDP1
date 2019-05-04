@@ -191,9 +191,6 @@ void main_MEF_Update() {
 						i++;
 					}
 					write(aten_digitos);
-					for (i = 0; i < 4; i++) {
-						aten_digitos[i]=0;
-					}
 					break;
 				default:
 					Aten_SetValue(atoi(param));

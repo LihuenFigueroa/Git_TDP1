@@ -210,3 +210,10 @@ uint8_t COMM_CheckSerials(uint8_t **param) {
 	}
 	return false;
 }
+
+uint8_t* int_to_ascii(uint8_t dato){
+	uint8_t dato;
+	uint8_t dato_ascii[9] = { 32, 32, 32, 32, 32, 32, 32, 32, 0 };
+	uint8_t i=0;
+
+}

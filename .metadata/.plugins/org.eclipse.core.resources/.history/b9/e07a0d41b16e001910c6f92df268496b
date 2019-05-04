@@ -139,7 +139,7 @@ void main_MEF_Init() {
 void main_MEF_Update() {
 	uint8_t *param;
 	uint8_t aten;
-	uint8_t aten_digitos[4] = { 0,0,0,0 };
+	uint8_t digitos[3] = { 0,0,0 };
 	uint8_t i=0;
 	KEYPAD_Interrupt();
 	switch (state) {
@@ -186,15 +186,11 @@ void main_MEF_Update() {
 				case '?':
 					aten=Aten_Get_Actual_Aten();
 					while (aten != 0) {
-						aten_digitos[2-i] = (aten % 10) + 0x30;
+						aten_ascii[7 - i] = (aten % 10) + 0x30;
 						aten = aten / 10;
 						i++;
 					}
-					write(aten_digitos);
-					for (i = 0; i < 4; i++) {
-						aten_digitos[i]=0;
-					}
-					break;
+					write(aten_ascii);
 				default:
 					Aten_SetValue(atoi(param));
 					break;

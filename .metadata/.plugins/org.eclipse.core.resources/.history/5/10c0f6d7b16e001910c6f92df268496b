@@ -186,15 +186,11 @@ void main_MEF_Update() {
 				case '?':
 					aten=Aten_Get_Actual_Aten();
 					while (aten != 0) {
-						aten_digitos[2-i] = (aten % 10) + 0x30;
+						aten_digitos[i] = (aten % 10) + 0x30;
 						aten = aten / 10;
 						i++;
 					}
 					write(aten_digitos);
-					for (i = 0; i < 4; i++) {
-						aten_digitos[i]=0;
-					}
-					break;
 				default:
 					Aten_SetValue(atoi(param));
 					break;
