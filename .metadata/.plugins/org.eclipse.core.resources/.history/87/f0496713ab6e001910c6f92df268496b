@@ -139,7 +139,7 @@ void main_MEF_Init() {
 void main_MEF_Update() {
 	uint8_t *param;
 	uint8_t aten;
-	uint8_t aten_ascii[9] = { 32, 32, 32, 32, 32, 32, 32, 32, 0 };
+	uint8_t aten_ascii[8];
 	uint8_t i=0;
 	KEYPAD_Interrupt();
 	switch (state) {

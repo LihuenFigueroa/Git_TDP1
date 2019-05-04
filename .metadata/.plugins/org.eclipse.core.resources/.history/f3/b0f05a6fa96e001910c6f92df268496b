@@ -139,8 +139,8 @@ void main_MEF_Init() {
 void main_MEF_Update() {
 	uint8_t *param;
 	uint8_t aten;
-	uint8_t aten_ascii[9] = { 32, 32, 32, 32, 32, 32, 32, 32, 0 };
-	uint8_t i=0;
+	uint8_t aten_ascii[8];
+	int i;
 	KEYPAD_Interrupt();
 	switch (state) {
 	case STATE_NORMAL:
@@ -190,7 +190,7 @@ void main_MEF_Update() {
 						aten = aten / 10;
 						i++;
 					}
-					write(aten_ascii);
+					write();
 				default:
 					Aten_SetValue(atoi(param));
 					break;

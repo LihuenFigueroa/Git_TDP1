@@ -1,4 +1,4 @@
-16:42:08 **** Build of configuration Default for project Firmware_v2 ****
+17:27:58 **** Build of configuration Default for project Firmware_v2 ****
 make all 
 Build project...
 
@@ -204,17 +204,17 @@ Shi_Zeijer/src/main_MEF.c:87:10: warning: variable 'digitos' set but not used [-
   uint8_t digitos[3] = { 0, 0, 0 };
           ^
 Shi_Zeijer/src/main_MEF.c: In function 'main_MEF_Update':
-Shi_Zeijer/src/main_MEF.c:184:6: warning: implicit declaration of function 'atoi' [-Wimplicit-function-declaration]
+Shi_Zeijer/src/main_MEF.c:195:6: warning: implicit declaration of function 'atoi' [-Wimplicit-function-declaration]
       Aten_SetValue(atoi(param));
       ^
-Shi_Zeijer/src/main_MEF.c:199:26: warning: passing argument 1 of 'LCD_Write_Buffer_Line' discards 'const' qualifier from pointer target type
+Shi_Zeijer/src/main_MEF.c:210:26: warning: passing argument 1 of 'LCD_Write_Buffer_Line' discards 'const' qualifier from pointer target type
     LCD_Write_Buffer_Line(clear, 1);
                           ^
 In file included from Shi_Zeijer/src/main_MEF.c:11:0:
 Shi_Zeijer/inc/lcd.h:61:6: note: expected 'uint8_t *' but argument is of type 'const uint8_t *'
  void LCD_Write_Buffer_Line(uint8_t data[32],uint8_t line);
       ^
-Shi_Zeijer/src/main_MEF.c:252:26: warning: passing argument 1 of 'LCD_Write_Buffer_Line' discards 'const' qualifier from pointer target type
+Shi_Zeijer/src/main_MEF.c:263:26: warning: passing argument 1 of 'LCD_Write_Buffer_Line' discards 'const' qualifier from pointer target type
     LCD_Write_Buffer_Line(clear, 1);
                           ^
 In file included from Shi_Zeijer/src/main_MEF.c:11:0:
@@ -487,35 +487,21 @@ Shi_Zeijer/src/comm.c:17:6: note: expected 'uint8_t *' but argument is of type '
 *** compiling C file Shi_Zeijer/src/buzzer.c ***
 *** linking project Shi_Zeijer ***
    text	   data	    bss	    dec	    hex	filename
-  24240	   1092	    316	  25648	   6430	out/lpc4337_m4/Shi_Zeijer.axf
+  24368	   1092	    316	  25776	   64b0	out/lpc4337_m4/Shi_Zeijer.axf
 copy from `out/lpc4337_m4/Shi_Zeijer.axf' [elf32-littlearm] to `out/lpc4337_m4/Shi_Zeijer.bin' [binary]
 *** post-build ***
 make[1]: se sale del directorio '/cygdrive/c/CIAA/Git_TDP1/Firmware_v2'
 
 Build complete.
 
-16:43:28 **** Incremental Build of configuration Default for project Firmware_v2 ****
+17:29:10 **** Incremental Build of configuration Default for project Firmware_v2 ****
 make all 
 Build project...
 
 make[1]: se entra en el directorio '/cygdrive/c/CIAA/Git_TDP1/Firmware_v2'
 *** linking project Shi_Zeijer ***
    text	   data	    bss	    dec	    hex	filename
-  24240	   1092	    316	  25648	   6430	out/lpc4337_m4/Shi_Zeijer.axf
-copy from `out/lpc4337_m4/Shi_Zeijer.axf' [elf32-littlearm] to `out/lpc4337_m4/Shi_Zeijer.bin' [binary]
-*** post-build ***
-make[1]: se sale del directorio '/cygdrive/c/CIAA/Git_TDP1/Firmware_v2'
-
-Build complete.
-
-16:52:37 **** Incremental Build of configuration Default for project Firmware_v2 ****
-make all 
-Build project...
-
-make[1]: se entra en el directorio '/cygdrive/c/CIAA/Git_TDP1/Firmware_v2'
-*** linking project Shi_Zeijer ***
-   text	   data	    bss	    dec	    hex	filename
-  24240	   1092	    316	  25648	   6430	out/lpc4337_m4/Shi_Zeijer.axf
+  24368	   1092	    316	  25776	   64b0	out/lpc4337_m4/Shi_Zeijer.axf
 copy from `out/lpc4337_m4/Shi_Zeijer.axf' [elf32-littlearm] to `out/lpc4337_m4/Shi_Zeijer.bin' [binary]
 *** post-build ***
 make[1]: se sale del directorio '/cygdrive/c/CIAA/Git_TDP1/Firmware_v2'
