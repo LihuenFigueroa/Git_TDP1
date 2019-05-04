@@ -1,4 +1,4 @@
-18:42:53 **** Build of configuration Default for project Firmware_v2 ****
+19:05:47 **** Build of configuration Default for project Firmware_v2 ****
 make all 
 Build project...
 
@@ -182,6 +182,7 @@ modules/lpc4337_m4/board/src/board.c:50:17: warning: 'lcd_cfg_val' defined but n
     808	      0	      0	    808	    328	hsadc_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
       0	      0	      0	      0	      0	gpiogroup_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
    2072	      0	      0	   2072	    818	ccan_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
+*** compiling C file Shi_Zeijer/src/rs232.c ***
 Shi_Zeijer/src/rs232.c: In function 'interrupcion232':
 Shi_Zeijer/src/rs232.c:38:1: warning: no return statement in function returning non-void [-Wreturn-type]
  }
@@ -197,24 +198,23 @@ In file included from modules/lpc4337_m4/sapi/inc/sapi.h:51:0,
 modules/lpc4337_m4/sapi/inc/sapi_uart.h:118:6: note: expected 'callBackFuncPtr_t' but argument is of type 'void (* (*)(void))(void *)'
  void uartRxInterruptCallbackSet( 
       ^
-*** compiling C file Shi_Zeijer/src/rs232.c ***
 *** compiling C file Shi_Zeijer/src/main_MEF.c ***
 Shi_Zeijer/src/main_MEF.c: In function 'fill_lcd_buffer_aten_err':
 Shi_Zeijer/src/main_MEF.c:87:10: warning: variable 'digitos' set but not used [-Wunused-but-set-variable]
   uint8_t digitos[3] = { 0, 0, 0 };
           ^
 Shi_Zeijer/src/main_MEF.c: In function 'main_MEF_Update':
-Shi_Zeijer/src/main_MEF.c:199:6: warning: implicit declaration of function 'atoi' [-Wimplicit-function-declaration]
-      Aten_SetValue(atoi(param));
-      ^
-Shi_Zeijer/src/main_MEF.c:214:26: warning: passing argument 1 of 'LCD_Write_Buffer_Line' discards 'const' qualifier from pointer target type
+Shi_Zeijer/src/main_MEF.c:219:5: warning: implicit declaration of function 'atoi' [-Wimplicit-function-declaration]
+     aten = atoi(param);
+     ^
+Shi_Zeijer/src/main_MEF.c:235:26: warning: passing argument 1 of 'LCD_Write_Buffer_Line' discards 'const' qualifier from pointer target type
     LCD_Write_Buffer_Line(clear, 1);
                           ^
 In file included from Shi_Zeijer/src/main_MEF.c:11:0:
 Shi_Zeijer/inc/lcd.h:61:6: note: expected 'uint8_t *' but argument is of type 'const uint8_t *'
  void LCD_Write_Buffer_Line(uint8_t data[32],uint8_t line);
       ^
-Shi_Zeijer/src/main_MEF.c:267:26: warning: passing argument 1 of 'LCD_Write_Buffer_Line' discards 'const' qualifier from pointer target type
+Shi_Zeijer/src/main_MEF.c:288:26: warning: passing argument 1 of 'LCD_Write_Buffer_Line' discards 'const' qualifier from pointer target type
     LCD_Write_Buffer_Line(clear, 1);
                           ^
 In file included from Shi_Zeijer/src/main_MEF.c:11:0:
@@ -487,21 +487,21 @@ Shi_Zeijer/src/comm.c:17:6: note: expected 'uint8_t *' but argument is of type '
 *** compiling C file Shi_Zeijer/src/buzzer.c ***
 *** linking project Shi_Zeijer ***
    text	   data	    bss	    dec	    hex	filename
-  24384	   1092	    316	  25792	   64c0	out/lpc4337_m4/Shi_Zeijer.axf
+  24652	   1092	    316	  26060	   65cc	out/lpc4337_m4/Shi_Zeijer.axf
 copy from `out/lpc4337_m4/Shi_Zeijer.axf' [elf32-littlearm] to `out/lpc4337_m4/Shi_Zeijer.bin' [binary]
 *** post-build ***
 make[1]: se sale del directorio '/cygdrive/c/CIAA/Git_TDP1/Firmware_v2'
 
 Build complete.
 
-18:43:56 **** Incremental Build of configuration Default for project Firmware_v2 ****
+19:06:43 **** Incremental Build of configuration Default for project Firmware_v2 ****
 make all 
 Build project...
 
 make[1]: se entra en el directorio '/cygdrive/c/CIAA/Git_TDP1/Firmware_v2'
 *** linking project Shi_Zeijer ***
    text	   data	    bss	    dec	    hex	filename
-  24384	   1092	    316	  25792	   64c0	out/lpc4337_m4/Shi_Zeijer.axf
+  24652	   1092	    316	  26060	   65cc	out/lpc4337_m4/Shi_Zeijer.axf
 copy from `out/lpc4337_m4/Shi_Zeijer.axf' [elf32-littlearm] to `out/lpc4337_m4/Shi_Zeijer.bin' [binary]
 *** post-build ***
 make[1]: se sale del directorio '/cygdrive/c/CIAA/Git_TDP1/Firmware_v2'

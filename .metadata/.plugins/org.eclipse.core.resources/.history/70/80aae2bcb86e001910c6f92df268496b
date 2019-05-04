@@ -218,6 +218,11 @@ void main_MEF_Update() {
 			default:
 				aten = atoi(param);
 				Aten_SetValue(aten);
+				while (aten != 0) {
+					aten_digitos[2 - i] = (aten % 10) + 0x30;
+					aten = aten / 10;
+					i++;
+				}
 				write(param);
 			}
 			fill_lcd_buffer_normal(data);
