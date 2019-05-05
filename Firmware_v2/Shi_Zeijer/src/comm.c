@@ -12,8 +12,8 @@ void COMM_Init() {
 	RS232_Init(EEPROM_GetRS232State(), EEPROM_GetRS232BaudRate());
 	RS485_Init(EEPROM_GetRS485State(), EEPROM_GetRS485BaudRate());
 	USB_Init(EEPROM_GetUSBState(), EEPROM_GetUSBBaudRate());
-
 }
+
 static void write(uint8_t *data) {
 	USB_Write(data);
 	RS232_Write(data);
@@ -22,8 +22,7 @@ static void write(uint8_t *data) {
 
 static bool_t string_compare(uint8_t *str1, uint8_t *str2) {
 	uint8_t i = 0;
-	while ((str1[i] == str2[i]) & (str1[i] != '\0') & (str2[i++] != '\0'))
-		;
+	while ((str1[i] == str2[i]) & (str1[i] != '\0') & (str2[i++] != '\0'));
 	return str1[i - 1] == str2[i - 1];
 }
 
