@@ -2,28 +2,28 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="" key="selection"/>
+		<item value="&#x09;uint8_t datoWrite[2];" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="&#x09;uint8_t datoWrite[2];"/>
+			<item value="USB"/>
+			<item value="usb"/>
 			<item value="KEPAD"/>
 			<item value="lastkey"/>
 			<item value="lastjey"/>
 			<item value="lcd_write_bu"/>
 			<item value="KEYPAD_GetValue"/>
-			<item value="char"/>
-			<item value="buffer"/>
-			<item value="value"/>
 		</list>
 		<list key="replacehistory">
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item value="257" key="DIALOG_WIDTH"/>
-		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
-		<item value="381" key="DIALOG_HEIGHT"/>
+		<item value="237" key="DIALOG_WIDTH"/>
+		<item value="1|Tahoma|8.25|0|WINDOWS|1|-11|0|0|0|400|0|0|0|1|0|0|0|0|Tahoma" key="DIALOG_FONT_NAME"/>
+		<item value="357" key="DIALOG_HEIGHT"/>
 		<item value="863" key="DIALOG_X_ORIGIN"/>
 		<item value="122" key="DIALOG_Y_ORIGIN"/>
 	</section>

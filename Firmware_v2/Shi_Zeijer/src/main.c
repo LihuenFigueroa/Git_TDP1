@@ -88,7 +88,7 @@ int main(void)
 	tickCallbackSet( myTickHook, (void*)NULL );
 	main_MEF_Init();
 	BUZZER_Ring();
-	USB_Write("Hola.");
+	write("Hola.");
 	for(;;)
 	{
 		if (SysTick_LCD_Flag)

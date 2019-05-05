@@ -13,6 +13,14 @@ static uint8_t flag = 0;
 static callBackFuncPtr_t interrupcionUSB(void){
 	uint8_t dato;
 	dato=uartRxRead( ACTUAL_UART );
+/*
+	uint8_t datoWrite[2];
+
+	datoWrite[0] = dato;
+	datoWrite[1] = '\0';
+	write(datoWrite);
+*/
+
 	if(dato==FIN_DE_COMANDO){
 		buffer[pos++] = '\0';
         flag = 1;
@@ -65,3 +73,16 @@ void    USB_Write         (uint8_t *data ){
         uartTxWrite( ACTUAL_UART, '\n');
     }
 }
+
+void    USB_Writenln         (uint8_t *data ){
+    if (EEPROM_GetUSBState() != Apagado)
+    {
+
+        for(uint8_t i = 0; (i < SIZE_BUFFER) && data[i] != '\0' ; i++)
+        {
+            uartTxWrite( ACTUAL_UART, data[i]);
+        }
+    }
+}
+
+

@@ -13,11 +13,16 @@ void COMM_Init() {
 	RS485_Init(EEPROM_GetRS485State(), EEPROM_GetRS485BaudRate());
 	USB_Init(EEPROM_GetUSBState(), EEPROM_GetUSBBaudRate());
 }
-
-static void write(uint8_t *data) {
+void write(uint8_t *data) {
 	USB_Write(data);
 	RS232_Write(data);
 	RS485_Write(data);
+}
+
+void writenln(uint8_t *data) {
+	USB_Writenln(data);
+	RS232_Writenln(data);
+	RS485_Writenln(data);
 }
 
 static bool_t string_compare(uint8_t *str1, uint8_t *str2) {
@@ -209,4 +214,3 @@ uint8_t COMM_CheckSerials(uint8_t **param) {
 	}
 	return false;
 }
-
