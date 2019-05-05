@@ -12,13 +12,6 @@ static callBackFuncPtr_t interrupcion232(void){
 	uint8_t dato;
 	dato=uartRxRead( ACTUAL_UART );
 
-	/*
-		uint8_t datoWrite[2];
-
-		datoWrite[0] = dato;
-		datoWrite[1] = '\0';
-		write(datoWrite);
-	*/
 	if(dato == FIN_DE_COMANDO){
 		buffer[pos++] = '\0';
         flag = 1;

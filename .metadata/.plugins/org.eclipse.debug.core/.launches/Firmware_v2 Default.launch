@@ -49,7 +49,7 @@
 <stringAttribute key="org.eclipse.cdt.launch.PROGRAM_NAME" value="C:\CIAA\Git_TDP1\Firmware_v2\out\lpc4337_m4\Shi_Zeijer.axf"/>
 <stringAttribute key="org.eclipse.cdt.launch.PROJECT_ATTR" value="Firmware_v2"/>
 <booleanAttribute key="org.eclipse.cdt.launch.PROJECT_BUILD_CONFIG_AUTO_ATTR" value="true"/>
-<stringAttribute key="org.eclipse.cdt.launch.PROJECT_BUILD_CONFIG_ID_ATTR" value="0.1396272196"/>
+<stringAttribute key="org.eclipse.cdt.launch.PROJECT_BUILD_CONFIG_ID_ATTR" value="0.1954167267"/>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
 <listEntry value="/Firmware_v2"/>
 </listAttribute>

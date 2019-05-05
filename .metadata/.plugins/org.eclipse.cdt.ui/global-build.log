@@ -1,4 +1,4 @@
-19:54:28 **** Build of configuration Default for project Firmware_v2 ****
+12:06:06 **** Build of configuration Default for project Firmware_v2 ****
 make all 
 Build project...
 
@@ -184,11 +184,11 @@ modules/lpc4337_m4/board/src/board.c:50:17: warning: 'lcd_cfg_val' defined but n
    2072	      0	      0	   2072	    818	ccan_18xx_43xx.o (ex out/lpc4337_m4/libchip.a)
 *** compiling C file Shi_Zeijer/src/rs232.c ***
 Shi_Zeijer/src/rs232.c: In function 'interrupcion232':
-Shi_Zeijer/src/rs232.c:38:1: warning: no return statement in function returning non-void [-Wreturn-type]
+Shi_Zeijer/src/rs232.c:31:1: warning: no return statement in function returning non-void [-Wreturn-type]
  }
  ^
 Shi_Zeijer/src/rs232.c: In function 'RS232_Init':
-Shi_Zeijer/src/rs232.c:55:46: warning: passing argument 2 of 'uartRxInterruptCallbackSet' from incompatible pointer type
+Shi_Zeijer/src/rs232.c:48:46: warning: passing argument 2 of 'uartRxInterruptCallbackSet' from incompatible pointer type
       uartRxInterruptCallbackSet(ACTUAL_UART ,&interrupcion232);  // pointer to function
                                               ^
 In file included from modules/lpc4337_m4/sapi/inc/sapi.h:51:0,
@@ -204,17 +204,17 @@ Shi_Zeijer/src/main_MEF.c:87:10: warning: variable 'digitos' set but not used [-
   uint8_t digitos[3] = { 0, 0, 0 };
           ^
 Shi_Zeijer/src/main_MEF.c: In function 'main_MEF_Update':
-Shi_Zeijer/src/main_MEF.c:238:5: warning: implicit declaration of function 'atoi' [-Wimplicit-function-declaration]
+Shi_Zeijer/src/main_MEF.c:226:5: warning: implicit declaration of function 'atoi' [-Wimplicit-function-declaration]
      aten = atoi(param);
      ^
-Shi_Zeijer/src/main_MEF.c:262:26: warning: passing argument 1 of 'LCD_Write_Buffer_Line' discards 'const' qualifier from pointer target type
+Shi_Zeijer/src/main_MEF.c:244:26: warning: passing argument 1 of 'LCD_Write_Buffer_Line' discards 'const' qualifier from pointer target type
     LCD_Write_Buffer_Line(clear, 1);
                           ^
 In file included from Shi_Zeijer/src/main_MEF.c:11:0:
 Shi_Zeijer/inc/lcd.h:61:6: note: expected 'uint8_t *' but argument is of type 'const uint8_t *'
  void LCD_Write_Buffer_Line(uint8_t data[32],uint8_t line);
       ^
-Shi_Zeijer/src/main_MEF.c:315:26: warning: passing argument 1 of 'LCD_Write_Buffer_Line' discards 'const' qualifier from pointer target type
+Shi_Zeijer/src/main_MEF.c:297:26: warning: passing argument 1 of 'LCD_Write_Buffer_Line' discards 'const' qualifier from pointer target type
     LCD_Write_Buffer_Line(clear, 1);
                           ^
 In file included from Shi_Zeijer/src/main_MEF.c:11:0:
@@ -223,11 +223,11 @@ Shi_Zeijer/inc/lcd.h:61:6: note: expected 'uint8_t *' but argument is of type 'c
       ^
 *** compiling C file Shi_Zeijer/src/rs485.c ***
 Shi_Zeijer/src/rs485.c: In function 'interrupcion485':
-Shi_Zeijer/src/rs485.c:37:1: warning: no return statement in function returning non-void [-Wreturn-type]
+Shi_Zeijer/src/rs485.c:30:1: warning: no return statement in function returning non-void [-Wreturn-type]
  }
  ^
 Shi_Zeijer/src/rs485.c: In function 'RS485_Init':
-Shi_Zeijer/src/rs485.c:54:46: warning: passing argument 2 of 'uartRxInterruptCallbackSet' from incompatible pointer type
+Shi_Zeijer/src/rs485.c:47:46: warning: passing argument 2 of 'uartRxInterruptCallbackSet' from incompatible pointer type
       uartRxInterruptCallbackSet(ACTUAL_UART ,&interrupcion485);  // pointer to function
                                               ^
 In file included from modules/lpc4337_m4/sapi/inc/sapi.h:51:0,
@@ -288,11 +288,11 @@ Shi_Zeijer/src/com_MEF.c:29:13: note: expected 'char *' but argument is of type 
 *** compiling C file Shi_Zeijer/src/lcd.c ***
 *** compiling C file Shi_Zeijer/src/usb.c ***
 Shi_Zeijer/src/usb.c: In function 'interrupcionUSB':
-Shi_Zeijer/src/usb.c:40:1: warning: no return statement in function returning non-void [-Wreturn-type]
+Shi_Zeijer/src/usb.c:33:1: warning: no return statement in function returning non-void [-Wreturn-type]
  }
  ^
 Shi_Zeijer/src/usb.c: In function 'USB_Init':
-Shi_Zeijer/src/usb.c:56:46: warning: passing argument 2 of 'uartRxInterruptCallbackSet' from incompatible pointer type
+Shi_Zeijer/src/usb.c:49:46: warning: passing argument 2 of 'uartRxInterruptCallbackSet' from incompatible pointer type
       uartRxInterruptCallbackSet(ACTUAL_UART ,&interrupcionUSB);  // pointer to function
                                               ^
 In file included from modules/lpc4337_m4/sapi/inc/sapi.h:51:0,
@@ -304,13 +304,13 @@ modules/lpc4337_m4/sapi/inc/sapi_uart.h:118:6: note: expected 'callBackFuncPtr_t
       ^
 *** compiling C file Shi_Zeijer/src/comm.c ***
 Shi_Zeijer/src/comm.c: In function 'string_compare':
-Shi_Zeijer/src/comm.c:31:59: warning: operation on 'i' may be undefined [-Wsequence-point]
-  while ((str1[i] == str2[i]) & (str1[i] != '\0') & (str2[i++] != '\0'))
+Shi_Zeijer/src/comm.c:30:59: warning: operation on 'i' may be undefined [-Wsequence-point]
+  while ((str1[i] == str2[i]) & (str1[i] != '\0') & (str2[i++] != '\0'));
                                                            ^
-Shi_Zeijer/src/comm.c:31:59: warning: operation on 'i' may be undefined [-Wsequence-point]
-Shi_Zeijer/src/comm.c:31:59: warning: operation on 'i' may be undefined [-Wsequence-point]
+Shi_Zeijer/src/comm.c:30:59: warning: operation on 'i' may be undefined [-Wsequence-point]
+Shi_Zeijer/src/comm.c:30:59: warning: operation on 'i' may be undefined [-Wsequence-point]
 Shi_Zeijer/src/comm.c: In function 'COMM_CheckCommand':
-Shi_Zeijer/src/comm.c:41:24: warning: pointer targets in passing argument 1 of 'strchr' differ in signedness [-Wpointer-sign]
+Shi_Zeijer/src/comm.c:39:24: warning: pointer targets in passing argument 1 of 'strchr' differ in signedness [-Wpointer-sign]
   uint8_t * p1 = strchr(v, ',');
                         ^
 In file included from c:\ciaa\cygwin\usr\arm-none-eabi\arm-none-eabi\include\stdio.h:29:0,
@@ -322,215 +322,199 @@ In file included from c:\ciaa\cygwin\usr\arm-none-eabi\arm-none-eabi\include\std
 c:\ciaa\cygwin\usr\arm-none-eabi\arm-none-eabi\include\string.h:27:8: note: expected 'const char *' but argument is of type 'uint8_t *'
  char  *_EXFUN(strchr,(const char *, int));
         ^
-Shi_Zeijer/src/comm.c:41:17: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+Shi_Zeijer/src/comm.c:39:17: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
   uint8_t * p1 = strchr(v, ',');
                  ^
-Shi_Zeijer/src/comm.c:44:25: warning: pointer targets in passing argument 2 of 'string_compare' differ in signedness [-Wpointer-sign]
+Shi_Zeijer/src/comm.c:42:25: warning: pointer targets in passing argument 2 of 'string_compare' differ in signedness [-Wpointer-sign]
    if (string_compare(v, "EUSB")) {
                          ^
-Shi_Zeijer/src/comm.c:29:15: note: expected 'uint8_t *' but argument is of type 'char *'
+Shi_Zeijer/src/comm.c:28:15: note: expected 'uint8_t *' but argument is of type 'char *'
  static bool_t string_compare(uint8_t *str1, uint8_t *str2) {
                ^
-Shi_Zeijer/src/comm.c:62:12: warning: pointer targets in passing argument 1 of 'write' differ in signedness [-Wpointer-sign]
+Shi_Zeijer/src/comm.c:60:12: warning: pointer targets in passing argument 1 of 'write' differ in signedness [-Wpointer-sign]
       write("Apagado");
             ^
-Shi_Zeijer/src/comm.c:17:6: note: expected 'uint8_t *' but argument is of type 'char *'
+Shi_Zeijer/src/comm.c:16:6: note: expected 'uint8_t *' but argument is of type 'char *'
  void write(uint8_t *data) {
       ^
-Shi_Zeijer/src/comm.c:65:12: warning: pointer targets in passing argument 1 of 'write' differ in signedness [-Wpointer-sign]
+Shi_Zeijer/src/comm.c:63:12: warning: pointer targets in passing argument 1 of 'write' differ in signedness [-Wpointer-sign]
       write("Primaria");
             ^
-Shi_Zeijer/src/comm.c:17:6: note: expected 'uint8_t *' but argument is of type 'char *'
+Shi_Zeijer/src/comm.c:16:6: note: expected 'uint8_t *' but argument is of type 'char *'
  void write(uint8_t *data) {
       ^
-Shi_Zeijer/src/comm.c:68:12: warning: pointer targets in passing argument 1 of 'write' differ in signedness [-Wpointer-sign]
+Shi_Zeijer/src/comm.c:66:12: warning: pointer targets in passing argument 1 of 'write' differ in signedness [-Wpointer-sign]
       write("Secundaria");
             ^
-Shi_Zeijer/src/comm.c:17:6: note: expected 'uint8_t *' but argument is of type 'char *'
+Shi_Zeijer/src/comm.c:16:6: note: expected 'uint8_t *' but argument is of type 'char *'
  void write(uint8_t *data) {
       ^
-Shi_Zeijer/src/comm.c:74:25: warning: pointer targets in passing argument 2 of 'string_compare' differ in signedness [-Wpointer-sign]
+Shi_Zeijer/src/comm.c:72:25: warning: pointer targets in passing argument 2 of 'string_compare' differ in signedness [-Wpointer-sign]
    if (string_compare(v, "BRUSB")) {
                          ^
-Shi_Zeijer/src/comm.c:29:15: note: expected 'uint8_t *' but argument is of type 'char *'
+Shi_Zeijer/src/comm.c:28:15: note: expected 'uint8_t *' but argument is of type 'char *'
  static bool_t string_compare(uint8_t *str1, uint8_t *str2) {
                ^
-Shi_Zeijer/src/comm.c:85:5: warning: implicit declaration of function 'atoi' [-Wimplicit-function-declaration]
+Shi_Zeijer/src/comm.c:83:5: warning: implicit declaration of function 'atoi' [-Wimplicit-function-declaration]
      EEPROM_SetUSBBaudRate(atoi(v));
      ^
-Shi_Zeijer/src/comm.c:90:25: warning: pointer targets in passing argument 2 of 'string_compare' differ in signedness [-Wpointer-sign]
+Shi_Zeijer/src/comm.c:88:25: warning: pointer targets in passing argument 2 of 'string_compare' differ in signedness [-Wpointer-sign]
    if (string_compare(v, "E232")) {
                          ^
-Shi_Zeijer/src/comm.c:29:15: note: expected 'uint8_t *' but argument is of type 'char *'
+Shi_Zeijer/src/comm.c:28:15: note: expected 'uint8_t *' but argument is of type 'char *'
  static bool_t string_compare(uint8_t *str1, uint8_t *str2) {
                ^
-Shi_Zeijer/src/comm.c:108:12: warning: pointer targets in passing argument 1 of 'write' differ in signedness [-Wpointer-sign]
+Shi_Zeijer/src/comm.c:106:12: warning: pointer targets in passing argument 1 of 'write' differ in signedness [-Wpointer-sign]
       write("Apagado");
             ^
-Shi_Zeijer/src/comm.c:17:6: note: expected 'uint8_t *' but argument is of type 'char *'
+Shi_Zeijer/src/comm.c:16:6: note: expected 'uint8_t *' but argument is of type 'char *'
  void write(uint8_t *data) {
       ^
-Shi_Zeijer/src/comm.c:111:12: warning: pointer targets in passing argument 1 of 'write' differ in signedness [-Wpointer-sign]
+Shi_Zeijer/src/comm.c:109:12: warning: pointer targets in passing argument 1 of 'write' differ in signedness [-Wpointer-sign]
       write("Primaria");
             ^
-Shi_Zeijer/src/comm.c:17:6: note: expected 'uint8_t *' but argument is of type 'char *'
+Shi_Zeijer/src/comm.c:16:6: note: expected 'uint8_t *' but argument is of type 'char *'
  void write(uint8_t *data) {
       ^
-Shi_Zeijer/src/comm.c:114:12: warning: pointer targets in passing argument 1 of 'write' differ in signedness [-Wpointer-sign]
+Shi_Zeijer/src/comm.c:112:12: warning: pointer targets in passing argument 1 of 'write' differ in signedness [-Wpointer-sign]
       write("Secundaria");
             ^
-Shi_Zeijer/src/comm.c:17:6: note: expected 'uint8_t *' but argument is of type 'char *'
+Shi_Zeijer/src/comm.c:16:6: note: expected 'uint8_t *' but argument is of type 'char *'
  void write(uint8_t *data) {
       ^
-Shi_Zeijer/src/comm.c:120:25: warning: pointer targets in passing argument 2 of 'string_compare' differ in signedness [-Wpointer-sign]
+Shi_Zeijer/src/comm.c:118:25: warning: pointer targets in passing argument 2 of 'string_compare' differ in signedness [-Wpointer-sign]
    if (string_compare(v, "BR232")) {
                          ^
-Shi_Zeijer/src/comm.c:29:15: note: expected 'uint8_t *' but argument is of type 'char *'
+Shi_Zeijer/src/comm.c:28:15: note: expected 'uint8_t *' but argument is of type 'char *'
  static bool_t string_compare(uint8_t *str1, uint8_t *str2) {
                ^
-Shi_Zeijer/src/comm.c:136:25: warning: pointer targets in passing argument 2 of 'string_compare' differ in signedness [-Wpointer-sign]
+Shi_Zeijer/src/comm.c:134:25: warning: pointer targets in passing argument 2 of 'string_compare' differ in signedness [-Wpointer-sign]
    if (string_compare(v, "E485")) {
                          ^
-Shi_Zeijer/src/comm.c:29:15: note: expected 'uint8_t *' but argument is of type 'char *'
+Shi_Zeijer/src/comm.c:28:15: note: expected 'uint8_t *' but argument is of type 'char *'
  static bool_t string_compare(uint8_t *str1, uint8_t *str2) {
                ^
-Shi_Zeijer/src/comm.c:154:12: warning: pointer targets in passing argument 1 of 'write' differ in signedness [-Wpointer-sign]
+Shi_Zeijer/src/comm.c:152:12: warning: pointer targets in passing argument 1 of 'write' differ in signedness [-Wpointer-sign]
       write("Apagado");
             ^
-Shi_Zeijer/src/comm.c:17:6: note: expected 'uint8_t *' but argument is of type 'char *'
+Shi_Zeijer/src/comm.c:16:6: note: expected 'uint8_t *' but argument is of type 'char *'
  void write(uint8_t *data) {
       ^
-Shi_Zeijer/src/comm.c:157:12: warning: pointer targets in passing argument 1 of 'write' differ in signedness [-Wpointer-sign]
+Shi_Zeijer/src/comm.c:155:12: warning: pointer targets in passing argument 1 of 'write' differ in signedness [-Wpointer-sign]
       write("Primaria");
             ^
-Shi_Zeijer/src/comm.c:17:6: note: expected 'uint8_t *' but argument is of type 'char *'
+Shi_Zeijer/src/comm.c:16:6: note: expected 'uint8_t *' but argument is of type 'char *'
  void write(uint8_t *data) {
       ^
-Shi_Zeijer/src/comm.c:160:12: warning: pointer targets in passing argument 1 of 'write' differ in signedness [-Wpointer-sign]
+Shi_Zeijer/src/comm.c:158:12: warning: pointer targets in passing argument 1 of 'write' differ in signedness [-Wpointer-sign]
       write("Secundaria");
             ^
-Shi_Zeijer/src/comm.c:17:6: note: expected 'uint8_t *' but argument is of type 'char *'
+Shi_Zeijer/src/comm.c:16:6: note: expected 'uint8_t *' but argument is of type 'char *'
  void write(uint8_t *data) {
       ^
-Shi_Zeijer/src/comm.c:166:25: warning: pointer targets in passing argument 2 of 'string_compare' differ in signedness [-Wpointer-sign]
+Shi_Zeijer/src/comm.c:164:25: warning: pointer targets in passing argument 2 of 'string_compare' differ in signedness [-Wpointer-sign]
    if (string_compare(v, "BR485")) {
                          ^
-Shi_Zeijer/src/comm.c:29:15: note: expected 'uint8_t *' but argument is of type 'char *'
+Shi_Zeijer/src/comm.c:28:15: note: expected 'uint8_t *' but argument is of type 'char *'
  static bool_t string_compare(uint8_t *str1, uint8_t *str2) {
                ^
-Shi_Zeijer/src/comm.c:181:25: warning: pointer targets in passing argument 2 of 'string_compare' differ in signedness [-Wpointer-sign]
+Shi_Zeijer/src/comm.c:179:25: warning: pointer targets in passing argument 2 of 'string_compare' differ in signedness [-Wpointer-sign]
    if (string_compare(v, "ATEN")) {
                          ^
-Shi_Zeijer/src/comm.c:29:15: note: expected 'uint8_t *' but argument is of type 'char *'
+Shi_Zeijer/src/comm.c:28:15: note: expected 'uint8_t *' but argument is of type 'char *'
  static bool_t string_compare(uint8_t *str1, uint8_t *str2) {
                ^
-Shi_Zeijer/src/comm.c:187:9: warning: pointer targets in passing argument 1 of 'write' differ in signedness [-Wpointer-sign]
+Shi_Zeijer/src/comm.c:185:9: warning: pointer targets in passing argument 1 of 'write' differ in signedness [-Wpointer-sign]
    write("Comando Invalido");
          ^
-Shi_Zeijer/src/comm.c:17:6: note: expected 'uint8_t *' but argument is of type 'char *'
+Shi_Zeijer/src/comm.c:16:6: note: expected 'uint8_t *' but argument is of type 'char *'
  void write(uint8_t *data) {
       ^
-Shi_Zeijer/src/comm.c:189:31: warning: pointer targets in passing argument 2 of 'string_compare' differ in signedness [-Wpointer-sign]
+Shi_Zeijer/src/comm.c:187:31: warning: pointer targets in passing argument 2 of 'string_compare' differ in signedness [-Wpointer-sign]
   if (!string_compare(command, "EUSB") && !string_compare(command, "BRUSB")
                                ^
-Shi_Zeijer/src/comm.c:29:15: note: expected 'uint8_t *' but argument is of type 'char *'
+Shi_Zeijer/src/comm.c:28:15: note: expected 'uint8_t *' but argument is of type 'char *'
  static bool_t string_compare(uint8_t *str1, uint8_t *str2) {
                ^
-Shi_Zeijer/src/comm.c:189:67: warning: pointer targets in passing argument 2 of 'string_compare' differ in signedness [-Wpointer-sign]
+Shi_Zeijer/src/comm.c:187:67: warning: pointer targets in passing argument 2 of 'string_compare' differ in signedness [-Wpointer-sign]
   if (!string_compare(command, "EUSB") && !string_compare(command, "BRUSB")
                                                                    ^
-Shi_Zeijer/src/comm.c:29:15: note: expected 'uint8_t *' but argument is of type 'char *'
+Shi_Zeijer/src/comm.c:28:15: note: expected 'uint8_t *' but argument is of type 'char *'
+ static bool_t string_compare(uint8_t *str1, uint8_t *str2) {
+               ^
+Shi_Zeijer/src/comm.c:188:32: warning: pointer targets in passing argument 2 of 'string_compare' differ in signedness [-Wpointer-sign]
+    && !string_compare(command, "E232")
+                                ^
+Shi_Zeijer/src/comm.c:28:15: note: expected 'uint8_t *' but argument is of type 'char *'
+ static bool_t string_compare(uint8_t *str1, uint8_t *str2) {
+               ^
+Shi_Zeijer/src/comm.c:189:32: warning: pointer targets in passing argument 2 of 'string_compare' differ in signedness [-Wpointer-sign]
+    && !string_compare(command, "BR232")
+                                ^
+Shi_Zeijer/src/comm.c:28:15: note: expected 'uint8_t *' but argument is of type 'char *'
  static bool_t string_compare(uint8_t *str1, uint8_t *str2) {
                ^
 Shi_Zeijer/src/comm.c:190:32: warning: pointer targets in passing argument 2 of 'string_compare' differ in signedness [-Wpointer-sign]
-    && !string_compare(command, "E232")
+    && !string_compare(command, "E485")
                                 ^
-Shi_Zeijer/src/comm.c:29:15: note: expected 'uint8_t *' but argument is of type 'char *'
+Shi_Zeijer/src/comm.c:28:15: note: expected 'uint8_t *' but argument is of type 'char *'
  static bool_t string_compare(uint8_t *str1, uint8_t *str2) {
                ^
 Shi_Zeijer/src/comm.c:191:32: warning: pointer targets in passing argument 2 of 'string_compare' differ in signedness [-Wpointer-sign]
-    && !string_compare(command, "BR232")
+    && !string_compare(command, "BR485")
                                 ^
-Shi_Zeijer/src/comm.c:29:15: note: expected 'uint8_t *' but argument is of type 'char *'
+Shi_Zeijer/src/comm.c:28:15: note: expected 'uint8_t *' but argument is of type 'char *'
  static bool_t string_compare(uint8_t *str1, uint8_t *str2) {
                ^
 Shi_Zeijer/src/comm.c:192:32: warning: pointer targets in passing argument 2 of 'string_compare' differ in signedness [-Wpointer-sign]
-    && !string_compare(command, "E485")
-                                ^
-Shi_Zeijer/src/comm.c:29:15: note: expected 'uint8_t *' but argument is of type 'char *'
- static bool_t string_compare(uint8_t *str1, uint8_t *str2) {
-               ^
-Shi_Zeijer/src/comm.c:193:32: warning: pointer targets in passing argument 2 of 'string_compare' differ in signedness [-Wpointer-sign]
-    && !string_compare(command, "BR485")
-                                ^
-Shi_Zeijer/src/comm.c:29:15: note: expected 'uint8_t *' but argument is of type 'char *'
- static bool_t string_compare(uint8_t *str1, uint8_t *str2) {
-               ^
-Shi_Zeijer/src/comm.c:194:32: warning: pointer targets in passing argument 2 of 'string_compare' differ in signedness [-Wpointer-sign]
     && !string_compare(command, "ATEN")) {
                                 ^
-Shi_Zeijer/src/comm.c:29:15: note: expected 'uint8_t *' but argument is of type 'char *'
+Shi_Zeijer/src/comm.c:28:15: note: expected 'uint8_t *' but argument is of type 'char *'
  static bool_t string_compare(uint8_t *str1, uint8_t *str2) {
                ^
-Shi_Zeijer/src/comm.c:195:9: warning: pointer targets in passing argument 1 of 'write' differ in signedness [-Wpointer-sign]
+Shi_Zeijer/src/comm.c:193:9: warning: pointer targets in passing argument 1 of 'write' differ in signedness [-Wpointer-sign]
    write("Comando Invalido");
          ^
-Shi_Zeijer/src/comm.c:17:6: note: expected 'uint8_t *' but argument is of type 'char *'
+Shi_Zeijer/src/comm.c:16:6: note: expected 'uint8_t *' but argument is of type 'char *'
  void write(uint8_t *data) {
       ^
-Shi_Zeijer/src/comm.c:199:9: warning: pointer targets in passing argument 1 of 'write' differ in signedness [-Wpointer-sign]
+Shi_Zeijer/src/comm.c:197:9: warning: pointer targets in passing argument 1 of 'write' differ in signedness [-Wpointer-sign]
    write("OK.");
          ^
-Shi_Zeijer/src/comm.c:17:6: note: expected 'uint8_t *' but argument is of type 'char *'
+Shi_Zeijer/src/comm.c:16:6: note: expected 'uint8_t *' but argument is of type 'char *'
  void write(uint8_t *data) {
       ^
 *** compiling C file Shi_Zeijer/src/aten.c ***
+Shi_Zeijer/src/aten.c: In function 'Aten_ValueStrToInt':
+Shi_Zeijer/src/aten.c:111:2: warning: implicit declaration of function 'atoi' [-Wimplicit-function-declaration]
+  actualAten=atoi(actualAtenStr);
+  ^
+Shi_Zeijer/src/aten.c: In function 'Aten_ValueIntToStr':
+Shi_Zeijer/src/aten.c:108:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Shi_Zeijer/src/aten.c: In function 'Aten_ValueStrToInt':
+Shi_Zeijer/src/aten.c:112:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
 *** compiling C file Shi_Zeijer/src/buzzer.c ***
 *** linking project Shi_Zeijer ***
    text	   data	    bss	    dec	    hex	filename
-  24984	   1092	    316	  26392	   6718	out/lpc4337_m4/Shi_Zeijer.axf
+  24912	   1092	    316	  26320	   66d0	out/lpc4337_m4/Shi_Zeijer.axf
 copy from `out/lpc4337_m4/Shi_Zeijer.axf' [elf32-littlearm] to `out/lpc4337_m4/Shi_Zeijer.bin' [binary]
 *** post-build ***
 make[1]: se sale del directorio '/cygdrive/c/CIAA/Git_TDP1/Firmware_v2'
 
 Build complete.
 
-19:55:33 **** Incremental Build of configuration Default for project Firmware_v2 ****
+12:07:27 **** Incremental Build of configuration Default for project Firmware_v2 ****
 make all 
 Build project...
 
 make[1]: se entra en el directorio '/cygdrive/c/CIAA/Git_TDP1/Firmware_v2'
 *** linking project Shi_Zeijer ***
    text	   data	    bss	    dec	    hex	filename
-  24984	   1092	    316	  26392	   6718	out/lpc4337_m4/Shi_Zeijer.axf
-copy from `out/lpc4337_m4/Shi_Zeijer.axf' [elf32-littlearm] to `out/lpc4337_m4/Shi_Zeijer.bin' [binary]
-*** post-build ***
-make[1]: se sale del directorio '/cygdrive/c/CIAA/Git_TDP1/Firmware_v2'
-
-Build complete.
-
-19:59:49 **** Incremental Build of configuration Default for project Firmware_v2 ****
-make all 
-Build project...
-
-make[1]: se entra en el directorio '/cygdrive/c/CIAA/Git_TDP1/Firmware_v2'
-*** linking project Shi_Zeijer ***
-   text	   data	    bss	    dec	    hex	filename
-  24984	   1092	    316	  26392	   6718	out/lpc4337_m4/Shi_Zeijer.axf
-copy from `out/lpc4337_m4/Shi_Zeijer.axf' [elf32-littlearm] to `out/lpc4337_m4/Shi_Zeijer.bin' [binary]
-*** post-build ***
-make[1]: se sale del directorio '/cygdrive/c/CIAA/Git_TDP1/Firmware_v2'
-
-Build complete.
-
-20:02:41 **** Incremental Build of configuration Default for project Firmware_v2 ****
-make all 
-Build project...
-
-make[1]: se entra en el directorio '/cygdrive/c/CIAA/Git_TDP1/Firmware_v2'
-*** linking project Shi_Zeijer ***
-   text	   data	    bss	    dec	    hex	filename
-  24984	   1092	    316	  26392	   6718	out/lpc4337_m4/Shi_Zeijer.axf
+  24912	   1092	    316	  26320	   66d0	out/lpc4337_m4/Shi_Zeijer.axf
 copy from `out/lpc4337_m4/Shi_Zeijer.axf' [elf32-littlearm] to `out/lpc4337_m4/Shi_Zeijer.bin' [binary]
 *** post-build ***
 make[1]: se sale del directorio '/cygdrive/c/CIAA/Git_TDP1/Firmware_v2'

@@ -22,5 +22,7 @@ uint8_t Aten_SetValue(uint16_t value);
 uint8_t Aten_Plus ();
 uint8_t Aten_Minus ();
 uint8_t Aten_Get_Actual_Aten(void);
+uint8_t Aten_ValueIntToStr(void);
+uint8_t Aten_ValueStrToInt(void);
 
 #endif

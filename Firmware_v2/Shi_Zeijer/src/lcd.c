@@ -16,13 +16,10 @@
 #include "chip.h"                  /* <= LPCopen header */
 #include "sapi.h"
 
-
 #define SIZE_BUFFER_OUT 32U
-
 
 #define INPUT     0
 #define OUTPUT    1
-
 
 /* Define the number of cycles for 1ms */
 #define INACCURATE_TO_MS 20400
@@ -54,17 +51,17 @@ static uint8_t buffer[32];
 //**************************************************************************
 
 //*************************************************************************//
-void LCD_Set_PosCur(uint8_t x,uint8_t y)
-{
-	poscur = (16*y)+(x);
+void LCD_Set_PosCur(uint8_t x, uint8_t y) {
+	poscur = (16 * y) + (x);
 }
 void LCD_delay_ms(uint64_t delay_ms) {
-   volatile uint64_t i;
-   volatile uint64_t delay;
+	volatile uint64_t i;
+	volatile uint64_t delay;
 
-   delay = INACCURATE_TO_MS * delay_ms;
+	delay = INACCURATE_TO_MS * delay_ms;
 
-   for( i=delay; i>0; i-- );
+	for (i = delay; i > 0; i--)
+		;
 }
 //**************************************************************************
 //* Send a nibble to the LCD
@@ -85,7 +82,8 @@ void LCD_send_nibble(int8_t data) {
 
 	// pulse the LCD enable line
 	gpioWrite(LCD_EN, ON);
-	for (data = 255; data; data--);
+	for (data = 255; data; data--)
+		;
 	gpioWrite(LCD_EN, OFF);
 }
 
@@ -105,7 +103,8 @@ void LCD_send_byte(int8_t address, int8_t data) {
 	gpioWrite(LCD_EN, OFF); // set LCD enable line to 0
 	LCD_send_nibble(data >> 4); // send the higher nibble
 	LCD_send_nibble(data & 0x0f); // send the lower nibble
-	for (temp = 255; temp; temp--);
+	for (temp = 255; temp; temp--)
+		;
 }
 
 //**************************************************************************
@@ -133,22 +132,21 @@ void LCD_init(int8_t mode1, int8_t mode2) {
 	//Chip_SCU_PinMux(LCD_D2_P, LCD_D2_P_, MD_PUP, FUNC0); /* P4_5, GPIO2[5],LCD_D2*/
 	//Chip_SCU_PinMux(LCD_D3_P, LCD_D3_P_, MD_PUP, FUNC0); /* P4_6, GPIO2[6],LCD_D3 */
 	//Chip_SCU_PinMux(LCD_D4_P, LCD_D4_P_, MD_PUP, FUNC4); /* P4_10, GPIO5[14],LCD_D4 */
-
 	/* Config EDU-CIAA-NXP LCD Pins as Outputs */
-	gpioConfig( LCD_EN, GPIO_OUTPUT );
-	gpioConfig( LCD_1, GPIO_OUTPUT );
-	gpioConfig( LCD_2, GPIO_OUTPUT );
-	gpioConfig( LCD_3, GPIO_OUTPUT );
-	gpioConfig( LCD_4, GPIO_OUTPUT );
-	gpioConfig( LCD_RS, GPIO_OUTPUT );
+	gpioConfig( LCD_EN, GPIO_OUTPUT);
+	gpioConfig( LCD_1, GPIO_OUTPUT);
+	gpioConfig( LCD_2, GPIO_OUTPUT);
+	gpioConfig( LCD_3, GPIO_OUTPUT);
+	gpioConfig( LCD_4, GPIO_OUTPUT);
+	gpioConfig( LCD_RS, GPIO_OUTPUT);
 
 	/* Init EDU-CIAA-NXP LCD Pins OFF */
-	gpioWrite(LCD_1,OFF);
-	gpioWrite(LCD_2,OFF);
-	gpioWrite(LCD_3,OFF);
-	gpioWrite(LCD_4,OFF);
-	gpioWrite(LCD_RS,OFF);
-	gpioWrite(LCD_EN,OFF);
+	gpioWrite(LCD_1, OFF);
+	gpioWrite(LCD_2, OFF);
+	gpioWrite(LCD_3, OFF);
+	gpioWrite(LCD_4, OFF);
+	gpioWrite(LCD_RS, OFF);
+	gpioWrite(LCD_EN, OFF);
 
 	LCD_delay_ms(16); // retardo de 15 ms
 	// LCD 4-bit mode initialization sequence
@@ -279,8 +277,7 @@ void LCD_Write_Buffer(uint8_t data[SIZE_BUFFER_OUT]) {
 void LCD_Write_Buffer_At_Pos(uint8_t data, uint8_t pos) {
 	buffer[pos] = data;
 }
-void LCD_Write_Buffer_Line(uint8_t data[SIZE_BUFFER_OUT / 2],
-		uint8_t line) {
+void LCD_Write_Buffer_Line(uint8_t data[SIZE_BUFFER_OUT / 2], uint8_t line) {
 	uint8_t i;
 	for (i = 16 * line; i < (SIZE_BUFFER_OUT / 2) * (line + 1); i++) {
 		if (i >= SIZE_BUFFER_OUT / 2) {
@@ -293,7 +290,8 @@ void LCD_Write_Buffer_Line(uint8_t data[SIZE_BUFFER_OUT / 2],
 void LCD_Interrupt(void) {
 	uint8_t i;
 	LCD_pos_xy(pos % (SIZE_BUFFER_OUT / 2), pos / (SIZE_BUFFER_OUT / 2));
-	for (i=255;i>0;i--);
+	for (i = 255; i > 0; i--)
+		;
 	LCD_write_int8_t(buffer[pos]);
 	pos = (pos + 1) % SIZE_BUFFER_OUT;
 	LCD_pos_xy(poscur % (SIZE_BUFFER_OUT / 2), poscur / (SIZE_BUFFER_OUT / 2));
