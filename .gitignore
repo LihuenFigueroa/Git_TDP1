@@ -5,3 +5,5 @@
 .metadata/.plugins/
 .metadata/version.ini
 *.xmi
+*.ini
+*.ini
