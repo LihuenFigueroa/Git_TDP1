@@ -25,49 +25,49 @@ static void Aten_Write(uint8_t value) {
 //	} else {
 //	}
 
-	if (value & 64) {
+	if (value & 0b1000000) {
 		actualAten += 64;
 		gpioWrite(ATEN_64, ON);
 	} else {
 		gpioWrite(ATEN_64, OFF);
 	}
 
-	if (value & 32) {
+	if (value & 0b100000) {
 		actualAten += 32;
 		gpioWrite(ATEN_32, ON);
 	} else {
 		gpioWrite(ATEN_32, OFF);
 	}
 
-	if (value & 16) {
+	if (value & 0b10000) {
 		actualAten += 16;
 		gpioWrite(ATEN_16, ON);
 	} else {
 		gpioWrite(ATEN_16, OFF);
 	}
 
-	if (value & 8) {
+	if (value & 0b1000) {
 		actualAten += 8;
 		gpioWrite(ATEN_8, ON);
 	} else {
 		gpioWrite(ATEN_8, OFF);
 	}
 
-	if (value & 4) {
+	if (value & 0b100) {
 		actualAten += 4;
 		gpioWrite(ATEN_4, ON);
 	} else {
 		gpioWrite(ATEN_4, OFF);
 	}
 
-	if (value & 2) {
+	if (value & 0b10) {
 		actualAten += 2;
 		gpioWrite(ATEN_2, ON);
 	} else {
 		gpioWrite(ATEN_2, OFF);
 	}
 
-	if (value & 1) {
+	if (value & 0b1) {
 		actualAten += 1;
 		gpioWrite(ATEN_1, ON);
 	} else {

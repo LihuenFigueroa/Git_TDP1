@@ -32,7 +32,7 @@
 
 -include project.mk
 
-PROJECT ?= examples/blinky
+PROJECT ?= Shi_Zeijer
 TARGET ?= lpc4337_m4
 BOARD ?= edu_ciaa_nxp
 
