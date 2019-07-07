@@ -25,6 +25,7 @@ static uint8_t data[32];
 static uint32_t value;
 static const uint8_t clear[16] = { 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32,
 		32, 32, 32, 32, 32 };
+
 static void fill_lcd_buffer_normal(uint8_t buffer[16]) {
 	uint16_t value = Aten_Get_Actual_Aten();
 	uint8_t digitos[3] = { 0, 0, 0 };
@@ -137,6 +138,10 @@ void main_MEF_Init() {
 
 void main_MEF_Update() {
 	uint8_t *param;
+	uint8_t aten;
+	uint8_t aten_digitos[4] = { 0, 0, 0, 0 };
+	uint8_t respuesta[10]={0,0,0,0,0,0,0,0,0,0}; // "ATEN: XXX"+'\0'
+	uint8_t i = 0;
 	KEYPAD_Interrupt();
 	switch (state) {
 	case STATE_NORMAL:
@@ -171,17 +176,58 @@ void main_MEF_Update() {
 				break;
 			}
 		}
-		if (COMM_CheckSerials(&param)){
+		if (COMM_CheckSerials(&param)) {
+			respuesta[0]='A';
+			respuesta[1]='T';
+			respuesta[2]='E';
+			respuesta[3]='N';
+			respuesta[4]=':';
+			respuesta[5]=' ';
 			switch (param[0]) {
-				case '+':
-					Aten_Plus();
-					break;
-				case '-':
-					Aten_Minus();
-					break;
-				default:
-					Aten_SetValue(atoi(param));
-					break;
+			case '+':
+				Aten_Plus();
+				aten = Aten_Get_Actual_Aten();
+				while (aten != 0) {
+					aten_digitos[2 - i] = (aten % 10) + 0x30;
+					aten = aten / 10;
+					i++;
+				}
+				respuesta[6]=aten_digitos[0];
+				respuesta[7]=aten_digitos[1];
+				respuesta[8]=aten_digitos[2];
+				write(respuesta);
+				break;
+			case '-':
+				Aten_Minus();
+				aten = Aten_Get_Actual_Aten();
+				while (aten != 0) {
+					aten_digitos[2 - i] = (aten % 10) + 0x30;
+					aten = aten / 10;
+					i++;
+				}
+				respuesta[6]=aten_digitos[0];
+				respuesta[7]=aten_digitos[1];
+				respuesta[8]=aten_digitos[2];
+				write(respuesta);
+				break;
+			case '?':
+				aten = Aten_Get_Actual_Aten();
+				while (aten != 0) {
+					aten_digitos[2 - i] = (aten % 10) + 0x30;
+					aten = aten / 10;
+					i++;
+				}
+				respuesta[6]=aten_digitos[0];
+				respuesta[7]=aten_digitos[1];
+				respuesta[8]=aten_digitos[2];
+				write(respuesta);
+				break;
+			default:
+				aten = atoi(param);
+				Aten_SetValue(aten);
+				writenln(respuesta);
+				write(param);
+
 			}
 			fill_lcd_buffer_normal(data);
 			LCD_Write_Buffer_Line(data, 0);

@@ -1,5 +1,7 @@
 #include "aten.h"
 static uint8_t actualAten;
+static uint8_t actualAtenStr[4] = { 0, 0, 0, 0 };
+
 void Aten_Init() {
 	//poner aten en 127
 	gpioConfig(ATEN_1, GPIO_OUTPUT);
@@ -76,7 +78,7 @@ static void Aten_Write(uint8_t value) {
 }
 
 uint8_t Aten_SetValue(uint16_t value) {
-	if ((value > 127) || (value<0)) {
+	if ((value > 127) || (value < 0)) {
 		return 1;
 	} else {
 		Aten_Write(value);
@@ -84,13 +86,27 @@ uint8_t Aten_SetValue(uint16_t value) {
 	return 0;
 }
 
-uint8_t Aten_Plus (){
-	return Aten_SetValue(actualAten+1);
+uint8_t Aten_Plus() {
+	return Aten_SetValue(actualAten + 1);
 }
-uint8_t Aten_Minus (){
-	return Aten_SetValue(actualAten-1);
+uint8_t Aten_Minus() {
+	return Aten_SetValue(actualAten - 1);
 }
 
-uint8_t Aten_Get_Actual_Aten(void){
+uint8_t Aten_Get_Actual_Aten(void) {
 	return actualAten;
+}
+
+uint8_t Aten_ValueIntToStr() {
+	uint8_t value=actualAten;
+	uint8_t i = 0;
+	while (value != 0) {
+		actualAtenStr[2-i] = (value % 10) + 0x30;
+		value = value / 10;
+		i++;
+	}
+}
+
+uint8_t Aten_ValueStrToInt() {
+	actualAten=atoi(actualAtenStr);
 }

@@ -1,3 +1,10 @@
 
 .metadata/.plugins/org.eclipse.cdt.core/Firmware_v2.1544367176390.pdom
 *.pdom
+.metadata/.log
+.metadata/.plugins/
+.metadata/version.ini
+*.xmi
+*.ini
+*.ini
+*.log
