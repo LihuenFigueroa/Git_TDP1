@@ -137,6 +137,7 @@ void main_MEF_Init() {
 
 void main_MEF_Update() {
 	uint8_t *param;
+	uint8_t rta[4];
 	KEYPAD_Interrupt();
 	switch (state) {
 	case STATE_NORMAL:
@@ -171,17 +172,36 @@ void main_MEF_Update() {
 				break;
 			}
 		}
-		if (COMM_CheckSerials(&param)){
+		if (COMM_CheckSerials(&param)) {
 			switch (param[0]) {
-				case '+':
-					Aten_Plus();
-					break;
-				case '-':
-					Aten_Minus();
-					break;
-				default:
-					Aten_SetValue(atoi(param));
-					break;
+			case '+':
+				if (!Aten_Plus()) {
+					write("OK.");
+				} else {
+					write("ERROR.");
+					BUZZER_Ring();
+				}
+				break;
+			case '-':
+				if (!Aten_Minus()) {
+					write("OK.");
+				} else {
+					write("ERROR.");
+					BUZZER_Ring();
+				}
+				break;
+			case '?':
+					Aten_Get_Actual_Aten_String(rta);
+					write(rta);
+				break;
+			default:
+				if (!Aten_SetValue(atoi(param))) {
+					write("OK.");
+				} else {
+					write("ERROR.");
+					BUZZER_Ring();
+				}
+				break;
 			}
 			fill_lcd_buffer_normal(data);
 			LCD_Write_Buffer_Line(data, 0);

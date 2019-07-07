@@ -94,3 +94,14 @@ uint8_t Aten_Minus (){
 uint8_t Aten_Get_Actual_Aten(void){
 	return actualAten;
 }
+
+void Aten_Get_Actual_Aten_String(uint8_t * rta){
+	uint8_t aux = actualAten;
+	uint8_t i = 0;
+	while (aux != 0) {
+		rta[2 - i] = (aux % 10) + 0x30;
+		aux = aux / 10;
+		i++;
+	}
+	rta[3] = '\0';
+}
