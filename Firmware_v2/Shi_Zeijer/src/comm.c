@@ -31,12 +31,13 @@ static bool_t string_compare(uint8_t *str1, uint8_t *str2) {
 	return str1[i - 1] == str2[i - 1];
 }
 
-static bool_t COMM_CheckCommand(uint8_t *v,uint8_t **param) {
+static bool_t COMM_CheckCommand(uint8_t *v, uint8_t **param) {
 	uint8_t *command = v;
 	uint8_t digitos[9] = { 32, 32, 32, 32, 32, 32, 32, 32, 0 };
 	uint8_t i = 0;
 	uint32_t baud_rate;
 	uint8_t * p1 = strchr(v, ',');
+	write(command);
 	if (p1 != NULL) {
 		*(p1) = '\0';
 		if (string_compare(v, "EUSB")) {
@@ -66,6 +67,10 @@ static bool_t COMM_CheckCommand(uint8_t *v,uint8_t **param) {
 					write("Secundaria");
 					break;
 				}
+				break;
+			default:
+				write("Invalido.");
+				BUZZER_Ring();
 				break;
 			}
 		}
@@ -113,6 +118,10 @@ static bool_t COMM_CheckCommand(uint8_t *v,uint8_t **param) {
 					break;
 				}
 				break;
+			default:
+				write("Invalido.");
+				BUZZER_Ring();
+				break;
 			}
 		}
 		if (string_compare(v, "BR232")) {
@@ -159,6 +168,10 @@ static bool_t COMM_CheckCommand(uint8_t *v,uint8_t **param) {
 					break;
 				}
 				break;
+			default:
+				write("Invalido.");
+				BUZZER_Ring();
+				break;
 			}
 		}
 		if (string_compare(v, "BR485")) {
@@ -178,11 +191,11 @@ static bool_t COMM_CheckCommand(uint8_t *v,uint8_t **param) {
 		}
 		if (string_compare(v, "ATEN")) {
 			(*param) = ++p1;
-			return true;
+			return 1;
 		}
-	}else
-	{
-		write("Comando Invalido");
+	} else {
+		write("Invalido.");
+		return 0;
 	}
 	if (!string_compare(command, "EUSB") && !string_compare(command, "BRUSB")
 			&& !string_compare(command, "E232")
@@ -190,27 +203,23 @@ static bool_t COMM_CheckCommand(uint8_t *v,uint8_t **param) {
 			&& !string_compare(command, "E485")
 			&& !string_compare(command, "BR485")
 			&& !string_compare(command, "ATEN")) {
-		write("Comando Invalido");
+		write("Invalido.");
 	}
-	else
-	{
-		write("OK.");
-	}
-	return false;
+	return 0;
 }
 
 uint8_t COMM_CheckSerials(uint8_t **param) {
 	if (USB_Flag()) {
 		USB_GetBuffer(buffer);
-		return COMM_CheckCommand(buffer,param);
+		return COMM_CheckCommand(buffer, param);
 	}
 	if (RS232_Flag()) {
 		RS232_GetBuffer(buffer);
-		return COMM_CheckCommand(buffer,param);
+		return COMM_CheckCommand(buffer, param);
 	}
 	if (RS485_Flag()) {
 		RS485_GetBuffer(buffer);
-		return COMM_CheckCommand(buffer,param);
+		return COMM_CheckCommand(buffer, param);
 	}
-	return false;
+	return 0;
 }

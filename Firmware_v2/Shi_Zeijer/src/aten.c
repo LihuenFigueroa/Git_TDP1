@@ -1,6 +1,5 @@
 #include "aten.h"
 static uint8_t actualAten;
-static uint8_t actualAtenStr[4] = { 0, 0, 0, 0 };
 
 void Aten_Init() {
 	//poner aten en 127
@@ -97,16 +96,13 @@ uint8_t Aten_Get_Actual_Aten(void) {
 	return actualAten;
 }
 
-uint8_t Aten_ValueIntToStr() {
-	uint8_t value=actualAten;
+void Aten_Get_Actual_Aten_String(uint8_t * rta){
+	uint8_t aux = actualAten;
 	uint8_t i = 0;
-	while (value != 0) {
-		actualAtenStr[2-i] = (value % 10) + 0x30;
-		value = value / 10;
+	while (aux != 0) {
+		rta[2 - i] = (aux % 10) + 0x30;
+		aux = aux / 10;
 		i++;
 	}
-}
-
-uint8_t Aten_ValueStrToInt() {
-	actualAten=atoi(actualAtenStr);
+	rta[3] = '\0';
 }

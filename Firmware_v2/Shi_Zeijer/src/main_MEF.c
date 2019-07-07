@@ -138,10 +138,7 @@ void main_MEF_Init() {
 
 void main_MEF_Update() {
 	uint8_t *param;
-	uint8_t aten;
-	uint8_t aten_digitos[4] = { 0, 0, 0, 0 };
-	uint8_t respuesta[10]={0,0,0,0,0,0,0,0,0,0}; // "ATEN: XXX"+'\0'
-	uint8_t i = 0;
+	uint8_t rta[4];
 	KEYPAD_Interrupt();
 	switch (state) {
 	case STATE_NORMAL:
@@ -177,57 +174,35 @@ void main_MEF_Update() {
 			}
 		}
 		if (COMM_CheckSerials(&param)) {
-			respuesta[0]='A';
-			respuesta[1]='T';
-			respuesta[2]='E';
-			respuesta[3]='N';
-			respuesta[4]=':';
-			respuesta[5]=' ';
 			switch (param[0]) {
 			case '+':
-				Aten_Plus();
-				aten = Aten_Get_Actual_Aten();
-				while (aten != 0) {
-					aten_digitos[2 - i] = (aten % 10) + 0x30;
-					aten = aten / 10;
-					i++;
+				if (!Aten_Plus()) {
+					write("OK.");
+				} else {
+					write("ERROR.");
+					BUZZER_Ring();
 				}
-				respuesta[6]=aten_digitos[0];
-				respuesta[7]=aten_digitos[1];
-				respuesta[8]=aten_digitos[2];
-				write(respuesta);
 				break;
 			case '-':
-				Aten_Minus();
-				aten = Aten_Get_Actual_Aten();
-				while (aten != 0) {
-					aten_digitos[2 - i] = (aten % 10) + 0x30;
-					aten = aten / 10;
-					i++;
+				if (!Aten_Minus()) {
+					write("OK.");
+				} else {
+					write("ERROR.");
+					BUZZER_Ring();
 				}
-				respuesta[6]=aten_digitos[0];
-				respuesta[7]=aten_digitos[1];
-				respuesta[8]=aten_digitos[2];
-				write(respuesta);
 				break;
 			case '?':
-				aten = Aten_Get_Actual_Aten();
-				while (aten != 0) {
-					aten_digitos[2 - i] = (aten % 10) + 0x30;
-					aten = aten / 10;
-					i++;
-				}
-				respuesta[6]=aten_digitos[0];
-				respuesta[7]=aten_digitos[1];
-				respuesta[8]=aten_digitos[2];
-				write(respuesta);
+					Aten_Get_Actual_Aten_String(rta);
+					write(rta);
 				break;
 			default:
-				aten = atoi(param);
-				Aten_SetValue(aten);
-				writenln(respuesta);
-				write(param);
-
+				if (!Aten_SetValue(atoi(param))) {
+					write("OK.");
+				} else {
+					write("ERROR.");
+					BUZZER_Ring();
+				}
+				break;
 			}
 			fill_lcd_buffer_normal(data);
 			LCD_Write_Buffer_Line(data, 0);

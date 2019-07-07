@@ -9,6 +9,4 @@ typedef enum { Primario, Secundario, Apagado } estado_t;
 void COMM_Init();
 uint8_t COMM_CheckSerials(uint8_t **param) ;
 void write(uint8_t *data);
-void writenln(uint8_t *data);
-
 #endif
